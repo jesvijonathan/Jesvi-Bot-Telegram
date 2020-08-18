@@ -3,7 +3,7 @@ import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 
-updater = Updater("1262215479:AAHtwK5J-6lP8iw9b7uRjcOaazelRkHgq3s", use_context=True)
+updater = Updater("1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI", use_context=True)
 dp = updater.dispatcher
 
 

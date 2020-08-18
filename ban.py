@@ -64,14 +64,13 @@ def kick(update, context):
 
 
 def leave(update, context):
-    msg = update.message.reply_to_message
-
-    user_id = msg.from_user.id 
-    first_name = msg.from_user.first_name
-
+    msg = update.message.reply_text("Okay, I'm leaving ...")
+    time.sleep(5)
+    msg.edit_text("Bye !")
+    time.sleep(1)
+    user_id = msg.from_user.id
     kick = update.effective_chat.unban_member(user_id)
-    
-    msg.reply_text( "Kicked " + str(first_name) + " !")
+
     
 
 def main():

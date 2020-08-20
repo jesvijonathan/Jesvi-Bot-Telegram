@@ -1,23 +1,6 @@
 
-import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
-from typing import Optional, List
 
 import telegram 
-from telegram.error import BadRequest
-from telegram.ext.dispatcher import run_async
-from telegram.utils.helpers import mention_html
-import time
-
-updater = Updater("1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI", use_context=True)
-dp = updater.dispatcher
-
-
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
 
 
 def unmute(update, context):
@@ -83,17 +66,3 @@ def mute(update, context):
     
     context.bot.restrict_chat_member(chat_id, user_id,permissions=new_permissions)
     update.message.reply_text("Muted "+ str(first_name) + " !")
-
-
-def main():
-    
-    dp.add_handler(CommandHandler("mute", mute))
-    dp.add_handler(CommandHandler("unmute", unmute))
-
-    updater.start_polling()
-
-    updater.idle()
-
-
-if __name__ == '__main__':
-    main()

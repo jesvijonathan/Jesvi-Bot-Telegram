@@ -1,22 +1,13 @@
 
-import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
 import time
 
-updater = Updater("1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI", use_context=True)
-dp = updater.dispatcher
 
-
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
+lock = 0
 
 
 def clean(update, context):
     msg = update.message.reply_to_message
-    del_msg = update.message.reply_text("Cleaning...")
+    del_msg = update.message.reply_text("Cleaning started...")
 
     msg_id = int(msg.message_id)
     chat_id = update.effective_chat.id
@@ -67,15 +58,6 @@ def silent_delete(update, context):
     context.bot.deleteMessage(chat_id, msg_id)
 
 
-def msg_id(update, context):
-    msg = update.message.reply_to_message
-    msg_id = msg.message_id
-    update.message.reply_text(str(msg_id))
-
-
-lock = 0
-
-
 def lock(update, context):
     global lock
     lock = 1
@@ -91,33 +73,9 @@ def lock_delete(update, context):
         chat_id = update.effective_chat.id
 
         context.bot.deleteMessage(chat_id, msg_id)
-    
-    else:
-        pass
 
 
 def unlock(update, context):
     global lock
     lock = 0
     update.message.reply_text("Unlocked !")
-
-
-def main():
-
-    dp.add_handler(CommandHandler("clean", clean))
-    dp.add_handler(CommandHandler("del", delete))
-    dp.add_handler(CommandHandler("sdel", silent_delete))
-    dp.add_handler(CommandHandler("id", msg_id))
-    
-    dp.add_handler(CommandHandler("lock", lock))
-    dp.add_handler(CommandHandler("unlock", unlock))
-
-    dp.add_handler(MessageHandler(Filters.all, lock_delete))
-
-    updater.start_polling()
-
-    updater.idle()
-
-
-if __name__ == '__main__':
-    main()

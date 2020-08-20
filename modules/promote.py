@@ -1,18 +1,4 @@
 
-import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
-
-updater = Updater("1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI", use_context=True)
-dp = updater.dispatcher
-
-
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
-
-
 def promote(update, context):
     msg = update.message.reply_to_message
 
@@ -47,18 +33,3 @@ def depromote(update, context):
                               can_promote_members=False)
         
     update.message.reply_text("Depromoted " + str(first_name) +" !")
-
-
-def main():
-
-    dp.add_handler(CommandHandler("promote", promote))
-
-    dp.add_handler(CommandHandler("demote", depromote))
-
-    updater.start_polling()
-
-    updater.idle()
-
-
-if __name__ == '__main__':
-    main()

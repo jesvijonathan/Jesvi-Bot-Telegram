@@ -1,16 +1,6 @@
 
-import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-
-updater = Updater("1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI", use_context=True)
-dp = updater.dispatcher
-
-
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
+import telegram 
 
 
 spam = 0
@@ -148,11 +138,11 @@ def spam_check(update, context):
 
     update.message.reply_text(text)
 
-def spam(update,context):
+def spam_call(update,context):
     global spam_text
     global spam_type
     global spam
-
+    
     msg = update.message
     
     try:
@@ -171,17 +161,3 @@ def spam(update,context):
             msg.reply_text(msg.text)
         elif spam_type == "reply":
             msg.reply_text(spam_text)
-
-
-def main():
-    
-    dp.add_handler(CommandHandler("spam", spam_check))
-    dp.add_handler(MessageHandler(Filters.text, spam))
-
-    updater.start_polling()
-
-    updater.idle()
-
-
-if __name__ == '__main__':
-    main()

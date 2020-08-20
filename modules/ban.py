@@ -1,19 +1,5 @@
 
-import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import requests
 import time
-
-
-updater = Updater("1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI", use_context=True)
-dp = updater.dispatcher
-
-
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
-
 
 def rip(update, context):
     user_id = update.effective_message.from_user.id
@@ -70,25 +56,3 @@ def leave(update, context):
     time.sleep(1)
     user_id = msg.from_user.id
     kick = update.effective_chat.unban_member(user_id)
-
-    
-
-def main():
-
-    dp.add_handler(CommandHandler("rip", rip))
-
-    dp.add_handler(CommandHandler("kick", kick))
-
-    dp.add_handler(CommandHandler("ban", ban))
-
-    dp.add_handler(CommandHandler("unban", unban))
-
-    dp.add_handler(CommandHandler("leave", leave))
-
-    updater.start_polling()
-
-    updater.idle()
-
-
-if __name__ == '__main__':
-    main()

@@ -39,6 +39,11 @@ def set_(update,context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
+    elif m == 1:
+           n = extract.sudocheck(update,context,0)
+           if m == 0:
+              update.message.reply_text("He got his own title boii !")
+              return
 
     prev_message = update.message.reply_to_message
     

@@ -38,6 +38,14 @@ def kick(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
+    elif m == 1:
+           n = extract.sudocheck(update,context,0)
+           if m == 0:
+              update.message.reply_text("Try /rip instead...")
+              return
+           #elif m == 1:
+            #  update.message.reply_text("Get an admin to do it !")
+             # return
 
     msg = update.message.reply_to_message
 
@@ -53,6 +61,8 @@ def leave(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
+    if m == 1:
+        update.message.reply_text("Will leave only if the group owner says to do so...")
 
     msg = update.message.reply_text("Okay, I'm leaving ...")
     time.sleep(5)

@@ -7,6 +7,14 @@ def promote(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
+    elif m == 1:
+           n = extract.sudocheck(update,context,0)
+           if m == 0:
+              update.message.reply_text("'I can't give where i got my powers from' ~jesvi_bot")
+              return
+           elif m == 1:
+              update.message.reply_text("Already a fellow admin !")
+              return
     
     msg = update.message.reply_to_message
 
@@ -20,7 +28,7 @@ def promote(update, context):
                               can_invite_users=True,
                               can_restrict_members=True,
                               can_pin_messages=True,
-                              can_promote_members=True)
+                              can_promote_members=False)
         
     update.message.reply_text("Promoted " + str(first_name) +" !")
 
@@ -29,6 +37,11 @@ def depromote(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
+    elif m == 1:
+           n = extract.sudocheck(update,context,0)
+           if m == 0:
+              update.message.reply_text("Nice Joke")
+              return
 
     msg = update.message.reply_to_message
 

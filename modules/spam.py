@@ -2,13 +2,14 @@
 
 import telegram 
 
+import modules.extract as extract
+
 
 spam = 0
 spam_text = ""
 spam_type = "echo"
 spam_overflow_text = ""
 spam_user = {}
-
 
 def spam_check(update, context):
     global spam
@@ -17,7 +18,11 @@ def spam_check(update, context):
     global spam_user
 
     msg = update.message.reply_to_message
-    
+
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+        
     try:
         res = update.message.text.split(None, 3)
     except:
@@ -161,3 +166,8 @@ def spam_call(update,context):
             msg.reply_text(msg.text)
         elif spam_type == "reply":
             msg.reply_text(spam_text)
+
+
+def boom(update,context): 
+    chat_id = update.effective_chat.id
+    context.bot.send_message(chat_id, "Boom !\nWe have something to celebrate ! 🥳")

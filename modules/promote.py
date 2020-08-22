@@ -1,5 +1,13 @@
 
+
+import modules.extract as extract
+
+
 def promote(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+    
     msg = update.message.reply_to_message
 
     chat_id = update.effective_chat.id
@@ -18,6 +26,10 @@ def promote(update, context):
 
 
 def depromote(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     msg = update.message.reply_to_message
 
     chat_id = update.effective_chat.id

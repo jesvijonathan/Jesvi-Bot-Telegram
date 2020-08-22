@@ -1,11 +1,15 @@
 
+import modules.extract as extract
 import time
-
 
 lock = 0
 
 
 def clean(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     msg = update.message.reply_to_message
     del_msg = update.message.reply_text("Cleaning started...")
 
@@ -32,6 +36,10 @@ def clean(update, context):
 
 
 def delete(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     msg = update.message.reply_to_message
     msg_frm = update.message
     
@@ -48,6 +56,10 @@ def delete(update, context):
 
 
 def silent_delete(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     msg = update.message.reply_to_message
     msg_frm = update.message
     
@@ -59,6 +71,10 @@ def silent_delete(update, context):
 
 
 def lock(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     global lock
     lock = 1
     update.message.reply_text("Locked !")
@@ -76,6 +92,10 @@ def lock_delete(update, context):
 
 
 def unlock(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     global lock
     lock = 0
     update.message.reply_text("Unlocked !")

@@ -8,6 +8,7 @@ import telegram.ext
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 
+import config
 import modules.welcome as welcome
 import modules.info as info
 import modules.edit as edit
@@ -17,9 +18,10 @@ import modules.filter as filter
 import modules.promote as promote
 import modules.ban as ban
 import modules.spam as spams
+import modules.about as about
 
 
-updater = Updater("1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI", use_context=True)
+updater = Updater(config.bot_token, use_context=True)
 dp = updater.dispatcher
 
 
@@ -55,7 +57,14 @@ def main():
     kick_cmd = ("kick")
     ban_cmd = ("ban", "gban")
     unban_cmd = ("unban","forgive","accept")
-
+    about_cmd = ("about", "bot", "botinfo")
+    owner_cmd = ("owner","jesvi","boss","maintainer")
+    boom_cmd = ("boom","yay","dang","bang","party")
+    
+    dp.add_handler(CommandHandler(boom_cmd, spams.boom))
+    
+    dp.add_handler(CommandHandler("owner", about.owner))
+    dp.add_handler(CommandHandler("about", about.about))
 
     dp.add_handler(CommandHandler(rip_cmd, ban.rip))
     dp.add_handler(CommandHandler(kick_cmd, ban.kick))

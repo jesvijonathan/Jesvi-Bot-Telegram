@@ -2,8 +2,14 @@
 
 import telegram 
 
+import modules.extract as extract
+
 
 def unmute(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     msg = update.message.reply_to_message
 
     user_id = msg.from_user.id 
@@ -36,6 +42,10 @@ def unmute(update, context):
 
 
 def mute(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     msg = update.message.reply_to_message
     res = update.message.text.split(None, 1)
     

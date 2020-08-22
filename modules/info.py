@@ -16,7 +16,7 @@ def info(update, context):
         msg = update.message
         chat_id = update.effective_chat.id
         group_name = update.effective_chat.title
-        owner =""
+        owner = ""
         name = ""
         chat = update.effective_chat
 

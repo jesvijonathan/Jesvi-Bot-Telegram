@@ -1,5 +1,13 @@
 
+
+import modules.extract as extract
+
+
 def pin(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+        
     msg = update.effective_message.reply_to_message
     
     chat_id = update.effective_chat.id
@@ -15,6 +23,10 @@ def pin(update, context):
 
 
 def unpin(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     chat_id = update.effective_chat.id
 
     try:
@@ -24,6 +36,10 @@ def unpin(update, context):
 
 
 def set_(update,context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     prev_message = update.message.reply_to_message
     
     chat_id = ""

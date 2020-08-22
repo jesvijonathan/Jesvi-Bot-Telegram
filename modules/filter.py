@@ -2,6 +2,7 @@
 
 import telegram 
 
+import modules.extract as extract
 
 lock = 0
 msg_filter = 0
@@ -9,6 +10,10 @@ filter_text = {}
 
 
 def silent_delete(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     msg = update.message.reply_to_message
     msg_frm = update.message
     
@@ -44,6 +49,10 @@ def filter_delete(update, context):
 
 
 def message_filter(update, context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+
     global msg_filter
     global filter_text
     

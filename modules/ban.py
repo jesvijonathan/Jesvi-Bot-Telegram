@@ -6,6 +6,14 @@ def ban(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
+    elif m == 1:
+           n = extract.sudocheck(update,context,0)
+           if n == 0:
+              update.message.reply_text("Are you insane ?")
+              return
+           elif n == 1:
+              update.message.reply_text("Get a sudo admin to do it !")
+              return
 
     msg = update.message.reply_to_message
 
@@ -40,7 +48,7 @@ def kick(update, context):
         return
     elif m == 1:
            n = extract.sudocheck(update,context,0)
-           if m == 0:
+           if n == 0:
               update.message.reply_text("Try /rip instead...")
               return
            #elif m == 1:
@@ -63,6 +71,7 @@ def leave(update, context):
         return
     if m == 1:
         update.message.reply_text("Will leave only if the group owner says to do so...")
+        return
 
     msg = update.message.reply_text("Okay, I'm leaving ...")
     time.sleep(5)
@@ -73,6 +82,10 @@ def leave(update, context):
 
 
 def rip(update, context):
+    m = extract.sudocheck(update,context)
+    #if m == 1:
+     #   return
+
     user_id = update.effective_message.from_user.id
     first_name = update.effective_message.from_user.first_name
 

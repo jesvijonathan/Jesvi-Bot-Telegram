@@ -51,7 +51,7 @@ def info(update, context):
             invitelink = "Unable to fetch the links ! "
 
         t1 = t2 = t3 = t4 = t5 = t6 = t7 = t8 =""
-        
+
         username = update.effective_chat.username
 
         t1 = "\nChat id : <a href=''>" + str(chat_id) + "</a>"
@@ -63,21 +63,21 @@ def info(update, context):
         except:
             link_name = "<a href='"+ invitelink + "'>t.me/joinchat/</a>"
             t4 = "\nInvite link : " + invitelink
-        
+
         try:
             usr_link_name = "<a href='t.me/"+ username + "'>" + group_name +"</a>"
             t2 = "\n\nTitle : " + usr_link_name
         except:
             t2 = "\n\nTitle : " + group_name
-        
+
         t3 = "\nOwner : " + owner
 
         t5 = "\n\nMembers : "+ str(count)
-        
+
         t6 = ""#"\nDescription : "
 
         text = "<b>Group Info -</b>\n" +t1+t2+t8+t3+t6+"\n\nAdministrators : "+admin_li +t5+"\n"+t7+t4
-        
+
         context.bot.send_message(chat_id=chat_id, text=text, 
                   parse_mode="HTML")
         return
@@ -132,6 +132,7 @@ def info(update, context):
 def admin_list(update,context):
     administrators = update.effective_chat.get_administrators()
     msg = update.effective_message
+    textt = ""
     try:
         text = "'{}' Member Info -\n".format(update.effective_chat.title or "This chat's")
         for admin in administrators:
@@ -193,7 +194,7 @@ def msg_id(update, context):
         pass
 
     name = "\nName : <a href='t.me/"+str(user_name)+"'>" + str(first_name) +" "+ str(last_name) + "</a>" + userid
-    
+
     try:
         chat_id = update.effective_chat.id
     except:
@@ -231,7 +232,7 @@ def msg_id(update, context):
     try:
         textt = '\nText : "' + msg.text + '"'
     except:
-        text = "" 
+        textt = "Type : #FILE" 
 
     text = ("<b>Message Info -</b>" +
             msgid +

@@ -50,7 +50,7 @@ def spam_check(update, context):
             return
         
         if text_1 == "stop":
-            del spam_user[shrt]
+            del spam_user[user_name]
             update.message.reply_text("Halted spamming " + user_name + " !")
             return
 

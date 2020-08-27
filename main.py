@@ -19,6 +19,7 @@ import modules.promote as promote
 import modules.ban as ban
 import modules.spam as spams
 import modules.about as about
+import modules.notes as notes
 
 
 updater = Updater(config.bot_token, use_context=True)
@@ -35,6 +36,7 @@ def send(Update,Context):
     delete.lock_delete(Update,Context)
     filter.filter_delete(Update,Context)
     spams.spam_call(Update,Context)
+    notes.note_check(Update,Context)
 
 
 def main():
@@ -57,20 +59,24 @@ def main():
     kick_cmd = ("kick")
     ban_cmd = ("ban", "gban")
     unban_cmd = ("unban","forgive","accept")
-    about_cmd = ("about", "bot", "botinfo")
+    about_cmd = ("about","start", "bot", "botinfo")
     owner_cmd = ("owner","jesvi","boss","maintainer")
     boom_cmd = ("boom","yay","dang","bang","party")
+    leave_cmd = ("leave","scoot")
+    note_cmd = ("note","notes")
     
+    dp.add_handler(CommandHandler(note_cmd, notes.notes))
+
     dp.add_handler(CommandHandler(boom_cmd, spams.boom))
     
     dp.add_handler(CommandHandler("owner", about.owner))
-    dp.add_handler(CommandHandler("about", about.about))
+    dp.add_handler(CommandHandler(about_cmd, about.about))
 
     dp.add_handler(CommandHandler(rip_cmd, ban.rip))
     dp.add_handler(CommandHandler(kick_cmd, ban.kick))
     dp.add_handler(CommandHandler(ban_cmd, ban.ban))
     dp.add_handler(CommandHandler(unban_cmd, ban.unban))
-    dp.add_handler(CommandHandler("scoot", ban.leave))
+    dp.add_handler(CommandHandler(leave_cmd, ban.leave))
 
     dp.add_handler(CommandHandler(pin_cmd, edit.pin))
     dp.add_handler(CommandHandler("unpin", edit.unpin))

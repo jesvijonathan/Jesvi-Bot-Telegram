@@ -44,7 +44,11 @@ def delete(update, context):
     msg = update.message.reply_to_message
     msg_frm = update.message
     
-    msg_id = msg.message_id
+    try:
+        msg_id = msg.message_id
+    except:
+        return
+
     chat_id = update.effective_chat.id
     
     context.bot.deleteMessage(chat_id, msg_id)
@@ -72,8 +76,10 @@ def silent_delete(update, context):
 
 
 def lock(update, context):
-    m = extract.sudocheck(update,context)
+    m = extract.sudocheck(update,context,1,1)
     if m == 2:
+        return
+    if m == 1:
         return
 
     global lock
@@ -84,17 +90,20 @@ def lock(update, context):
 def lock_delete(update, context):
     global lock
     if lock == 1:
-        msg = update.message
-
-        msg_id = msg.message_id
+        user_id = update.message.from_user.id
         chat_id = update.effective_chat.id
-
+        status = context.bot.get_chat_member(chat_id, user_id)['status']
+        if status == "creator":
+            return
+    
+        msg_id = update.message.message_id
+        
         context.bot.deleteMessage(chat_id, msg_id)
 
 
 def unlock(update, context):
-    m = extract.sudocheck(update,context)
-    if m == 2:
+    m = extract.sudocheck(update,context,1,1)
+    if m == 2 or m == 1:
         return
 
     global lock

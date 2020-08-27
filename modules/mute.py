@@ -48,10 +48,10 @@ def mute(update, context):
     elif m == 1:
            n = extract.sudocheck(update,context,0)
            if n == 0:
-              update.message.reply_text("I'm afraid I can't stop a group owner from speaking...")
+              update.message.reply_text("I'm afraid I can't stop an owner from speaking...")
               return
            elif n == 1:
-              update.message.reply_text("Dang ! I can't hold back a admin from speaking !")
+              update.message.reply_text("Dang ! I can't hold back an admin from speaking !")
               return
               
 

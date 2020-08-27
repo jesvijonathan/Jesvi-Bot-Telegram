@@ -41,7 +41,7 @@ def set_(update,context):
         return
     elif m == 1:
            n = extract.sudocheck(update,context,0)
-           if m == 0:
+           if n == 0:
               update.message.reply_text("He got his own title boii !")
               return
 

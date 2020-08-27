@@ -1,4 +1,4 @@
-def sudocheck(update,context, objective = 1):
+def sudocheck(update,context, objective = 1, admin_del = 0):
     msg = user_id = None
     
     if objective == 1:
@@ -14,6 +14,8 @@ def sudocheck(update,context, objective = 1):
     if status['status'] == "creator":
            return 0
     elif status['status'] == "administrator":
+           if admin_del == 1:
+               msg.delete()
            return 1
     else:
         msg.delete()

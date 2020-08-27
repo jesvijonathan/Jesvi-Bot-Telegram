@@ -9,10 +9,10 @@ def promote(update, context):
         return
     elif m == 1:
            n = extract.sudocheck(update,context,0)
-           if m == 0:
-              update.message.reply_text("'I can't give where i got my powers from' ~jesvi_bot")
+           if n == 0:
+              update.message.reply_text("'I can't give where I got my powers from' ~jesvi_bot")
               return
-           elif m == 1:
+           elif n == 1:
               update.message.reply_text("Already a fellow admin !")
               return
     
@@ -39,8 +39,8 @@ def depromote(update, context):
         return
     elif m == 1:
            n = extract.sudocheck(update,context,0)
-           if m == 0:
-              update.message.reply_text("Nice Joke")
+           if n == 0:
+              update.message.reply_text("Joke ugh ?")
               return
 
     msg = update.message.reply_to_message

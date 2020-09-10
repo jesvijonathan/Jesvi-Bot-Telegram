@@ -49,7 +49,7 @@ def spam_check(update, context):
             update.message.reply_text("No Spam Text Provided !")
             return
         
-        if text_1 == "stop":
+        if text_1 == "stop" or text_1 == "off" or text_1 == "halt":
             del spam_user[user_name]
             update.message.reply_text("Halted spamming " + user_name + " !")
             return

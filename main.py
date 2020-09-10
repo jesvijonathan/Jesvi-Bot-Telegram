@@ -20,6 +20,8 @@ import modules.ban as ban
 import modules.spam as spams
 import modules.about as about
 import modules.notes as notes
+import database as database
+import random
 
 
 updater = Updater(config.bot_token, use_context=True)
@@ -39,9 +41,32 @@ def send(Update,Context):
     notes.note_check(Update,Context)
 
 
+def check(update,context):
+    user_id = msg = ""
+    
+    try:
+        msg = update.message.reply_to_message.from_user
+        user_id = msg.from_user.id
+    except:
+        msg = update.effective_message.from_user
+        user_id = msg.id
+
+    chat_id = update.effective_chat.id
+    user = msg.first_name
+
+    #d = "User link test : " + telegram.utils.helpers.mention_html(user_id, str(user))
+    d = ("Why is the FBI here ?!  \n\n\n\nHaha ! you fell for the notification :P ",
+    "The FBI wants to know your location... \n\n\n\nLOLZzz, unfortunately bots can't laugh at our own jokes",
+    "The FBI is watching you (0_0)\n\n\n\nYou Just Triggered A Prank Command, HA ! :}",
+    "I'm too tired to tell a FBI Joke :(")
+    i = random.choice(d)
+    
+    context.bot.send_message(chat_id=user_id, text=i, 
+                  parse_mode="HTML")
+
+
 def main():
-
-
+    print("started")
     info_cmd = ("info","ginfo","group","groupinfo","aboutgroup","chatinfo","infogroup","infochat","user","userinfo")
     admin_cmd = ("ainfo","adminlist","admin","listadmin","administrators","members","memb")
     message_id = ("id","minfo","msgid","msg","messageid", "msginfo","message")
@@ -64,6 +89,11 @@ def main():
     boom_cmd = ("boom","yay","dang","bang","party")
     leave_cmd = ("leave","scoot")
     note_cmd = ("note","notes")
+
+    dp.add_handler(CommandHandler("fbi", check))
+
+    dp.add_handler(CommandHandler("cdsync", welcome.dat))
+    dp.add_handler(CommandHandler("net", database.net))
     
     dp.add_handler(CommandHandler(note_cmd, notes.notes))
 

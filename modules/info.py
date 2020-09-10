@@ -1,4 +1,17 @@
 
+def admin(update, context):
+    chat = update.effective_chat
+    administrators = update.effective_chat.get_administrators()
+    owner = name = ""
+
+    for admin in administrators:
+        status = admin.status
+        if status == "creator":
+            user = admin.user
+            owner_id = user.id
+            return owner_id
+
+
 def info(update, context):
 
     msg = update.message.reply_to_message
@@ -31,12 +44,10 @@ def info(update, context):
             except:
                 title = ""
             try:
-               name = ("@" + user.username)
+                name = ("@" + user.username)
             except:
-                try:
-                    name = "@~" + user.first_name
-                except:    
-                    pass
+                name = "<a href='tg://user?id=" + str(user.id) + "'>@" + user.first_name + "</a>"
+                pass
             if status == "creator":
                 owner = name
             elif status == "administrator":
@@ -57,15 +68,15 @@ def info(update, context):
         t1 = "\nChat id : <a href=''>" + str(chat_id) + "</a>"
 
         try:
-            usr_link = "t.me/"+ username 
+            usr_link = "telegram.me/"+ username 
             t8 = "\nUsername : @" + username
             t7 = "\nGroup link : " + usr_link
         except:
-            link_name = "<a href='"+ invitelink + "'>t.me/joinchat/</a>"
+            link_name = "<a href='"+ invitelink + "'>telegram.me/joinchat/</a>"
             t4 = "\nInvite link : " + invitelink
 
         try:
-            usr_link_name = "<a href='t.me/"+ username + "'>" + group_name +"</a>"
+            usr_link_name = "<a href='telegram.me/"+ username + "'>" + group_name +"</a>"
             t2 = "\n\nTitle : " + usr_link_name
         except:
             t2 = "\n\nTitle : " + group_name
@@ -85,7 +96,6 @@ def info(update, context):
     first_name = msg.from_user.first_name
     last_name = msg.from_user.last_name
     user_name = msg.from_user.username
-    user_link = msg.from_user.link
     chat_id = update.effective_chat.id
     user_status = context.bot.get_chat_member(chat_id, user_id)
     
@@ -100,7 +110,7 @@ def info(update, context):
 
     if first_name != "":
         try:
-            t2 = "\n\nFirst Name   : " + first_name
+            t2 = '\n\nFirst Name   : '+ first_name
         except:
             pass  
     if last_name != "":
@@ -116,13 +126,21 @@ def info(update, context):
     t5 = "\nChat status  : " + user_status['status'] # chat warn no.
     t6 = "" 
     try:
-        t7 = "\n\nUser link   : " + user_link   
+        c = "https://telegram.me/" + user_name
+        t7 = "\n\nUser link   : " + "<a href='https://telegram.me/" + user_name + "'>" + c + "</a>"  
     except:
         pass
 
-    text = "User Info -\n" + t1 + t2 + t3 + t4 + t5 + t6 + t7  
+    try:
+        t8 = "\nPermanent link   : " + "<a href='tg://user?id=" + str(user_id) + "'>Click Here</a>"
+        pass
+    except:
+        pass
+
+    text = "User Info -\n" + t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 
     
-    msg.reply_text(text)
+    msg.reply_text(text=text, 
+                  parse_mode="HTML")
 
 #no_warns
 #ban
@@ -193,7 +211,7 @@ def msg_id(update, context):
         user_name = ""
         pass
 
-    name = "\nName : <a href='t.me/"+str(user_name)+"'>" + str(first_name) +" "+ str(last_name) + "</a>" + userid
+    name = "\nName : <a href='telegram.me/"+str(user_name)+"'>" + str(first_name) +" "+ str(last_name) + "</a>" + userid
 
     try:
         chat_id = update.effective_chat.id

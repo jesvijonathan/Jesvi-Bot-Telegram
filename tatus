@@ -1,0 +1,11 @@
+[33m08275d7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: reset: moving to HEAD@{0}
+[33m08275d7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{1}: reset: moving to HEAD@{2}
+[33m73c4050[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m73c4050[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{3}: commit: added a lot of things and a lot of changes... !!
+[33m08275d7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{4}: commit: added notes
+[33m5e6c883[m HEAD@{5}: commit: added owner privilage
+[33m8331819[m HEAD@{6}: commit: added extraction basic function
+[33m5731292[m HEAD@{7}: commit: merge all the module & made it accessable
+[33m78df97f[m HEAD@{8}: commit: added /leave command in ban.py
+[33m4ba2133[m HEAD@{9}: commit: added more seperate moules
+[33m4c5143a[m HEAD@{10}: commit (initial): Sends Welcom & Farewell Text

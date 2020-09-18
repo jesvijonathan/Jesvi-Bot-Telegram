@@ -26,7 +26,7 @@ def silent_delete(update, context):
 
 def filter_delete(update, context):
     global msg_filter
-    global filter_text
+    global filter_text #filter -> group -> username/no.strike | words/delete/warn/reply
 
     if msg_filter == 1:
         msg = update.message
@@ -52,10 +52,19 @@ def message_filter(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
-
+    
     global msg_filter
     global filter_text
     
+    try:
+        chat_id = update.effective_chat.id
+    except:
+        return
+    try:
+        filter_text[chat_id]
+    except:
+        filter_text[chat_id] = {}
+
     prev_message = update.message.reply_to_message
     res = update.message.text.split(None, 3)
 
@@ -80,11 +89,11 @@ def message_filter(update, context):
         
     if text_1 == 'remove':
         if text_2 != "":
-            del filter_text[text_2]
+            del filter_text[chat_id]['filter'][text_2]
             text = 'Removed "' + str(text_2) + '" from filter !'
     
     elif text_1 == 'list':
-        text = "Here is a list of filters stored :\n" + str(filter_text)
+        text = "Here is a list of filters stored :\n" + str(filter_text[chat_id]['filter'])
 
     elif text_1 == 'reply':
         try:
@@ -92,14 +101,15 @@ def message_filter(update, context):
         except:
             update.message.reply_text("No to-reply-with text provided !")
             return
-        filter_text[text_2] = text_3
+        filter_text[chat_id]['filter'][text_2] = text_3
+#        filter_text[text_2] = text_3
         text = '"' + str(text_2) + '" will be replied with "' + str(text_3) + '" !'
 
     elif text_1 == 'warn':
         if text_2 == "":
             text= "No filter-warn word passed !"
         else: 
-            filter_text[text_2] = "<filter-warn>"
+            filter_text[chat_id]['filter'][text_2] = "<filter-warn>"
             text = 'Use of "' + str(text_2) + '" will warn-strike the user !'
 
     elif text_1 == 'off':
@@ -111,11 +121,16 @@ def message_filter(update, context):
         text = 'Filter turned on !'
 
     elif text_1 == 'clear':
-        filter_text.clear()
+        filter_text[chat_id]['filter'].clear()
         text = "Cleared filter data"
     
     else:
-        filter_text[text_1] = "<filter-delete>"
+        try:
+            filter_text[chat_id]['filter']
+        except:
+            filter_text[chat_id]['filter'] = {}
+
+        filter_text[chat_id]['filter'][text_1] = "<filter-delete>"
         text = 'Added "' + str(text_1) + '" to filter !'
 
     update.message.reply_text(text)

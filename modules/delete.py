@@ -31,6 +31,18 @@ def clean(update, context):
 
         del_msg_id=del_msg_id-1
 
+    """
+    if msg_id >= del_msg_id:
+           t = 0
+        
+        try:
+            context.bot.deleteMessage(chat_id, msg_id)
+        except:
+            pass
+
+        msg_id=msg_id+1
+    """
+
     cln = context.bot.send_message(chat_id, "Cleaned !")
     time.sleep(3)
     cln.delete()

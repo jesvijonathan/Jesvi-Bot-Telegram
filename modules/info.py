@@ -207,11 +207,14 @@ def msg_id(update, context):
     
     try:
         user_name = msg.from_user.username
-    except:
-        user_name = ""
-        pass
+        if user_name == None:
+            name = "\nName : <a href='tg://user?id=" + str(user_id) + "'>" + str(first_name) +" "+ str(last_name) + "</a>" + user_id
 
-    name = "\nName : <a href='telegram.me/"+str(user_name)+"'>" + str(first_name) +" "+ str(last_name) + "</a>" + userid
+        name = "\nName : <a href='telegram.me/"+str(user_name)+"'>" + str(first_name) +" "+ str(last_name) + "</a>" + userid
+    except:
+        user_name = "<a href='tg://user?id=" + str(user_id) + "'>" + str(first_name) + "</a>"
+        name = "\nName : <a href='tg://user?id=" + str(user_id) + "'>" + str(first_name) +" "+ str(last_name) + "</a>" + userid
+        pass
 
     try:
         chat_id = update.effective_chat.id
@@ -248,7 +251,7 @@ def msg_id(update, context):
         chat_name = ""
 
     try:
-        textt = '\nText : "' + msg.text + '"'
+        textt = '\nText :\n<b>------------------</b>\n<i>' + msg.text + '</i>\n<b>------------------</b>'
     except:
         textt = "Type : #FILE" 
 
@@ -263,3 +266,5 @@ def msg_id(update, context):
 
     update.message.reply_text(text=text, 
                   parse_mode="HTML")
+
+                  

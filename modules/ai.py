@@ -1,7 +1,5 @@
 import modules.wiki as wiki
 
-#sdfsdf
-
 def search(update,context):
 
     res = update.message.text.split(None, 1)

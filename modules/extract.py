@@ -2,7 +2,7 @@ import sys
 sys.path.append('./')
 import config as config
 
-def sudocheck(update,context, objective = 1, admin_del = 0):
+def sudocheck(update,context, objective = 1, admin_del = 0,udel = 1):
     msg = user_id = None
     
     if objective == 1:
@@ -24,5 +24,6 @@ def sudocheck(update,context, objective = 1, admin_del = 0):
                msg.delete()
            return 1
     else:
-        msg.delete()
+        if udel == 1:
+            msg.delete()
         return 2

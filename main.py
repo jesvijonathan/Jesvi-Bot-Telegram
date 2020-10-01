@@ -10,6 +10,7 @@ import logging
 
 import config
 import modules.welcome as welcome
+import modules.ai as ai
 import modules.info as info
 import modules.edit as edit
 import modules.delete as delete
@@ -18,10 +19,12 @@ import modules.filter as filter
 import modules.promote as promote
 import modules.ban as ban
 import modules.spam as spams
-import modules.about as about
+import modules.fun as fun
 import modules.notes as notes
 import database as database
+import modules.cricscore as cric
 import random
+import time
 
 
 updater = Updater(config.bot_token, use_context=True)
@@ -35,38 +38,17 @@ logger = logging.getLogger(__name__)
 
 
 def send(Update,Context):
+    welcome.udat(Update,Context)
     delete.lock_delete(Update,Context)
     filter.filter_delete(Update,Context)
     spams.spam_call(Update,Context)
     notes.note_check(Update,Context)
 
 
-def check(update,context):
-    user_id = msg = ""
-    
-    try:
-        msg = update.message.reply_to_message.from_user
-        user_id = msg.from_user.id
-    except:
-        msg = update.effective_message.from_user
-        user_id = msg.id
-
-    chat_id = update.effective_chat.id
-    user = msg.first_name
-
-    #d = "User link test : " + telegram.utils.helpers.mention_html(user_id, str(user))
-    d = ("Why is the FBI here ?!  \n\n\n\nHaha ! you fell for the notification :P ",
-    "The FBI wants to know your location... \n\n\n\nLOLZzz, unfortunately bots can't laugh at our own jokes",
-    "The FBI is watching you (0_0)\n\n\n\nYou Just Triggered A Prank Command, HA ! :}",
-    "I'm too tired to tell a FBI Joke :(")
-    i = random.choice(d)
-    
-    context.bot.send_message(chat_id=user_id, text=i, 
-                  parse_mode="HTML")
-
-
 def main():
+    dp.bot.send_message(chat_id=config.owner_id, text="<code>Started Service !\n\nTime : " + time.strftime("%Y-%m-%d (%H:%M:%S)") + "</code>",parse_mode="HTML")
     print("started")
+    
     info_cmd = ("info","ginfo","group","groupinfo","aboutgroup","chatinfo","infogroup","infochat","user","userinfo")
     admin_cmd = ("ainfo","adminlist","admin","listadmin","administrators","members","memb")
     message_id = ("id","minfo","msgid","msg","messageid", "msginfo","message")
@@ -76,7 +58,7 @@ def main():
     demote_cmd = ("demote", "depromote", "depromo","degrade")
     filter_cmd = ("filter", "filt", "word", "fil")
     pin_cmd = ("pin", "notify", "notice", "noti")
-    set_cmd = ("set","change")
+    set_cmd = ("set","change", "setbio", "bio", "about")
     clean_cmd = ("clean", "purge", "tdel")
     delete_cmd = ("del", "delete","rem","remove")
     silent_delete_cmd = ("sdel","silentdel","sildel","silentdelete")
@@ -84,14 +66,30 @@ def main():
     kick_cmd = ("kick")
     ban_cmd = ("ban", "gban")
     unban_cmd = ("unban","forgive","accept")
-    about_cmd = ("about","start", "bot", "botinfo")
+    about_cmd = ("about", "bot", "botinfo")
     owner_cmd = ("owner","jesvi","boss","maintainer")
     boom_cmd = ("boom","yay","dang","bang","party")
     leave_cmd = ("leave","scoot")
     note_cmd = ("note","notes")
+    warn_cmd = {"warnset","warnclear","warnreset","forgive","withdraw", "warninfo", "warnlist", "allwarns","warnremove"}
+    rules_cmd = {"rules","setrules"}
+    search_cmd = {"search","google","usearch"}
+    translate_cmd = {"trans","translate"}
 
-    dp.add_handler(CommandHandler("fbi", check))
+    dp.add_handler(CommandHandler("ipltoday", fun.cricket))
+    dp.add_handler(CommandHandler("iplupdate", fun.cricket))
 
+    dp.add_handler(CommandHandler(search_cmd, ai.search))
+    dp.add_handler(CommandHandler(translate_cmd, ai.translate))
+
+    dp.add_handler(CommandHandler("warn", filter.warn_strike))
+    dp.add_handler(CommandHandler(warn_cmd, filter.warn_set))
+
+    dp.add_handler(CommandHandler(rules_cmd, edit.rules))
+
+    dp.add_handler(CommandHandler("fbi", fun.fbi_joke))
+
+    dp.add_handler(CommandHandler("start", welcome.start_func))
     dp.add_handler(CommandHandler("cdsync", welcome.dat))
     dp.add_handler(CommandHandler("net", database.net))
     
@@ -99,8 +97,8 @@ def main():
 
     dp.add_handler(CommandHandler(boom_cmd, spams.boom))
     
-    dp.add_handler(CommandHandler("owner", about.owner))
-    dp.add_handler(CommandHandler(about_cmd, about.about))
+    dp.add_handler(CommandHandler("owner", welcome.owner))
+    dp.add_handler(CommandHandler(about_cmd, welcome.about))
 
     dp.add_handler(CommandHandler(rip_cmd, ban.rip))
     dp.add_handler(CommandHandler(kick_cmd, ban.kick))

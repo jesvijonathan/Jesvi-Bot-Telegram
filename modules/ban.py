@@ -51,9 +51,9 @@ def kick(update, context):
            if n == 0:
               update.message.reply_text("Try /rip instead...")
               return
-           #elif m == 1:
-            #  update.message.reply_text("Get an admin to do it !")
-             # return
+           elif m == 1:
+              update.message.reply_text("Get an admin to do it !")
+              return
 
     msg = update.message.reply_to_message
 

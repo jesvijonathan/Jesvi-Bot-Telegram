@@ -1,7 +1,5 @@
-
-
 import telegram 
-
+from database import push_note
 import modules.extract as extract
 
 lock = 0
@@ -34,10 +32,8 @@ def note_check(update, context):
 def notes(update, context):
     global notes_data
     
-    try:
-        prev_message = update.message.reply_to_message
-    except:
-        return
+    msg = update.message
+    
     res = update.message.text.split(None, 3)
     chat_id = update.effective_chat.id
 
@@ -93,13 +89,13 @@ def notes(update, context):
         except:
             update.message.reply_text("Note content not provided !")
             return
-        try:
-            notes_data[str(chat_id)][str(text_2)] = str(text_3)
-            text = 'Note #' + str(text_2) + ' - \n"' + str(text_3) + '"'
-        except:
-            notes_data[str(chat_id)] = {}
-            notes_data[str(chat_id)][str(text_2)] = str(text_3)
-            text = 'Note #' + str(text_2) + ' - \n"' + str(text_3) + '"'
+        
+        chat_idd = str(chat_id)
+        chat_idd = chat_idd[1:]
+        user_id = str(msg.from_user.id)
+
+        push_note(chat_id=chat_idd,note_name=text_2,note=text_3,set_by=user_id)
+        text = 'Note #' + str(text_2) + ' - \n"' + str(text_3) + '"'
     
     else:
         text = "Wrong format !"

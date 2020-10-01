@@ -1,6 +1,8 @@
 
 
 import modules.extract as extract
+import modules.welcome
+from database import push_link, get_link, push_chat, get_chat
 
 
 def pin(update, context):
@@ -36,25 +38,49 @@ def unpin(update, context):
 
 
 def set_(update,context):
-    m = extract.sudocheck(update,context)
-    if m == 2:
-        return
-    elif m == 1:
-           n = extract.sudocheck(update,context,0)
-           if n == 0:
-              update.message.reply_text("He got his own title boii !")
-              return
-
-    prev_message = update.message.reply_to_message
+    res = update.message.text.split(None, 2)
+    if res[0] == "/bio":
+        pass
+    else:
+        m = extract.sudocheck(update,context)
+        if m == 2:
+            return
+        elif m == 1:
+               n = extract.sudocheck(update,context,0)
+               if n == 0:
+                  update.message.reply_text("He got his own title boii !")
+                  return
     
-    chat_id = ""
+    chat_id = chat_idd = ""
     try:
-        chat_id = update.effective_chat.id
-        usr_id = update.effective_chat.username
+        chat_id = str(update.effective_chat.id)
+        chat_idd = chat_id[1:]
+        #user_id = update.effective_chat.username
+        msg = update.message.reply_to_message
+        user_id = msg.from_user.id 
     except:
         return
-    
-    res = update.message.text.split(None, 2)
+
+    if res[0] == "/bio" or res[0] == "/about":
+        k = get_link(chat_id=chat_idd,user_id=user_id,bio=1)
+        name = msg.from_user.first_name
+        d = ""
+        
+        try:
+            txt = ("<b>Bio</b> - " + "<a href='tg://user?id=" + str(user_id) + "'>" +  str(name) + "</a>" + 
+        "\n\n<i>" + str(k[0][0]) + "</i>") 
+
+        except:
+            txt = "<b>No Bio set</b> for " + "<a href='tg://user?id=" + str(user_id) + "'>" +  str(name) + "</a> !"
+
+        update.message.reply_text(text=txt,parse_mode="HTML")
+        return
+
+    elif res[0] == "/setbio":
+        cus_bio(update,context)
+        return
+
+    prev_message = update.message.reply_to_message
 
     if res[1] == "chatname" or res[1] == "name" or res[1] == "groupname" or res[1] == "grouptitle" or res[1] == "chattitle" or res[1] == "gname":
         try:
@@ -78,7 +104,7 @@ def set_(update,context):
             else:
                 return
     
-    elif res[1] == "nick" or res[1] == "title" or res[1] == "uname" or res[1] == "aname" or  res[1] == "nickname" or res[1] == "byname" or res[1] == "admintitle" or res[1] == "status" or res[1] == "customtitle" or res[1] == "customname":
+    elif res[1] == "nick" or res[1] == "title" or res[1] == "uname" or res[1] == "nickname" or res[1] == "admintitle" or res[1] == "status":
         try:
             msg = update.message.reply_to_message
 
@@ -91,3 +117,90 @@ def set_(update,context):
             update.message.reply_text(text)
         except:
             pass
+
+
+def cus_bio(update,context):
+    m = extract.sudocheck(update,context)
+    if m == 2:
+        return
+        
+    msg = update.message.reply_to_message
+
+    chat_id = str(update.effective_chat.id)
+    chat_id = chat_id[1:]
+    user_id = msg.from_user.id
+
+    res = update.message.text.split(None, 1)
+    r=""
+    
+    try:
+        r = res[1]
+        if res == None:
+            return
+    except:
+        return
+
+    #udat(update,context)
+    k = push_link(chat_id=chat_id,user_id=user_id,bio=r)
+
+    if k == 1:
+        name = msg.from_user.first_name
+        txt = ("Set " + "(<a href='tg://user?id=" + str(user_id) + "'>" +  str(name) + "</a>) group <b>bio</b> as -\n\n<i>" + 
+        r + "</i>")
+        update.message.reply_text(text=txt,parse_mode="HTML")
+
+
+def rules(update,context):
+    res = update.message.text.split(None, 1)
+    r=""
+
+    chat_id = str(update.effective_chat.id)
+    chat_idd = chat_id[1:]
+    
+    if res[0] == "/start":
+        chat_idd = res[1]
+        chat_idd = chat_idd[1:]
+        k = ""
+        k = get_chat(chat_id=chat_idd,rules=r)
+
+        try:
+            k = k[0][0]
+        except:
+            k = "Error"
+
+        update.message.reply_text(text=k,parse_mode="HTML",disable_web_page_preview=True)
+        return
+
+    if res[0] == "/rules" :
+        k = get_chat(chat_id=chat_idd,rules=r)
+
+        try:
+            k = k[0][0]
+        except:
+            k = "Error"
+        
+        k = "<a href='t.me/jesvi_bot?start=" + chat_id + "'>Click Here</a>" + " to view the group's rules"
+        
+        update.message.reply_text(text=k,parse_mode="HTML",disable_web_page_preview=True)
+        return
+
+    else:
+        m = extract.sudocheck(update,context)
+        if m == 2:
+            return
+
+    try:
+        r = res[1]
+        if res == None:
+            return
+    except:
+        return
+    
+    k = push_chat(chat_id=chat_idd,rules=r)
+
+    if k == 1:
+        txt = ("Set group rules as - \n\n" + 
+        "<i>" + r + "</i>")
+        update.message.reply_text(text=txt,parse_mode="HTML")
+
+    

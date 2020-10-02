@@ -68,7 +68,7 @@ def set_(update,context):
         
         try:
             txt = ("<b>Bio</b> - " + "<a href='tg://user?id=" + str(user_id) + "'>" +  str(name) + "</a>" + 
-        "\n\n<i>" + str(k[0][0]) + "</i>") 
+        "\n\n<i>" + str(k[0][1]) + "</i>") 
 
         except:
             txt = "<b>No Bio set</b> for " + "<a href='tg://user?id=" + str(user_id) + "'>" +  str(name) + "</a> !"

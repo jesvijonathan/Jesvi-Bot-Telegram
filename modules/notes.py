@@ -1,5 +1,5 @@
 import telegram 
-from database import push_note
+from database import push_note, get_note
 import modules.extract as extract
 
 lock = 0
@@ -11,23 +11,25 @@ notes_data = {}
 def note_check(update, context):
     global notes_data
     
-    try:
-        prev_message = update.message.reply_to_message
-    except:
-        return
     res = update.message.text
-    chat_id = update.effective_chat.id
 
-    text_1 = text = ""
+    if res.startswith("#") == True:    
+        
+        chat_id = update.effective_chat.id
+        text = ""
 
-    try:
-        if res.startswith("#") == True:
-            shrt = res[1:]
-            text = str(notes_data[str(chat_id)][str(shrt)])
-            update.message.reply_text(text)
-            return
-    except:
+        shrt = res[1:]
+
+        chat_idd = str(chat_id)
+        chat_idd = chat_idd[1:] 
+        n = get_note(chat_id=chat_idd,note_name=shrt)
+        if n != -1:
+            text = str(n[0])
+            update.message.reply_text(text,parse_mode="HTML",disable_web_page_preview=True)
         return
+    else:
+        return
+
 
 def notes(update, context):
     global notes_data
@@ -69,14 +71,6 @@ def notes(update, context):
                 text = 'Removed #' + str(text_2) + ' from notes !'
             except:
                 text = "No such note availble !"
-
-    elif text_1 == 'list':
-        try:
-            text = notes_data[str(chat_id)]
-        except:
-            text = "No notes available !"
-        update.message.reply_text(text)
-        return
 
     elif text_1 == 'set':
         try:

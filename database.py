@@ -143,7 +143,7 @@ def create_chat_base():
   global mydb
   global mycursor
 
-  sql = ("CREATE TABLE IF NOT EXISTS {s0}({s1} VARCHAR(33) PRIMARY KEY, {s2} VARCHAR(64), {s3} VARCHAR(64), {s4} VARCHAR(64), {s5} VARCHAR(33), {s6} TIMESTAMP, {s7} VARCHAR(128))".format(
+  sql = ("CREATE TABLE IF NOT EXISTS {s0}({s1} VARCHAR(33) PRIMARY KEY, {s2} VARCHAR(64), {s3} VARCHAR(64), {s4} VARCHAR(64), {s5} VARCHAR(33), {s6} TIMESTAMP, {s7} TEXT)".format(
   s0= "chat_base",
   s1="chat_id",
   s2="username",
@@ -738,17 +738,21 @@ def get_link(chat_id,user_id=None,bio=None,status=None,warns=None,date=None):
   global mydb
   global mycursor
 
-  s3=""
+  s4 = s3=""
 
   if bio != None: 
-        s3 = "bio"
+        s3 = ",bio"
+  if status != None:
+        s4 = ",status"
 
-  sql = ( "SELECT {s3} FROM {s0} WHERE {s1} = {s11} and {s2}={s12}".format(
+  sql = ( "SELECT user_id{s3}{s4} FROM {s0} WHERE {s1} = {s11} and {s2}={s12}".format(
               s0= "link_base",
               s1="chat_id",s11= '"' + str(chat_id) + '"',
               s2="user_id",s12='"' + str(user_id) + '"',
-              s3=s3
+              s3=s3,
+              s4=s4
               ))
+
   mycursor.execute(sql)
   myresult = mycursor.fetchall()
   return myresult
@@ -759,7 +763,7 @@ def create_note_base():
   global mydb
   global mycursor
 
-  sql = ("CREATE TABLE IF NOT EXISTS {s0}( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, {s1} VARCHAR(33), {s2} VARCHAR(33), {s3} VARCHAR(128), {s4} VARCHAR(33), {s5} TIMESTAMP)".format(
+  sql = ("CREATE TABLE IF NOT EXISTS {s0}( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, {s1} VARCHAR(33), {s2} VARCHAR(33), {s3} MEDIUMTEXT, {s4} VARCHAR(33), {s5} TIMESTAMP)".format(
   s0= "note_base",
   s1="chat_id",
   s2="note_name",
@@ -802,6 +806,7 @@ def push_note(chat_id,note_name=None,note=None,set_by=None,date=None,res=None,po
         res=1
   except:
     pass
+
 
   if res == 1:
     sql = ( "REPLACE INTO {s0}({s1},{s2},{s3},{s4},{s5}) VALUE({s11},{s12},{s13},{s14},{s15})".format(
@@ -846,7 +851,38 @@ def push_note(chat_id,note_name=None,note=None,set_by=None,date=None,res=None,po
     return 1
 
 
-def create_base():
+def get_note(chat_id,note_name=None):
+  load()
+  global mydb
+  global mycursor
+
+  s4 = s3 = ""
+  results = None
+
+  if note_name == None or chat_id == None:
+        return
+
+  if chat_id == None or note_name == None:
+    return
+
+  sql = ( "SELECT note from {s0} WHERE {s1}={s11} and {s2}={s12}".format(
+          s0="note_base",
+          s1="chat_id",s11='"' + chat_id + '"',
+          s2="note_name",s12='"' + note_name + '"'
+        ))
+  mycursor.execute(sql)
+  
+  try:
+    results = mycursor.fetchone()
+    if results[0] == None or results[0] == "":
+      return -1 
+  except:
+    return -1
+
+  return results
+
+
+def create_base(update=None,context=None):
   load()
   create_chat_base()
   create_user_base()

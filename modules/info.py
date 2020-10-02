@@ -93,11 +93,13 @@ def info(update, context):
                   parse_mode="HTML")
         return
 
-    first_name = msg.from_user.first_name
-    last_name = msg.from_user.last_name
-    user_name = msg.from_user.username
+    
     chat_id = update.effective_chat.id
     user_status = context.bot.get_chat_member(chat_id, user_id)
+    user = user_status['user']
+    first_name = user['id']
+    last_name = user['last_name']
+    user_name = user['username']
     
 #    contact = update.effective_message.contact
  #   phone = contact.phone_number

@@ -38,11 +38,11 @@ logger = logging.getLogger(__name__)
 
 
 def send(Update,Context):
-    welcome.udat(Update,Context)
-    delete.lock_delete(Update,Context)
-    filter.filter_delete(Update,Context)
-    spams.spam_call(Update,Context)
+    k = delete.lock_delete(Update,Context)
     notes.note_check(Update,Context)
+    welcome.udat(Update,Context,quick=k)
+    #filter.filter_delete(Update,Context)
+    #spams.spam_call(Update,Context)
 
 
 def main():
@@ -75,6 +75,9 @@ def main():
     rules_cmd = {"rules","setrules"}
     search_cmd = {"search","google","usearch"}
     translate_cmd = {"trans","translate"}
+    create_base = {"createbase"}
+
+    dp.add_handler(CommandHandler(create_base, database.create_base))
 
     dp.add_handler(CommandHandler("ipltoday", fun.cricket))
     dp.add_handler(CommandHandler("iplupdate", fun.cricket))

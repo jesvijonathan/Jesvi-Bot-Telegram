@@ -12,10 +12,10 @@ def dat(update, context,sync=0):
     chat = update.effective_chat
     count = update.effective_chat.get_members_count()
 
-    chat_id = chat['id']
+    chat_id = str(chat['id'])
     bot_activity = context.bot.get_chat_member(chat_id, config.bot_id)
 
-    chat_id = re.sub(r'[^\w]', '', str(chat_id))
+    chat_id = chat_id[1:]
 
     database.create_base()
 
@@ -29,28 +29,32 @@ def dat(update, context,sync=0):
 
 def ldat(update,context):
     user_id = update.message.from_user.id
-    chat_id = update.effective_chat.id
+    chat_id = str(update.effective_chat.id)
     
     user = context.bot.get_chat_member(chat_id, user_id)
 
-    chat_id = re.sub(r'[^\w]', '', str(chat_id))
-
+    chat_id = chat_id[1:]
     database.add_link_base(chat_id=chat_id,user_id=str(user_id),status=user['status'])
     
 
-def udat(update, context,sync=0):
+def udat(update, context,sync=0,quick=0):
     user = update.message.from_user
-
-    database.create_base()
 
     database.add_user_base(user_id=str(user['id']),firstname=user['first_name'],username=user['username'],lastname=user['last_name'],is_bot=user['is_bot'])
 
-    chat = update.effective_chat.type
-    if chat != "private":
-        dat(update,context,1)
-        ldat(update,context)
+    chat = update.effective_chat
 
-         
+    if chat['type'] != "private":
+        #ldat(update,context)
+        chat_id = str(chat['id'])
+        chat_idd = chat_id[1:]
+
+        user1 = context.bot.get_chat_member(chat_id, user['id'])
+
+        database.add_link_base(chat_id=chat_idd,user_id=str(user['id']),status=user1['status'])
+
+        """if quick == 0:
+            dat(update,context,1)"""
 
 def start_func(update,context):
     if update.effective_chat.type != 'private':
@@ -85,10 +89,9 @@ def greet(update, context):
             else:
                 group = update.message["chat"]
                 user = new_member
+                welcome_text = "Welcome to " + str(group['title']) + ", "+ str(new_member['first_name']) + " ! 🥳"
                 database.add_user_base(user_id=str(user['id']),firstname=user['first_name'],username=user['username'],lastname=user['last_name'],is_bot=user['is_bot'])
 
-                welcome_text = "Welcome to " + str(group['title']) + ", "+ str(new_member['first_name']) + " ! 🥳"
-    
     update.message.reply_text(text=welcome_text, 
                   parse_mode="HTML")
 

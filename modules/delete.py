@@ -2,6 +2,8 @@
 import modules.extract as extract
 import time
 
+from database import get_link
+
 lock = 0
 
 
@@ -101,17 +103,22 @@ def lock(update, context):
 
 def lock_delete(update, context):
     global lock
+
     if lock == 1:
         user_id = update.message.from_user.id
-        chat_id = update.effective_chat.id
-        status = context.bot.get_chat_member(chat_id, user_id)['status']
-        if status == "creator":
-            return
-    
-        msg_id = update.message.message_id
+        chat_id = str(update.effective_chat.id)
+        #status = context.bot.get_chat_member(chat_id, user_id)['status']
         
-        context.bot.deleteMessage(chat_id, msg_id)
+        status = get_link(chat_id=chat_id[1:],user_id=user_id,status=1)
 
+        if status[0][1] == "member":
+            msg_id = update.message.message_id
+            context.bot.deleteMessage(chat_id, msg_id)
+        else:
+            return 1
+    else:
+        return 0
+        
 
 def unlock(update, context):
     m = extract.sudocheck(update,context,1,1)

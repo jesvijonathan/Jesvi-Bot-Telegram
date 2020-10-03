@@ -16,7 +16,7 @@ def note_check(update, context):
             
             chat_id = str(update.effective_chat.id)
             text = ""
-            
+
             shrt = res[1:]
     
             chat_idd = chat_id[1:] 
@@ -73,7 +73,7 @@ def notes(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
-        
+    #s
     if text_1 == 'remove':
         if text_2 != "":
             chat_idd = str(chat_id)[1:]

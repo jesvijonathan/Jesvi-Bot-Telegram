@@ -25,7 +25,7 @@ import database as database
 import modules.cricscore as cric
 import random
 import time
-
+import threading 
 
 updater = Updater(config.bot_token, use_context=True)
 dp = updater.dispatcher
@@ -49,6 +49,7 @@ def main():
     dp.bot.send_message(chat_id=config.owner_id, text="<code>Started Service !\n\nTime : " + time.strftime("%Y-%m-%d (%H:%M:%S)") + "</code>",parse_mode="HTML")
     print("started")
     
+    
     info_cmd = ("info","ginfo","group","groupinfo","aboutgroup","chatinfo","infogroup","infochat","user","userinfo")
     admin_cmd = ("ainfo","adminlist","admin","listadmin","administrators","members","memb")
     message_id = ("id","minfo","msgid","msg","messageid", "msginfo","message")
@@ -56,7 +57,7 @@ def main():
     spam_cmd = ("spam", "filler", "echo", "annoy")
     promote_cmd = ("promote", "upgrade", "prom")
     demote_cmd = ("demote", "depromote", "depromo","degrade")
-    filter_cmd = ("filter", "filt", "word", "fil")
+    filter_cmd = ("filter", "filt", "word", "fil","resetfilter","filterreset")
     pin_cmd = ("pin", "notify", "notice", "noti")
     set_cmd = ("set","change", "setbio", "bio", "about")
     clean_cmd = ("clean", "purge", "tdel")

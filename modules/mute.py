@@ -12,7 +12,7 @@ def unmute(update, context):
 
     msg = update.message.reply_to_message
 
-    user_id = msg.from_user.id 
+    user_id = msg.from_user.id
     chat_id = update.effective_chat.id
     user_name = msg.from_user.username
     first_name = msg.from_user.first_name
@@ -68,15 +68,15 @@ def mute(update, context):
            'can_send_media_messages': False,
            'can_send_polls': False,
            'can_send_other_messages': False, 
-           'can_add_web_page_previews': False,}
+           'can_add_web_page_previews': False,
+           'can_invite_users': False}
 
     permissions = {'can_send_messages': None, 
                    'can_send_media_messages': None, 
                    'can_send_polls': None, 
                    'can_send_other_messages': None, 
                    'can_add_web_page_previews': None, 
-                   'can_change_info': None, 
-                   'can_invite_users': None, 
+                   'can_change_info': None,
                    'can_pin_messages': None}
     
     permissions.update(current)

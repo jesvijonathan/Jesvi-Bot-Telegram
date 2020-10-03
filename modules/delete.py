@@ -54,22 +54,14 @@ def delete(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
-
-    msg = update.message.reply_to_message
+    
     msg_frm = update.message
+    msg = msg_frm.reply_to_message
     
-    try:
-        msg_id = msg.message_id
-    except:
-        return
-
-    chat_id = update.effective_chat.id
-    
-    context.bot.deleteMessage(chat_id, msg_id)
+    msg.delete()
 
     del_msg = update.message.reply_text("Deleted !")
     time.sleep(1)
-
     msg_frm.delete()
     del_msg.delete()
 
@@ -79,14 +71,10 @@ def silent_delete(update, context):
     if m == 2:
         return
 
-    msg = update.message.reply_to_message
     msg_frm = update.message
+    msg = msg_frm.reply_to_message.delete()
     
-    msg_id = msg.message_id
-    chat_id = update.effective_chat.id
-
-    msg_frm.delete()    
-    context.bot.deleteMessage(chat_id, msg_id)
+    msg_frm.delete()
 
 
 def lock(update, context):
@@ -110,10 +98,13 @@ def lock_delete(update, context):
         #status = context.bot.get_chat_member(chat_id, user_id)['status']
         
         status = get_link(chat_id=chat_id[1:],user_id=user_id,status=1)
+        try:
+            status = status[0][1]
+        except:
+            return 1
 
-        if status[0][1] == "member":
-            msg_id = update.message.message_id
-            context.bot.deleteMessage(chat_id, msg_id)
+        if status == "member" or status == "restricted" :
+            update.message.delete()
         else:
             return 1
     else:

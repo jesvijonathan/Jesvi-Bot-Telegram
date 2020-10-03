@@ -10,24 +10,24 @@ notes_data = {}
 
 def note_check(update, context):
     global notes_data
-    
     res = update.message.text
-
-    if res.startswith("#") == True:    
-        
-        chat_id = update.effective_chat.id
-        text = ""
-
-        shrt = res[1:]
-
-        chat_idd = str(chat_id)
-        chat_idd = chat_idd[1:] 
-        n = get_note(chat_id=chat_idd,note_name=shrt)
-        if n != -1:
-            text = str(n[0])
-            update.message.reply_text(text,parse_mode="HTML",disable_web_page_preview=True)
-        return
-    else:
+    try:
+        if res.startswith("#") == True:    
+            
+            chat_id = str(update.effective_chat.id)
+            text = ""
+    
+            shrt = res[1:]
+    
+            chat_idd = chat_id[1:] 
+            n = get_note(chat_id=chat_idd,note_name=shrt)
+            if n != -1:
+                text = str(n[0])
+                update.message.reply_text(text,disable_web_page_preview=True)
+            return
+        else:
+            return
+    except:
         return
 
 
@@ -63,6 +63,7 @@ def notes(update, context):
             return
         except:
             update.message.reply_text(text="Notes not available..",parse_mode="HTML",disable_web_page_preview=True)
+            return
     
     try:
         text_2 = res[2]

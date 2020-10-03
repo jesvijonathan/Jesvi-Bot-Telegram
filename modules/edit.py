@@ -3,6 +3,7 @@
 import modules.extract as extract
 import modules.welcome
 from database import push_link, get_link, push_chat, get_chat
+import config
 
 
 def pin(update, context):
@@ -171,7 +172,7 @@ def rules(update,context):
         update.message.reply_text(text=k,parse_mode="HTML",disable_web_page_preview=True)
         return
 
-    if res[0] == "/rules" :
+    if res[0] == "/rules" or res[0] == ("/rules@"+config.bot_username) :
         k = get_chat(chat_id=chat_idd,rules=r)
 
         try:
@@ -179,8 +180,14 @@ def rules(update,context):
         except:
             k = "Error"
         
-        k = "<a href='t.me/jesvi_bot?start=" + chat_id + "'>Click Here</a>" + " to view the group's rules"
+        #k = "<a href='t.me/jesvi_bot?start=" + chat_id + "'>Click Here</a>" + " to view the group's rules"
         
+        k = get_chat(chat_id=chat_idd,rules=r)
+        try:
+            k = k[0][0]
+        except:
+            k = "No rules set in this group !"
+
         update.message.reply_text(text=k,parse_mode="HTML",disable_web_page_preview=True)
         return
 

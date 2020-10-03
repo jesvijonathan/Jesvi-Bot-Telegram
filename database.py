@@ -1041,7 +1041,7 @@ def push_filter(chat_id,filterr=None,action="warn",set_by=None,replyt=None,pop=N
     return 1
 
 
-def get_note(chat_id,filterr=None,al=None):
+def get_filter(chat_id,filterr=None,al=None):
   load()
   global mydb
   global mycursor

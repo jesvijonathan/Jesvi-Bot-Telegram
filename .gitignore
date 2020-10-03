@@ -14,6 +14,12 @@ modules/__pycache__/promote.cpython-37.pyc
 modules/__pycache__/spam.cpython-37.pyc
 modules/__pycache__/welcome.cpython-37.pyc
 modules/__pycache__/wiki.cpython-37.pyc
+
+__pycache__/config.cpython-37.pyc
+__pycache__/database.cpython-37.pyc
+###
 __pycache__/
 .vscode/
+###
 Jesvi Bot.code-workspace
+.vscode/launch.json

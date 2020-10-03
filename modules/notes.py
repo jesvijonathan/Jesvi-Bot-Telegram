@@ -73,7 +73,7 @@ def notes(update, context):
     m = extract.sudocheck(update,context)
     if m == 2:
         return
-    #s
+    #ss
     if text_1 == 'remove':
         if text_2 != "":
             chat_idd = str(chat_id)[1:]

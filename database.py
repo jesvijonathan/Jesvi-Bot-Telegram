@@ -787,7 +787,20 @@ def push_note(chat_id,note_name=None,note=None,set_by=None,date=None,res=None,po
         return
 
   if pop != None:
-    pass
+    try:
+      sql = ( "DELETE FROM {s0} WHERE {s1}={s11} and {s2}={s12}".format(
+            s0="note_base",
+            s1="chat_id",s11='"' + chat_id + '"',
+            s2="note_name",s12='"' + note_name + '"'
+          ))
+
+      mycursor.execute(sql)
+      mydb.commit()
+      if mycursor.rowcount == 0:
+            return -2
+      return 1
+    except:
+      return -1
 
   sql = ( "SELECT EXISTS(SELECT * from {s0} WHERE {s1}={s11} and {s2}={s12})".format(
           s0="note_base",
@@ -851,13 +864,30 @@ def push_note(chat_id,note_name=None,note=None,set_by=None,date=None,res=None,po
     return 1
 
 
-def get_note(chat_id,note_name=None):
+def get_note(chat_id,note_name=None,all_name=None):
   load()
   global mydb
   global mycursor
 
   s4 = s3 = ""
   results = None
+
+  if all_name != None:
+    sql = ( "SELECT note_name from {s0} WHERE {s1}={s11}".format(
+          s0="note_base",
+          s1="chat_id",s11='"' + chat_id + '"',
+        ))
+    mycursor.execute(sql)
+    try:
+      results = mycursor.fetchall()
+
+      if results[0] == None:
+        return -1 
+    except:
+      return -1
+
+    return results
+        
 
   if note_name == None or chat_id == None:
         return
@@ -871,7 +901,7 @@ def get_note(chat_id,note_name=None):
           s2="note_name",s12='"' + note_name + '"'
         ))
   mycursor.execute(sql)
-  
+
   try:
     results = mycursor.fetchone()
     if results[0] == None or results[0] == "":

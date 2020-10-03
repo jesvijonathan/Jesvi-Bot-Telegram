@@ -82,7 +82,7 @@ def leave(update, context):
 
 
 def rip(update, context):
-    m = extract.sudocheck(update,context)
+    m = extract.sudocheck(update,context,udel = 0)
     #if m == 1:
      #   return
 

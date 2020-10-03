@@ -271,7 +271,7 @@ def warn_set(update,context,cl=0,re=0):
             date = "\nDate : <i>" + str(i[3])  + "</i>\n"
             tx = tx + warn_no + warn_by + reason + date
             c+=c
-            print(i)
+
         if tx == None or tx == tt:
             tx = tx + "\n<i>Clean as a whistle !</i>"
         update.message.reply_text(text=tx,parse_mode="HTML",disable_web_page_preview=True)
@@ -289,7 +289,6 @@ def warn_set(update,context,cl=0,re=0):
         tx = "Warn list - " + cha + "\n"
         tt = tx
         for i in inf:
-            print(i)
             no = "\n" + str(c) + " - "
             total_strike = "(Strikes : <b>" + str(i[1]) + "</b>) - "
             user = "<b><a href='tg://user?id=" + str(i[0]) + "'>" + i[0] + "</a></b>"
@@ -309,7 +308,7 @@ def warn_set(update,context,cl=0,re=0):
             return
         sett = database.add_settings_base(chat_id=chat_idd,warn_limit=res[2])
         update.message.reply_text(text="Warn limit set to <b>" + res[2] +"</b> !",parse_mode="HTML",disable_web_page_preview=True)
-    
+
     elif res[1] == "action":
         try:
             if res[2] == "kick" or res[2] == "mute" or res[2] == "ban":

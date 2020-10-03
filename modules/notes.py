@@ -39,22 +39,31 @@ def notes(update, context):
     res = update.message.text.split(None, 3)
     chat_id = update.effective_chat.id
 
-    text_3 = text = ""
+    text_1 = text_3 = text = ""
 
     try:
         text_1 = res[1]
     except: 
         try:
-            xt = notes_data[str(chat_id)]
-            text = "Available notes -\n"
-            for key in xt:
-                text = text + "\n#" + key
-#            text = text + "\n\nUse #NoteName to view the note"
-        except:
-            text = "Notes not available"
-        update.message.reply_text(text)
-        return
+            chat_idd = str(chat_id)[1:]
+            user_id = str(msg.from_user.id)
 
+            u = get_note(chat_id=chat_idd,all_name=1)
+            
+            if u == -1:
+                raise
+
+            text = "Available notes -\n\n"
+
+            for i in u:
+                text = text + "• <code>" + i[0] + "</code>\n"
+            text = text + "\nUse #notename to view the note"
+
+            update.message.reply_text(text=text,parse_mode="HTML",disable_web_page_preview=True)
+            return
+        except:
+            update.message.reply_text(text="Notes not available..",parse_mode="HTML",disable_web_page_preview=True)
+    
     try:
         text_2 = res[2]
     except:
@@ -66,11 +75,17 @@ def notes(update, context):
         
     if text_1 == 'remove':
         if text_2 != "":
-            try:
-                del notes_data[str(chat_id)][str(text_2)]
-                text = 'Removed #' + str(text_2) + ' from notes !'
-            except:
-                text = "No such note availble !"
+            chat_idd = str(chat_id)[1:]
+            user_id = str(msg.from_user.id)
+
+            u = push_note(chat_id=chat_idd,note_name=text_2,pop=1)
+            if u == 1:
+                text = "Note #" + text_2 + " deleted !"
+            elif u == -2:
+                text = "Noet #" + text_2 + " does not exist !"
+            else:
+                text = "Error !"
+
 
     elif text_1 == 'set':
         try:

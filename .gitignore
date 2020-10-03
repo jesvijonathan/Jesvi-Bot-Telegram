@@ -1,2 +1,2 @@
-_pycache_/
-.vscode/
+/_pycache_/*
+/.vscode/*

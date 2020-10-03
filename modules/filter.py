@@ -63,15 +63,19 @@ def message_filter(update, context):
         chat_id = update.effective_chat.id
     except:
         return
-    try:
-        filter_text[chat_id]
-    except:
-        filter_text[chat_id] = {}
 
-    prev_message = update.message.reply_to_message
     res = update.message.text.split(None, 3)
 
     text_3 = text = ""
+    
+    if res[0] == '/filterreset' or res[0] == "/resetfilter":
+        chat_idd = str(chat_id)[1:]
+        user_id = str(update.message.from_user.id)
+        k = database.push_filter(chat_id=chat_idd,pop=2)
+        text = "Reset filter data"
+        update.message.reply_text(text)
+        return
+
 
     try:
         text_1 = res[1]
@@ -84,56 +88,47 @@ def message_filter(update, context):
         update.message.reply_text(text)
         return
 
+
     try:
         text_2 = res[2]
     except:
         text_2 = ""
 
-        
-    if text_1 == 'remove':
+    if text_1 == 'off' or text_1 == "on":
+        msg_filter = 0
+        text = 'Filter turned off !'
+
+    elif text_1 == 'remove':
         if text_2 != "":
-            del filter_text[chat_id]['filter'][text_2]
+            chat_idd = str(chat_id)[1:]
+            user_id = str(update.message.from_user.id)
+            k = database.push_filter(chat_id=chat_idd,filterr=text_2,pop=1)
             text = 'Removed "' + str(text_2) + '" from filter !'
     
-    elif text_1 == 'list':
-        text = "Here is a list of filters stored :\n" + str(filter_text[chat_id]['filter'])
-
-    elif text_1 == 'reply':
-        try:
-            text_3 = res[3]
-        except:
-            update.message.reply_text("No to-reply-with text provided !")
-            return
-        filter_text[chat_id]['filter'][text_2] = text_3
-#        filter_text[text_2] = text_3
-        text = '"' + str(text_2) + '" will be replied with "' + str(text_3) + '" !'
-
-    elif text_1 == 'warn':
+    elif text_1 == 'warn' or text_1 == "delete" or text_1 == "reply":
         if text_2 == "":
             text= "No filter-warn word passed !"
-        else: 
-            filter_text[chat_id]['filter'][text_2] = "<filter-warn>"
-            text = 'Use of "' + str(text_2) + '" will warn-strike the user !'
+        
+        else:
+            if text_1 == "reply":
+                try:
+                    text_3 = res[3]
+                except:
+                    return
+            
+            chat_idd = str(chat_id)[1:]
+            user_id = str(update.message.from_user.id)
+            k = database.push_filter(chat_id=chat_idd,filterr=text_2,action=text_1,set_by=user_id,replyt=text_3)
+            text = 'Use of "' + str(text_2) + '" will - the user !'
 
-    elif text_1 == 'off':
-        msg_filter = 0
-        text = 'Filter turned off !'        
-    
-    elif text_1 == 'on':
-        msg_filter = 1
-        text = 'Filter turned on !'
+    elif text_1 == 'list':
+        k = database.get_filter(chat_id=chat_idd,filterr=None,al=1)
+        text = "Here is a list of filters stored :\n"
 
-    elif text_1 == 'clear':
-        filter_text[chat_id]['filter'].clear()
-        text = "Cleared filter data"
-    
     else:
-        try:
-            filter_text[chat_id]['filter']
-        except:
-            filter_text[chat_id]['filter'] = {}
-
-        filter_text[chat_id]['filter'][text_1] = "<filter-delete>"
+        chat_idd = str(chat_id)[1:]
+        user_id = str(update.message.from_user.id)
+        database.push_filter(chat_id=chat_idd,filterr=text_1,set_by=user_id,res=1)
         text = 'Added "' + str(text_1) + '" to filter !'
 
     update.message.reply_text(text)

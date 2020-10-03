@@ -912,6 +912,180 @@ def get_note(chat_id,note_name=None,all_name=None):
   return results
 
 
+def create_filter_base():
+  load()
+  global mydb
+  global mycursor
+
+  sql = ("CREATE TABLE IF NOT EXISTS {s0}( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, {s1} VARCHAR(33), {s2} VARCHAR(33), {s3} VARCHAR(33), {s4} VARCHAR(33), {s5} TIMESTAMP, {s6} text)".format(
+  s0= "filter_base",
+  s1="chat_id",
+  s2="filter",
+  s3="action",
+  s4="set_by",
+  s5="date",
+  s6="reply"
+  ))
+
+  mycursor.execute(sql)
+  mydb.commit()
+
+
+def push_filter(chat_id,filterr=None,action="warn",set_by=None,replyt=None,pop=None,res=None):
+  load()
+  global mydb
+  global mycursor
+
+  d = s4 = s3 = ""
+
+  if chat_id == None:
+        return
+
+  if pop != None:
+    if pop == 1:
+      d = "and filter=" + '"' + filterr + '"'
+    elif pop == 2:
+      d = ""
+    try:
+      sql = ( "DELETE FROM {s0} WHERE {s1}={s11} {s2}".format(
+            s0="filter_base",
+            s1="chat_id",s11='"' + chat_id + '"',
+            s2=d
+          ))
+        
+      mycursor.execute(sql)
+      mydb.commit()
+      if mycursor.rowcount == 0:
+            return -2
+      return 1
+    except:
+      return -1
+  
+  if filterr == None or chat_id == None:
+        return
+
+  sql = ( "SELECT EXISTS(SELECT * from {s0} WHERE {s1}={s11} and {s2}={s12})".format(
+          s0="filter_base",
+          s1="chat_id",s11='"' + chat_id + '"',
+          s2="filter",s12='"' + filterr + '"'
+        ))
+  mycursor.execute(sql)
+  try:
+    results = mycursor.fetchone()
+    
+    if results[0] == 0:
+      res=1
+  
+  except:
+    pass
+
+  if res == 1:
+    
+    if action == "reply":
+        if replyt == None:
+          return
+        else:
+          replyt = '"' + replyt + '"'
+    else:
+        replyt = "NULL"
+
+    sql = ( "REPLACE INTO {s0}({s1},{s2},{s3},{s4},{s5},{s6}) VALUE({s11},{s12},{s13},{s14},{s15},{s16})".format(
+        s0= "filter_base",
+        s1="chat_id",s11= '"' + chat_id + '"',
+        s2="filter",s12='"' + filterr + '"',
+        s3="action",s13= '"' + action + '"',
+        s4="set_by",s14='"' + set_by + '"',
+        s5="date",s15='CURRENT_TIMESTAMP()',
+        s6="reply",s16=replyt
+      ))
+
+    mycursor.execute(sql)
+    mydb.commit()
+    return 1
+  
+  else:
+        
+    s7=s5=s6=s3=s4=""
+
+    if filterr != None or action:
+        s3 = "filter = " + '"' + filterr + '"'
+        s4 = "action = " + '"' + action + '"'
+    else:
+        return
+    
+    if set_by != None:
+        s5 = ",set_by = " + '"' + set_by + '"'
+    
+    if action == "reply":
+        if replyt == None:
+          return
+        else:
+          s7 = ',reply="' + replyt + '"'
+    else:
+        s7 = ",reply=NULL"
+
+    s6 = ",date=CURRENT_TIMESTAMP()"
+
+    sql = ( "UPDATE {s0} SET {s4}{s5}{s6}{s7} WHERE {s1} = {s11} and {s3}".format(
+          s0= "filter_base",
+          s1="chat_id",s11= '"' + str(chat_id) + '"',
+          s3=s3,
+          s4=s4,
+          s5=s5,
+          s6=s6,
+          s7=s7
+        ))
+    print(sql)
+    mycursor.execute(sql)
+    mydb.commit()
+    return 1
+
+
+def get_note(chat_id,filterr=None,al=None):
+  load()
+  global mydb
+  global mycursor
+
+  s4 = s3 = ""
+  results = None
+
+  if al != None:
+    sql = ( "SELECT * from {s0} WHERE {s1}={s11}".format(
+          s0="filter_base",
+          s1="chat_id",s11='"' + chat_id + '"',
+        ))
+    mycursor.execute(sql)
+    try:
+      results = mycursor.fetchall()
+
+      if results[0] == None:
+        return -1 
+    except:
+      return -1
+
+    return results
+        
+
+  if filterr == None:
+        return
+
+  sql = ( "SELECT filter from {s0} WHERE {s1}={s11} and {s2}={s12}".format(
+          s0="filter_base",
+          s1="chat_id",s11='"' + chat_id + '"',
+          s2="filter",s12='"' + filterr + '"'
+        ))
+  mycursor.execute(sql)
+
+  try:
+    results = mycursor.fetchone()
+    if results[0] == None or results[0] == "":
+      return -1 
+  except:
+    return -1
+
+  return results
+
+
 def create_base(update=None,context=None):
   load()
   create_chat_base()
@@ -920,3 +1094,4 @@ def create_base(update=None,context=None):
   create_warn_base()
   create_settings_base()
   create_note_base()
+  create_filter_base()

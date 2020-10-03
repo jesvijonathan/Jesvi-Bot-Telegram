@@ -16,7 +16,7 @@ def note_check(update, context):
             
             chat_id = str(update.effective_chat.id)
             text = ""
-    
+            
             shrt = res[1:]
     
             chat_idd = chat_id[1:] 

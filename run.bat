@@ -13,7 +13,14 @@ call activate.bat
 
 for /f "tokens=3" %%i in ('netsh wlan show interface ^| findstr /i "SSID"') do set "myssid=%%i" & goto next
 :next
-if "%myssid%"=="" @echo Connected : - | @echo. | @echo No Network ! | @echo. | pause | exit
+if "%myssid%"=="" @echo Connected : - 
+if "%myssid%"=="" @echo. 
+if "%myssid%"=="" @echo No Network ! 
+if "%myssid%"=="" @echo.
+
+if "%myssid%"=="" color c 
+if "%myssid%"=="" pause 
+if "%myssid%"=="" exit
 @echo Connected : %myssid%
 
 set totalMem=
@@ -25,6 +32,7 @@ set availableMem=%availableMem:,=%
 set /a usedMem=totalMem-availableMem
 @echo Memory    : %usedMem%/%totalMem% 
 
+
 @echo Date      : %DATE% 
 @echo Time      : %TIME%
 
@@ -32,10 +40,13 @@ set /a usedMem=totalMem-availableMem
 @echo ----- Live Status -----
 @echo.
 
+ping 192.0.2.1 -n 1 -w 100 >nul
 @echo -activated
 
 cd C:\Users\jesvi\Documents\GitHub\Jesvi-Bot
+start logger.bat
 main.py
+
 
 @echo -ended
 @echo.

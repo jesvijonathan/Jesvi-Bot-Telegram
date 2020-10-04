@@ -25,3 +25,4 @@ Jesvi Bot.code-workspace
 .vscode/launch.json
 ###
 .gitignore
+bot_runtime.log

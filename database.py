@@ -57,11 +57,12 @@ def net(update,context):
   msg.edit_text(text=( "<code>" + "Test Time : " + time.strftime("%Y-%m-%d (%H:%M:%S)") + "\n\n" +  ds + us + ps + "</code>"), 
                   parse_mode="HTML")
 
+st =0
 
 def load():
   global mydb
   global mycursor
-
+  global st
 
   mydb = mysql.connector.connect(
   host="127.0.0.1",

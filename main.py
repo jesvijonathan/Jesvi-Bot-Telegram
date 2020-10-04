@@ -27,6 +27,8 @@ import random
 import time
 import threading 
 
+print("-loaded modules")
+
 updater = Updater(config.bot_token, use_context=True)
 dp = updater.dispatcher
 
@@ -47,7 +49,9 @@ def send(Update,Context):
 
 def main():
     dp.bot.send_message(chat_id=config.owner_id, text="<code>Started Service !\n\nTime : " + time.strftime("%Y-%m-%d (%H:%M:%S)") + "</code>",parse_mode="HTML")
-    print("started")
+    database.load()
+    print("-database ready")
+    print("-started")
     
     
     info_cmd = ("info","ginfo","group","groupinfo","aboutgroup","chatinfo","infogroup","infochat","user","userinfo")

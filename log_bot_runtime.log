@@ -1,114 +1,140 @@
-2020-10-04 20:56:35,466 DEBUG telegram.ext.dispatcher Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x000001D110FFF248>
-2020-10-04 20:56:35,474 DEBUG telegram.bot Entering: send_message
-2020-10-04 20:56:35,475 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org
-2020-10-04 20:56:36,722 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 368
-2020-10-04 20:56:36,723 DEBUG telegram.bot {'message_id': 3022, 'date': 1601825197, 'chat': {'id': 594702198, 'type': 'private', 'username': 'jesvijonathan', 'first_name': 'Jesvi', 'last_name': 'Jonathan'}, 'text': 'Started Service !\n\nTime : 2020-10-04 (20:56:35)', 'entities': [{'type': 'code', 'offset': 0, 'length': 47}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
-2020-10-04 20:56:36,723 DEBUG telegram.bot Exiting: send_message
-2020-10-04 20:56:36,963 DEBUG telegram.bot Entering: get_me
-2020-10-04 20:56:37,233 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "GET /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getMe HTTP/1.1" 200 190
-2020-10-04 20:56:37,234 DEBUG telegram.bot {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot', 'can_join_groups': True, 'can_read_all_group_messages': True, 'supports_inline_queries': False}
-2020-10-04 20:56:37,234 DEBUG telegram.bot Exiting: get_me
-2020-10-04 20:56:37,234 DEBUG telegram.bot Entering: get_my_commands
-2020-10-04 20:56:37,614 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "GET /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getMyCommands HTTP/1.1" 200 197
-2020-10-04 20:56:37,614 DEBUG telegram.bot [<telegram.botcommand.BotCommand object at 0x000001D110F2D708>, <telegram.botcommand.BotCommand object at 0x000001D110F2B2C8>, <telegram.botcommand.BotCommand object at 0x000001D110F2B4C8>]
-2020-10-04 20:56:37,615 DEBUG telegram.bot Exiting: get_my_commands
-2020-10-04 20:56:37,616 DEBUG JobQueue JobQueue thread started
-2020-10-04 20:56:37,617 DEBUG telegram.ext.updater Bot:1262215479:dispatcher - started
-2020-10-04 20:56:37,617 DEBUG telegram.ext.updater Bot:1262215479:updater - started
-2020-10-04 20:56:37,618 DEBUG telegram.ext.updater Updater thread started (polling)
-2020-10-04 20:56:37,618 DEBUG telegram.ext.updater Start network loop retry bootstrap del webhook
-2020-10-04 20:56:37,618 DEBUG telegram.bot Entering: delete_webhook
-2020-10-04 20:56:37,620 DEBUG telegram.ext.dispatcher Dispatcher started
-2020-10-04 20:56:37,873 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/deleteWebhook HTTP/1.1" 200 68
-2020-10-04 20:56:37,874 DEBUG telegram.bot True
-2020-10-04 20:56:37,874 DEBUG telegram.bot Exiting: delete_webhook
-2020-10-04 20:56:37,874 DEBUG telegram.ext.updater Bootstrap done
-2020-10-04 20:56:37,874 DEBUG telegram.ext.updater Start network loop retry getting Updates
-2020-10-04 20:56:37,874 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:56:38,090 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 1159
-2020-10-04 20:56:38,090 DEBUG telegram.bot Getting updates: [543328292, 543328293, 543328294]
-2020-10-04 20:56:38,091 DEBUG telegram.bot [<telegram.update.Update object at 0x000001D10FCDBAC8>, <telegram.update.Update object at 0x000001D111013388>, <telegram.update.Update object at 0x000001D111013608>]
-2020-10-04 20:56:38,091 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:56:38,091 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:56:38,091 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328292, 'message': {'message_id': 8596, 'date': 1601824795, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/rules@jesvi_bot', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 16}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 594702198, 'first_name': 'Jesvi', 'is_bot': False, 'last_name': 'Jonathan', 'username': 'jesvijonathan', 'language_code': 'en'}}}
-2020-10-04 20:56:38,426 DEBUG telegram.bot Entering: send_message
-2020-10-04 20:56:38,426 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool Starting new HTTPS connection (2): api.telegram.org
-2020-10-04 20:56:39,797 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 660
-2020-10-04 20:56:39,798 DEBUG telegram.bot {'message_id': 8599, 'date': 1601825200, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'reply_to_message': {'message_id': 8596, 'date': 1601824795, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/rules@jesvi_bot', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 16}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 594702198, 'first_name': 'Jesvi', 'is_bot': False, 'last_name': 'Jonathan', 'username': 'jesvijonathan', 'language_code': 'en'}}, 'text': "There is only one rule, 'there are no rules'", 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
-2020-10-04 20:56:39,798 DEBUG telegram.bot Exiting: send_message
-2020-10-04 20:56:39,798 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328293, 'message': {'message_id': 8597, 'date': 1601825191, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/boom', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 5}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 594702198, 'first_name': 'Jesvi', 'is_bot': False, 'last_name': 'Jonathan', 'username': 'jesvijonathan', 'language_code': 'en'}}}
-2020-10-04 20:56:39,799 DEBUG telegram.bot Entering: send_message
-2020-10-04 20:56:40,217 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 302
-2020-10-04 20:56:40,352 DEBUG telegram.bot Exiting: send_message
-2020-10-04 20:56:40,353 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328294, 'message': {'message_id': 8598, 'date': 1601825195, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/rules@jesvi_bot', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 16}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 594702198, 'first_name': 'Jesvi', 'is_bot': False, 'last_name': 'Jonathan', 'username': 'jesvijonathan', 'language_code': 'en'}}}
-2020-10-04 20:56:40,755 DEBUG telegram.bot Entering: send_message
-2020-10-04 20:56:41,395 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 660
-2020-10-04 20:56:41,397 DEBUG telegram.bot {'message_id': 8601, 'date': 1601825201, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'reply_to_message': {'message_id': 8598, 'date': 1601825195, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/rules@jesvi_bot', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 16}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 594702198, 'first_name': 'Jesvi', 'is_bot': False, 'last_name': 'Jonathan', 'username': 'jesvijonathan', 'language_code': 'en'}}, 'text': "There is only one rule, 'there are no rules'", 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
-2020-10-04 20:56:41,397 DEBUG telegram.bot Exiting: send_message
-2020-10-04 20:56:48,515 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:56:48,515 DEBUG telegram.bot No new updates found.
-2020-10-04 20:56:48,516 DEBUG telegram.bot []
-2020-10-04 20:56:48,516 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:56:48,516 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:56:59,374 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:56:59,375 DEBUG telegram.bot No new updates found.
-2020-10-04 20:56:59,375 DEBUG telegram.bot []
-2020-10-04 20:56:59,375 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:56:59,375 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:57:09,746 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:57:09,746 DEBUG telegram.bot No new updates found.
-2020-10-04 20:57:09,747 DEBUG telegram.bot []
-2020-10-04 20:57:09,747 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:57:09,747 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:57:20,175 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:57:20,175 DEBUG telegram.bot No new updates found.
-2020-10-04 20:57:20,176 DEBUG telegram.bot []
-2020-10-04 20:57:20,176 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:57:20,176 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:57:30,735 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:57:30,736 DEBUG telegram.bot No new updates found.
-2020-10-04 20:57:30,736 DEBUG telegram.bot []
-2020-10-04 20:57:30,736 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:57:30,736 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:57:41,294 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:57:41,295 DEBUG telegram.bot No new updates found.
-2020-10-04 20:57:41,295 DEBUG telegram.bot []
-2020-10-04 20:57:41,295 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:57:41,295 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:57:46,757 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 395
-2020-10-04 20:57:46,758 DEBUG telegram.bot Getting updates: [543328295]
-2020-10-04 20:57:46,758 DEBUG telegram.bot [<telegram.update.Update object at 0x000001D111103488>]
-2020-10-04 20:57:46,758 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:57:46,758 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:57:46,759 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328295, 'message': {'message_id': 8602, 'date': 1601825267, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/cdsync', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 7}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 594702198, 'first_name': 'Jesvi', 'is_bot': False, 'last_name': 'Jonathan', 'username': 'jesvijonathan', 'language_code': 'en'}}}
-2020-10-04 20:57:46,759 DEBUG telegram.bot Entering: get_chat_members_count
-2020-10-04 20:57:47,289 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatMembersCount HTTP/1.1" 200 22
-2020-10-04 20:57:47,290 DEBUG telegram.bot 6
-2020-10-04 20:57:47,290 DEBUG telegram.bot Exiting: get_chat_members_count
-2020-10-04 20:57:47,290 DEBUG telegram.bot Entering: get_chat_member
-2020-10-04 20:57:47,700 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatMember HTTP/1.1" 200 309
-2020-10-04 20:57:47,701 DEBUG telegram.bot {'user': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}, 'status': 'administrator', 'can_be_edited': False, 'can_change_info': True, 'can_delete_messages': True, 'can_invite_users': True, 'can_restrict_members': True, 'can_pin_messages': True, 'can_promote_members': True, 'until_date': None}
-2020-10-04 20:57:47,701 DEBUG telegram.bot Exiting: get_chat_member
-2020-10-04 20:57:49,762 DEBUG telegram.bot Entering: send_message
-2020-10-04 20:57:50,223 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 615
-2020-10-04 20:57:50,225 DEBUG telegram.bot {'message_id': 8603, 'date': 1601825270, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'reply_to_message': {'message_id': 8602, 'date': 1601825267, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/cdsync', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 7}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 594702198, 'first_name': 'Jesvi', 'is_bot': False, 'last_name': 'Jonathan', 'username': 'jesvijonathan', 'language_code': 'en'}}, 'text': 'Syncing..', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
-2020-10-04 20:57:50,225 DEBUG telegram.bot Exiting: send_message
-2020-10-04 20:57:50,440 DEBUG telegram.bot Entering: edit_message_text
-2020-10-04 20:57:50,846 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/editMessageText HTTP/1.1" 200 299
-2020-10-04 20:57:50,847 DEBUG telegram.bot {'message_id': 8603, 'date': 1601825270, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'edit_date': 1601825271, 'text': 'Current Chat Base Updated !', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
-2020-10-04 20:57:50,847 DEBUG telegram.bot Exiting: edit_message_text
-2020-10-04 20:57:57,207 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:57:57,207 DEBUG telegram.bot No new updates found.
-2020-10-04 20:57:57,207 DEBUG telegram.bot []
-2020-10-04 20:57:57,207 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:57:57,207 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:58:07,448 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:58:07,449 DEBUG telegram.bot No new updates found.
-2020-10-04 20:58:07,449 DEBUG telegram.bot []
-2020-10-04 20:58:07,449 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:58:07,449 DEBUG telegram.bot Entering: get_updates
-2020-10-04 20:58:17,651 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
-2020-10-04 20:58:17,652 DEBUG telegram.bot No new updates found.
-2020-10-04 20:58:17,652 DEBUG telegram.bot []
-2020-10-04 20:58:17,652 DEBUG telegram.bot Exiting: get_updates
-2020-10-04 20:58:17,652 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:30:09,385 DEBUG telegram.ext.dispatcher Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x00000258E01B00C8>
+2020-10-04 21:30:09,386 DEBUG telegram.bot Entering: send_message
+2020-10-04 21:30:09,386 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org
+2020-10-04 21:30:11,279 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 368
+2020-10-04 21:30:11,280 DEBUG telegram.bot {'message_id': 3037, 'date': 1601827211, 'chat': {'id': 594702198, 'type': 'private', 'username': 'jesvijonathan', 'first_name': 'Jesvi', 'last_name': 'Jonathan'}, 'text': 'Started Service !\n\nTime : 2020-10-04 (21:30:09)', 'entities': [{'type': 'code', 'offset': 0, 'length': 47}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
+2020-10-04 21:30:11,280 DEBUG telegram.bot Exiting: send_message
+2020-10-04 21:30:11,451 DEBUG telegram.bot Entering: get_me
+2020-10-04 21:30:11,919 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "GET /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getMe HTTP/1.1" 200 190
+2020-10-04 21:30:11,920 DEBUG telegram.bot {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot', 'can_join_groups': True, 'can_read_all_group_messages': True, 'supports_inline_queries': False}
+2020-10-04 21:30:11,920 DEBUG telegram.bot Exiting: get_me
+2020-10-04 21:30:11,920 DEBUG telegram.bot Entering: get_my_commands
+2020-10-04 21:30:12,353 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "GET /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getMyCommands HTTP/1.1" 200 197
+2020-10-04 21:30:12,353 DEBUG telegram.bot [<telegram.botcommand.BotCommand object at 0x00000258E013B2C8>, <telegram.botcommand.BotCommand object at 0x00000258DFF81548>, <telegram.botcommand.BotCommand object at 0x00000258DFF89148>]
+2020-10-04 21:30:12,354 DEBUG telegram.bot Exiting: get_my_commands
+2020-10-04 21:30:12,355 DEBUG JobQueue JobQueue thread started
+2020-10-04 21:30:12,356 DEBUG telegram.ext.updater Bot:1262215479:dispatcher - started
+2020-10-04 21:30:12,356 DEBUG telegram.ext.updater Bot:1262215479:updater - started
+2020-10-04 21:30:12,357 DEBUG telegram.ext.updater Updater thread started (polling)
+2020-10-04 21:30:12,357 DEBUG telegram.ext.updater Start network loop retry bootstrap del webhook
+2020-10-04 21:30:12,357 DEBUG telegram.bot Entering: delete_webhook
+2020-10-04 21:30:12,359 DEBUG telegram.ext.dispatcher Dispatcher started
+2020-10-04 21:30:12,870 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/deleteWebhook HTTP/1.1" 200 68
+2020-10-04 21:30:12,870 DEBUG telegram.bot True
+2020-10-04 21:30:12,870 DEBUG telegram.bot Exiting: delete_webhook
+2020-10-04 21:30:12,871 DEBUG telegram.ext.updater Bootstrap done
+2020-10-04 21:30:12,871 DEBUG telegram.ext.updater Start network loop retry getting Updates
+2020-10-04 21:30:12,871 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:30:13,189 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 358
+2020-10-04 21:30:13,189 DEBUG telegram.bot Getting updates: [543328324]
+2020-10-04 21:30:13,190 DEBUG telegram.bot [<telegram.update.Update object at 0x00000258E01B0AC8>]
+2020-10-04 21:30:13,190 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:30:13,190 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:30:13,191 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328324, 'message': {'message_id': 8642, 'date': 1601827072, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/rules@jesvi_bot', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 16}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}}}
+2020-10-04 21:30:13,506 DEBUG telegram.bot Entering: send_message
+2020-10-04 21:30:13,507 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool Starting new HTTPS connection (2): api.telegram.org
+2020-10-04 21:30:14,666 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 613
+2020-10-04 21:30:14,667 DEBUG telegram.bot {'message_id': 8643, 'date': 1601827215, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'reply_to_message': {'message_id': 8642, 'date': 1601827072, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/rules@jesvi_bot', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 16}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}}, 'text': "There is only one rule, 'there are no rules'", 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
+2020-10-04 21:30:14,667 DEBUG telegram.bot Exiting: send_message
+2020-10-04 21:30:20,301 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 346
+2020-10-04 21:30:20,301 DEBUG telegram.bot Getting updates: [543328325]
+2020-10-04 21:30:20,302 DEBUG telegram.bot [<telegram.update.Update object at 0x00000258E00DA1C8>]
+2020-10-04 21:30:20,302 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:30:20,302 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:30:20,303 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328325, 'message': {'message_id': 8644, 'date': 1601827220, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/info', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 5}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}}}
+2020-10-04 21:30:20,303 DEBUG telegram.bot Entering: get_chat_administrators
+2020-10-04 21:30:20,929 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatAdministrators HTTP/1.1" 200 789
+2020-10-04 21:30:20,930 DEBUG telegram.bot [<telegram.chatmember.ChatMember object at 0x00000258E01EF848>, <telegram.chatmember.ChatMember object at 0x00000258E01EF8C8>, <telegram.chatmember.ChatMember object at 0x00000258E01EF948>]
+2020-10-04 21:30:20,931 DEBUG telegram.bot Exiting: get_chat_administrators
+2020-10-04 21:30:20,931 DEBUG telegram.bot Entering: get_chat_members_count
+2020-10-04 21:30:21,948 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatMembersCount HTTP/1.1" 200 22
+2020-10-04 21:30:21,954 DEBUG telegram.bot 6
+2020-10-04 21:30:21,954 DEBUG telegram.bot Exiting: get_chat_members_count
+2020-10-04 21:30:21,954 DEBUG telegram.bot Entering: get_chat_members_count
+2020-10-04 21:30:22,162 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatMembersCount HTTP/1.1" 200 22
+2020-10-04 21:30:22,163 DEBUG telegram.bot 6
+2020-10-04 21:30:22,163 DEBUG telegram.bot Exiting: get_chat_members_count
+2020-10-04 21:30:22,163 DEBUG telegram.bot Entering: get_chat_members_count
+2020-10-04 21:30:22,376 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatMembersCount HTTP/1.1" 200 22
+2020-10-04 21:30:22,377 DEBUG telegram.bot 6
+2020-10-04 21:30:22,377 DEBUG telegram.bot Exiting: get_chat_members_count
+2020-10-04 21:30:22,377 DEBUG telegram.bot Entering: export_chat_invite_link
+2020-10-04 21:30:22,908 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/exportChatInviteLink HTTP/1.1" 200 67
+2020-10-04 21:30:22,909 DEBUG telegram.bot https://t.me/joinchat/SzvhN1gYmqcCzw4wxYP-LA
+2020-10-04 21:30:22,909 DEBUG telegram.bot Exiting: export_chat_invite_link
+2020-10-04 21:30:22,909 DEBUG telegram.bot Entering: send_message
+2020-10-04 21:30:23,392 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 808
+2020-10-04 21:30:23,394 DEBUG telegram.bot {'message_id': 8645, 'date': 1601827223, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': 'Group Info -\n\nChat id : -1001478007463\n\nTitle : Bot Garage\nUsername : @bot_garage\nOwner : @jesvijonathan\n\nAdministrators : \n@jesvi_bot\n@subashgm02\n\nMembers : 6\n\nGroup link : telegram.me/bot_garage', 'entities': [{'type': 'bold', 'offset': 0, 'length': 12}, {'type': 'text_link', 'offset': 48, 'length': 10, 'url': 'http://telegram.me/bot_garage'}, {'type': 'mention', 'offset': 70, 'length': 11}, {'type': 'mention', 'offset': 90, 'length': 14}, {'type': 'mention', 'offset': 124, 'length': 10}, {'type': 'mention', 'offset': 135, 'length': 11}, {'type': 'url', 'offset': 174, 'length': 22}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
+2020-10-04 21:30:23,394 DEBUG telegram.bot Exiting: send_message
+2020-10-04 21:30:30,539 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
+2020-10-04 21:30:30,540 DEBUG telegram.bot No new updates found.
+2020-10-04 21:30:30,540 DEBUG telegram.bot []
+2020-10-04 21:30:30,540 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:30:30,540 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:30:34,891 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 358
+2020-10-04 21:30:34,892 DEBUG telegram.bot Getting updates: [543328326]
+2020-10-04 21:30:34,892 DEBUG telegram.bot [<telegram.update.Update object at 0x00000258E01EFB88>]
+2020-10-04 21:30:34,892 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:30:34,892 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:30:34,893 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328326, 'message': {'message_id': 8646, 'date': 1601827235, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/rules@jesvi_bot', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 16}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}}}
+2020-10-04 21:30:35,173 DEBUG telegram.bot Entering: send_message
+2020-10-04 21:30:35,632 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 613
+2020-10-04 21:30:35,633 DEBUG telegram.bot {'message_id': 8647, 'date': 1601827236, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'reply_to_message': {'message_id': 8646, 'date': 1601827235, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/rules@jesvi_bot', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 16}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}}, 'text': "There is only one rule, 'there are no rules'", 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
+2020-10-04 21:30:35,633 DEBUG telegram.bot Exiting: send_message
+2020-10-04 21:30:41,077 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 348
+2020-10-04 21:30:41,077 DEBUG telegram.bot Getting updates: [543328327]
+2020-10-04 21:30:41,078 DEBUG telegram.bot [<telegram.update.Update object at 0x00000258E01F2908>]
+2020-10-04 21:30:41,078 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:30:41,078 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:30:41,079 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328327, 'message': {'message_id': 8648, 'date': 1601827241, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/cdsync', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 7}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}}}
+2020-10-04 21:30:41,079 DEBUG telegram.bot Entering: get_chat_members_count
+2020-10-04 21:30:41,296 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatMembersCount HTTP/1.1" 200 22
+2020-10-04 21:30:41,296 DEBUG telegram.bot 6
+2020-10-04 21:30:41,296 DEBUG telegram.bot Exiting: get_chat_members_count
+2020-10-04 21:30:41,296 DEBUG telegram.bot Entering: get_chat_member
+2020-10-04 21:30:42,983 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatMember HTTP/1.1" 200 309
+2020-10-04 21:30:42,984 DEBUG telegram.bot {'user': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}, 'status': 'administrator', 'can_be_edited': False, 'can_change_info': True, 'can_delete_messages': True, 'can_invite_users': True, 'can_restrict_members': True, 'can_pin_messages': True, 'can_promote_members': True, 'until_date': None}
+2020-10-04 21:30:42,984 DEBUG telegram.bot Exiting: get_chat_member
+2020-10-04 21:30:44,270 DEBUG telegram.bot Entering: send_message
+2020-10-04 21:30:44,726 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/sendMessage HTTP/1.1" 200 568
+2020-10-04 21:30:44,727 DEBUG telegram.bot {'message_id': 8649, 'date': 1601827245, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'reply_to_message': {'message_id': 8648, 'date': 1601827241, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': '/cdsync', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 7}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}}, 'text': 'Syncing..', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
+2020-10-04 21:30:44,727 DEBUG telegram.bot Exiting: send_message
+2020-10-04 21:30:44,860 DEBUG telegram.bot Entering: edit_message_text
+2020-10-04 21:30:45,290 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/editMessageText HTTP/1.1" 200 299
+2020-10-04 21:30:45,291 DEBUG telegram.bot {'message_id': 8649, 'date': 1601827245, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'edit_date': 1601827245, 'text': 'Current Chat Base Updated !', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 1262215479, 'first_name': 'Jesvi Bot', 'is_bot': True, 'username': 'jesvi_bot'}}
+2020-10-04 21:30:45,291 DEBUG telegram.bot Exiting: edit_message_text
+2020-10-04 21:30:51,390 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
+2020-10-04 21:30:51,390 DEBUG telegram.bot No new updates found.
+2020-10-04 21:30:51,391 DEBUG telegram.bot []
+2020-10-04 21:30:51,391 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:30:51,391 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:31:01,630 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
+2020-10-04 21:31:01,630 DEBUG telegram.bot No new updates found.
+2020-10-04 21:31:01,631 DEBUG telegram.bot []
+2020-10-04 21:31:01,631 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:31:01,631 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:31:11,890 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
+2020-10-04 21:31:11,890 DEBUG telegram.bot No new updates found.
+2020-10-04 21:31:11,890 DEBUG telegram.bot []
+2020-10-04 21:31:11,891 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:31:11,891 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:31:22,411 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
+2020-10-04 21:31:22,411 DEBUG telegram.bot No new updates found.
+2020-10-04 21:31:22,413 DEBUG telegram.bot []
+2020-10-04 21:31:22,413 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:31:22,413 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:31:31,201 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 287
+2020-10-04 21:31:31,201 DEBUG telegram.bot Getting updates: [543328328]
+2020-10-04 21:31:31,202 DEBUG telegram.bot [<telegram.update.Update object at 0x00000258E01C3708>]
+2020-10-04 21:31:31,202 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:31:31,202 DEBUG telegram.bot Entering: get_updates
+2020-10-04 21:31:31,203 DEBUG telegram.ext.dispatcher Processing Update: {'update_id': 543328328, 'message': {'message_id': 8650, 'date': 1601827291, 'chat': {'id': -1001478007463, 'type': 'supergroup', 'title': 'Bot Garage', 'username': 'bot_garage'}, 'text': 'hdhd', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}}}
+2020-10-04 21:31:31,350 DEBUG telegram.bot Entering: get_chat_member
+2020-10-04 21:31:31,778 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getChatMember HTTP/1.1" 200 375
+2020-10-04 21:31:31,779 DEBUG telegram.bot {'user': {'id': 808501594, 'first_name': 'Jonathan', 'is_bot': False, 'language_code': 'en'}, 'status': 'restricted', 'until_date': 0, 'can_change_info': False, 'can_invite_users': True, 'can_pin_messages': False, 'can_send_messages': True, 'can_send_media_messages': True, 'can_send_polls': True, 'can_send_other_messages': True, 'can_add_web_page_previews': True, 'is_member': True}
+2020-10-04 21:31:31,779 DEBUG telegram.bot Exiting: get_chat_member
+2020-10-04 21:31:41,470 DEBUG telegram.vendor.ptb_urllib3.urllib3.connectionpool https://api.telegram.org:443 "POST /bot1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI/getUpdates HTTP/1.1" 200 23
+2020-10-04 21:31:41,471 DEBUG telegram.bot No new updates found.
+2020-10-04 21:31:41,471 DEBUG telegram.bot []
+2020-10-04 21:31:41,471 DEBUG telegram.bot Exiting: get_updates
+2020-10-04 21:31:41,471 DEBUG telegram.bot Entering: get_updates

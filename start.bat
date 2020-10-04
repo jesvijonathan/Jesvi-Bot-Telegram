@@ -44,7 +44,8 @@ ping 192.0.2.1 -n 1 -w 100 >nul
 @echo -activated
 
 cd C:\Users\jesvi\Documents\GitHub\Jesvi-Bot
-start logger.bat
+start logger_bot.bat
+start logger_sql.bat
 main.py
 
 

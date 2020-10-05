@@ -1,7 +1,7 @@
 import mysql.connector
 import logging
 import time 
-import speedtest 
+import pyspeedtest as speedtest 
 import config as config
 import modules.extract as extract
 
@@ -1085,6 +1085,14 @@ def get_filter(chat_id,filterr=None,al=None):
     return -1
 
   return results
+
+def log(turn="OFF"):
+  load()
+  global mydb
+  global mycursor
+
+  sql = ("SET GLOBAL general_log = '{s0}'".format(s0=turn))
+  mycursor.execute(sql)
 
 
 def create_base(update=None,context=None):

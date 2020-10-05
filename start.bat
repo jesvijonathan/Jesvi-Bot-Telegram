@@ -1,13 +1,11 @@
 @echo off
 
+Title Jesvi Bot
 color A
 
 @echo.
 @echo ---- System Status ----
 @echo.
-
-cd C:\Users\jesvi\PycharmProjects\Auto Aroma Py\venv\Scripts
-call activate.bat
 
 @echo Program   : Jesvi Bot
 
@@ -43,7 +41,7 @@ set /a usedMem=totalMem-availableMem
 ping 192.0.2.1 -n 1 -w 100 >nul
 @echo -activated
 
-cd C:\Users\jesvi\Documents\GitHub\Jesvi-Bot
+cd %~dp0
 start logger_bot.bat
 start logger_sql.bat
 main.py

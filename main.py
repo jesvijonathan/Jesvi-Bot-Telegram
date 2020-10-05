@@ -7,12 +7,14 @@ import sys
 import os
 import logging
 
+
 path = path = str(os.path.dirname(sys.argv[0]))
 sys.stderr = open(path+"\\log_bot_runtime.log", 'w')
 class writer(object):
     log = []
     def write(self, data):
         self.log.append(data)
+
 
 logging.basicConfig(level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(name)s %(message)s')
@@ -55,6 +57,15 @@ def send(Update,Context):
     #filter.filter_delete(Update,Context)
     #spams.spam_call(Update,Context)
 
+def sqlof(update,context):
+    res = update.message.text
+    l = "OFF"
+    if res == "/sqlon":
+        l = "ON"
+    else:
+        l = "OFF"
+    database.log(turn=l)
+
 
 def main():
 
@@ -96,9 +107,10 @@ def main():
     search_cmd = {"search","google","usearch"}
     translate_cmd = {"trans","translate"}
     create_base = {"createbase"}
-
+    sql_cmd = {"sqlon","sqloff"}
     
     dp.add_handler(CommandHandler(create_base, database.create_base))
+    dp.add_handler(CommandHandler(sql_cmd, sqlof))
     dp.add_handler(CommandHandler("ipltoday", fun.cricket))
     dp.add_handler(CommandHandler("iplupdate", fun.cricket))
     dp.add_handler(CommandHandler(search_cmd, ai.search))

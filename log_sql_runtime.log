@@ -619,3 +619,51 @@
 2020-10-04T16:17:20.785563Z	  235 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
 2020-10-04T16:17:20.785901Z	  235 Query	SET @@session.autocommit = OFF
 2020-10-04T16:17:20.787859Z	  235 Query	SELECT note_name from note_base WHERE chat_id="1001478007463"
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe, Version: 8.0.21 (MySQL Community Server - GPL). started with:
+TCP Port: 3306, Named Pipe: MySQL
+Time                 Id Command    Argument
+2020-10-05T04:52:07.750837Z	  506 Connect	root@localhost on  using SSL/TLS
+2020-10-05T04:52:07.768041Z	  506 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:52:07.768622Z	  506 Query	SET @@session.autocommit = OFF
+2020-10-05T04:52:07.773073Z	  506 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T04:52:07.893472Z	  507 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T04:52:07.894141Z	  507 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:52:07.894519Z	  507 Query	SET @@session.autocommit = OFF
+2020-10-05T04:52:07.902436Z	  507 Query	SELECT add_date FROM jesvi_bot_database.user_base WHERE user_id = "594702198"
+2020-10-05T04:52:08.119611Z	  507 Query	UPDATE user_base SET username = "jesvijonathan",firstname = "Jesvi",lastname = "Jonathan",active = "yes" WHERE user_id = "594702198"
+2020-10-05T04:52:08.252809Z	  507 Query	COMMIT
+2020-10-05T04:53:19.898674Z	  508 Connect	root@localhost on  using SSL/TLS
+2020-10-05T04:53:19.899249Z	  508 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:53:19.921268Z	  508 Query	SET @@session.autocommit = OFF
+2020-10-05T04:53:19.923774Z	  508 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T04:53:20.113409Z	  509 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T04:53:20.114332Z	  509 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:53:20.114686Z	  509 Query	SET @@session.autocommit = OFF
+2020-10-05T04:53:20.116619Z	  509 Query	SET GLOBAL general_log = 'OFF'
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe, Version: 8.0.21 (MySQL Community Server - GPL). started with:
+TCP Port: 3306, Named Pipe: MySQL
+Time                 Id Command    Argument
+2020-10-05T04:56:14.614656Z	  516 Connect	root@localhost on  using SSL/TLS
+2020-10-05T04:56:14.615079Z	  516 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:56:14.615412Z	  516 Query	SET @@session.autocommit = OFF
+2020-10-05T04:56:14.617335Z	  516 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T04:56:14.731032Z	  517 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T04:56:14.732217Z	  517 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:56:14.732580Z	  517 Query	SET @@session.autocommit = OFF
+2020-10-05T04:56:14.734562Z	  517 Query	SELECT rules FROM chat_base WHERE chat_id = "94702198"
+2020-10-05T04:56:14.821901Z	  518 Connect	root@localhost on  using SSL/TLS
+2020-10-05T04:56:14.822403Z	  518 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:56:14.822796Z	  518 Query	SET @@session.autocommit = OFF
+2020-10-05T04:56:14.824770Z	  518 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T04:56:14.926400Z	  519 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T04:56:14.927481Z	  519 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:56:14.927835Z	  519 Query	SET @@session.autocommit = OFF
+2020-10-05T04:56:14.929908Z	  519 Query	SELECT rules FROM chat_base WHERE chat_id = "94702198"
+2020-10-05T04:57:43.268000Z	  520 Connect	root@localhost on  using SSL/TLS
+2020-10-05T04:57:43.275577Z	  520 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:57:43.276072Z	  520 Query	SET @@session.autocommit = OFF
+2020-10-05T04:57:43.278013Z	  520 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T04:57:43.383829Z	  521 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T04:57:43.384430Z	  521 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T04:57:43.384772Z	  521 Query	SET @@session.autocommit = OFF
+2020-10-05T04:57:43.386752Z	  521 Query	SET GLOBAL general_log = 'OFF'

@@ -17,7 +17,6 @@ setlocal
   exit
 :@EndCatch
 
-
 :someRoutine
 setlocal
 %@Try%

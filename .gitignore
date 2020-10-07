@@ -24,6 +24,5 @@ __pycache__/
 Jesvi Bot.code-workspace
 .vscode/launch.json
 ###
-.gitignores
 log_bot_runtime.log
 log_sql_runtime.log

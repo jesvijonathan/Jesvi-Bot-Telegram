@@ -44,7 +44,8 @@ ping 192.0.2.1 -n 1 -w 100 >nul
 cd %~dp0
 start logger_bot.bat
 start logger_sql.bat
-main.py
+
+..\main.py
 
 
 @echo -ended

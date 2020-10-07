@@ -52,10 +52,12 @@ def net(update,context):
   msg.edit_text(text=("<code>" + ds + us + "\n\nMeasuring ping..." + "</code>"), 
                   parse_mode="HTML")
   st.get_servers(servernames)    
-  ps = "\nPing : " + str(st.results.ping) + "ms"
+  p = str(st.results.ping)
+  ps = "\nPing : " + p + "ms"
 
   msg.edit_text(text=( "<code>" + "Test Time : " + time.strftime("%Y-%m-%d (%H:%M:%S)") + "\n\n" +  ds + us + ps + "</code>"), 
                   parse_mode="HTML")
+  #print("--net speed *(D:"+str(d)+"mb/s, U:" + +str(u) + "mb/s, P:"+str(p)+"ms)")
 
 st =0
 
@@ -1093,6 +1095,7 @@ def log(turn="OFF"):
 
   sql = ("SET GLOBAL general_log = '{s0}'".format(s0=turn))
   mycursor.execute(sql)
+  #print("--sql logging *",turn)
 
 
 def create_base(update=None,context=None):
@@ -1104,3 +1107,4 @@ def create_base(update=None,context=None):
   create_settings_base()
   create_note_base()
   create_filter_base()
+  #print("--created base")

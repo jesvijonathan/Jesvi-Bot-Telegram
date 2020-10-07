@@ -667,3 +667,118 @@ Time                 Id Command    Argument
 2020-10-05T04:57:43.384430Z	  521 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
 2020-10-05T04:57:43.384772Z	  521 Query	SET @@session.autocommit = OFF
 2020-10-05T04:57:43.386752Z	  521 Query	SET GLOBAL general_log = 'OFF'
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe, Version: 8.0.21 (MySQL Community Server - GPL). started with:
+TCP Port: 3306, Named Pipe: MySQL
+Time                 Id Command    Argument
+2020-10-05T06:37:17.766519Z	  534 Connect	root@localhost on  using SSL/TLS
+2020-10-05T06:37:17.768174Z	  534 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:37:17.780618Z	  534 Query	SET @@session.autocommit = OFF
+2020-10-05T06:37:17.841091Z	  534 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T06:37:17.948255Z	  535 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T06:37:17.948864Z	  535 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:37:17.949211Z	  535 Query	SET @@session.autocommit = OFF
+2020-10-05T06:37:17.951305Z	  535 Query	SELECT user_id,bio FROM link_base WHERE chat_id = "1001478007463" and user_id="1262215479"
+2020-10-05T06:39:38.998046Z	  536 Connect	root@localhost on  using SSL/TLS
+2020-10-05T06:39:39.059259Z	  536 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:39:39.060102Z	  536 Query	SET @@session.autocommit = OFF
+2020-10-05T06:39:39.060973Z	  536 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T06:39:39.176342Z	  537 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T06:39:39.228716Z	  537 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:39:39.229928Z	  537 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:12.358873Z	  538 Connect	root@localhost on  using SSL/TLS
+2020-10-05T06:40:12.360357Z	  538 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:12.387048Z	  538 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:12.389160Z	  538 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T06:40:12.486360Z	  539 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T06:40:12.507861Z	  539 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:12.508344Z	  539 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:12.510343Z	  539 Query	SELECT user_id,bio FROM link_base WHERE chat_id = "1001478007463" and user_id="1125276541"
+2020-10-05T06:40:37.236541Z	  540 Connect	root@localhost on  using SSL/TLS
+2020-10-05T06:40:37.236960Z	  540 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:37.237315Z	  540 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:37.239254Z	  540 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T06:40:37.392061Z	  541 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T06:40:37.393184Z	  541 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:37.393551Z	  541 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:37.395518Z	  541 Query	SELECT rules FROM chat_base WHERE chat_id = "1001478007463"
+2020-10-05T06:40:37.505885Z	  542 Connect	root@localhost on  using SSL/TLS
+2020-10-05T06:40:37.515399Z	  542 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:37.515898Z	  542 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:37.519226Z	  542 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T06:40:37.679531Z	  543 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T06:40:37.698913Z	  543 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:37.699667Z	  543 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:37.702862Z	  543 Query	SELECT rules FROM chat_base WHERE chat_id = "1001478007463"
+2020-10-05T06:40:40.145044Z	  544 Connect	root@localhost on  using SSL/TLS
+2020-10-05T06:40:40.145525Z	  544 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:40.145845Z	  544 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:40.148216Z	  544 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T06:40:40.257505Z	  545 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T06:40:40.258090Z	  545 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:40.258437Z	  545 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:40.260340Z	  545 Query	SELECT rules FROM chat_base WHERE chat_id = "1001478007463"
+2020-10-05T06:40:40.334077Z	  546 Connect	root@localhost on  using SSL/TLS
+2020-10-05T06:40:40.356139Z	  546 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:40.356588Z	  546 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:40.358487Z	  546 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T06:40:40.455178Z	  547 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T06:40:40.472266Z	  547 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:40:40.472651Z	  547 Query	SET @@session.autocommit = OFF
+2020-10-05T06:40:40.474680Z	  547 Query	SELECT rules FROM chat_base WHERE chat_id = "1001478007463"
+2020-10-05T06:45:31.512770Z	  548 Connect	root@localhost on  using SSL/TLS
+2020-10-05T06:45:31.513527Z	  548 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:45:31.513906Z	  548 Query	SET @@session.autocommit = OFF
+2020-10-05T06:45:31.516009Z	  548 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T06:45:31.630255Z	  549 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T06:45:31.664532Z	  549 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T06:45:31.664897Z	  549 Query	SET @@session.autocommit = OFF
+2020-10-05T06:45:31.666840Z	  549 Query	SET GLOBAL general_log = 'OFF'
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe, Version: 8.0.21 (MySQL Community Server - GPL). started with:
+TCP Port: 3306, Named Pipe: MySQL
+Time                 Id Command    Argument
+2020-10-05T07:30:11.474132Z	  575 Connect	root@localhost on  using SSL/TLS
+2020-10-05T07:30:11.510586Z	  575 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T07:30:11.511084Z	  575 Query	SET @@session.autocommit = OFF
+2020-10-05T07:30:11.513002Z	  575 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T07:30:11.595497Z	  576 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T07:30:11.596098Z	  576 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T07:30:11.597743Z	  576 Query	SET @@session.autocommit = OFF
+2020-10-05T07:30:11.599684Z	  576 Query	SET GLOBAL general_log = 'OFF'
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe, Version: 8.0.21 (MySQL Community Server - GPL). started with:
+TCP Port: 3306, Named Pipe: MySQL
+Time                 Id Command    Argument
+2020-10-05T15:12:25.452078Z	    8 Connect	root@localhost on  using SSL/TLS
+2020-10-05T15:12:25.711242Z	    8 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T15:12:25.944568Z	    8 Query	SET @@session.autocommit = OFF
+2020-10-05T15:12:25.998965Z	    8 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T15:12:27.145974Z	    9 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T15:12:27.146750Z	    9 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T15:12:27.147105Z	    9 Query	SET @@session.autocommit = OFF
+2020-10-05T15:12:41.557982Z	   10 Connect	root@localhost on  using SSL/TLS
+2020-10-05T15:12:41.558379Z	   10 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T15:12:41.558717Z	   10 Query	SET @@session.autocommit = OFF
+2020-10-05T15:12:41.560849Z	   10 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T15:12:41.665166Z	   11 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T15:12:41.665797Z	   11 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T15:12:41.666155Z	   11 Query	SET @@session.autocommit = OFF
+2020-10-05T15:12:41.740756Z	   11 Query	SELECT add_date FROM jesvi_bot_database.user_base WHERE user_id = "594702198"
+2020-10-05T15:12:42.719911Z	   11 Query	UPDATE user_base SET username = "jesvijonathan",firstname = "Jesvi",lastname = "Jonathan",active = "yes" WHERE user_id = "594702198"
+2020-10-05T15:12:42.736266Z	   11 Query	COMMIT
+2020-10-05T15:12:43.359814Z	   12 Connect	root@localhost on  using SSL/TLS
+2020-10-05T15:12:43.360353Z	   12 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T15:12:43.360730Z	   12 Query	SET @@session.autocommit = OFF
+2020-10-05T15:12:43.362713Z	   12 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T15:12:43.471163Z	   13 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T15:12:43.471814Z	   13 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T15:12:43.472169Z	   13 Query	SET @@session.autocommit = OFF
+2020-10-05T15:12:43.476683Z	   13 Query	SELECT spot_date FROM jesvi_bot_database.link_base WHERE chat_id = "1001478007463" and user_id = "594702198"
+2020-10-05T15:12:43.728423Z	   13 Query	UPDATE link_base SET status = "creator" WHERE chat_id = "1001478007463" and user_id = "594702198"
+2020-10-05T15:12:43.753117Z	   13 Query	COMMIT
+2020-10-05T15:12:45.001886Z	   14 Connect	root@localhost on  using SSL/TLS
+2020-10-05T15:12:45.002304Z	   14 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T15:12:45.002646Z	   14 Query	SET @@session.autocommit = OFF
+2020-10-05T15:12:45.004538Z	   14 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2020-10-05T15:12:45.085347Z	   15 Connect	root@localhost on jesvi_bot_database using SSL/TLS
+2020-10-05T15:12:45.085955Z	   15 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2020-10-05T15:12:45.086334Z	   15 Query	SET @@session.autocommit = OFF
+2020-10-05T15:12:45.088457Z	   15 Query	SET GLOBAL general_log = 'OFF'

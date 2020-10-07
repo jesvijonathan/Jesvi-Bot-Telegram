@@ -1,0 +1,4 @@
+sql_logging : auto
+bot_logging : true
+requirements_installed : false
+green_text : true

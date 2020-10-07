@@ -9,7 +9,7 @@ import logging
 
 
 path = path = str(os.path.dirname(sys.argv[0]))
-sys.stderr = open(path+"\\log_bot_runtime.log", 'w')
+sys.stderr = open(path+"\\logs\\log_bot_runtime.log", 'w')
 class writer(object):
     log = []
     def write(self, data):

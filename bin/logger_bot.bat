@@ -1,5 +1,7 @@
 @echo off
+
 Title Bot Debugger
+
 :someRoutine
 setlocal
 %@Try%
@@ -8,9 +10,19 @@ setlocal
   @echo Press Ctrl + C to stop logging...
   @echo.
 
-  powershell -Command "& {Get-Content log_bot_runtime.log -wait}"
+  powershell -Command "& {Get-Content ../logs/log_bot_runtime.log -wait}"
 %@EndTry%
 :@Catch
   REM Exception handling code goes here
   exit
+:@EndCatch
+
+
+:someRoutine
+setlocal
+%@Try%
+  REM Normal code goes here
+%@EndTry%
+:@Catch
+  REM Exception handling code goes here
 :@EndCatch

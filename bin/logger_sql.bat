@@ -7,7 +7,6 @@ setlocal
 
 %@Try%
   REM Normal code goes here
-  Title SQL Debugger
   cd %~dp0
   @echo.
   @echo Setting up Mysql Log feature..

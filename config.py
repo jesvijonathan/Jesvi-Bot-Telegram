@@ -1,4 +1,4 @@
-bot_token = "1262215479:AAEDrQUR-wY1XIvzHiL6_6Vu_PHyW8g4UHI"
+bot_token = "1262215479:AAFuDeiTLpod69uZRETv0MgZcE8aaIDGdg8"
 bot_name = "Jesvi Bot"
 bot_username = "jesvi_bot"
 bot_id = "1262215479"

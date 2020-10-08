@@ -1,4 +1,4 @@
-sql_logging : auto
-bot_logging : true
+bot_logging : false
+sql_logging : false
 requirements_installed : false
 green_text : true

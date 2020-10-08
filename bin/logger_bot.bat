@@ -1,4 +1,4 @@
-@echo off
+@echo OFF
 
 Title Bot Debugger
 
@@ -6,7 +6,8 @@ Title Bot Debugger
 setlocal
 %@Try%
   REM Normal code goes here
-  @echo Logging BOT (log_bot_runtime.log)
+  cd %~dp0
+  @echo Logging BOT (logs/log_bot_runtime.log)
   @echo Press Ctrl + C to stop logging...
   @echo.
 
@@ -14,14 +15,8 @@ setlocal
 %@EndTry%
 :@Catch
   REM Exception handling code goes here
+  pause
   exit
 :@EndCatch
 
-:someRoutine
-setlocal
-%@Try%
-  REM Normal code goes here
-%@EndTry%
-:@Catch
-  REM Exception handling code goes here
-:@EndCatch
+exit

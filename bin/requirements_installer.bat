@@ -1,12 +1,15 @@
-@echo off
+@echo OFF
+
 Title Requirements Installer
+cd %~dp0
 @echo Requirements Installer
-@echo.
-@echo Installing dependencies listed in requirements.txt
-@echo.
-@echo.
-py -m pip install -r requirements.txt
+
 @echo.
 @echo.
-pause
-::TIMEOUT /T 10 /NOBREAK
+@echo Installing dependencies listed on requirements.txt
+@echo.
+@echo.
+py -m pip install -r ../requirements.txt
+@echo.
+TIMEOUT /T 14 /NOBREAK
+exit

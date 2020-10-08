@@ -9,6 +9,10 @@ import logging
 
 
 path = path = str(os.path.dirname(sys.argv[0]))
+
+#stdoutOrigin=sys.stdout
+#sys.stdout = open(path+"\\textfile.txt", "w")
+
 sys.stderr = open(path+"\\logs\\log_bot_runtime.log", 'w')
 class writer(object):
     log = []
@@ -64,6 +68,7 @@ def sqlof(update,context):
         l = "ON"
     else:
         l = "OFF"
+    print("adas")
     database.log(turn=l)
 
 
@@ -73,7 +78,8 @@ def main():
     database.load()
     print("-database ready")
     #time.sleep(0.5)
-    print("-started")
+    print("-active")
+    print("\n-----------------------")
 
     logger = writer()
     sys.stdout = logger

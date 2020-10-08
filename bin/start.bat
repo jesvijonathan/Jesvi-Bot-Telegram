@@ -1,13 +1,8 @@
 @echo off
 
-Title Jesvi Bot
-color A
+Title Jesvi Bot Status
+cd %~dp0
 
-@echo.
-@echo ---- System Status ----
-@echo.
-
-@echo Program   : Jesvi Bot
 
 for /f "tokens=3" %%i in ('netsh wlan show interface ^| findstr /i "SSID"') do set "myssid=%%i" & goto next
 :next
@@ -21,6 +16,7 @@ if "%myssid%"=="" pause
 if "%myssid%"=="" exit
 @echo Connected : %myssid%
 
+
 set totalMem=
 set availableMem=
 set usedMem=
@@ -31,24 +27,27 @@ set /a usedMem=totalMem-availableMem
 @echo Memory    : %usedMem%/%totalMem% 
 
 
-@echo Date      : %DATE% 
-@echo Time      : %TIME%
+@echo Started   : %DATE% (%TIME%)
+
 
 @echo.
 @echo ----- Live Status -----
 @echo.
 
-ping 192.0.2.1 -n 1 -w 100 >nul
-@echo -activated
-
-cd %~dp0
-start logger_bot.bat
-start logger_sql.bat
-
-..\main.py
-
+:someRoutine
+setlocal
+%@Try%
+  REM Normal code goes here
+  cd %~dp0
+  ..\main.py
+%@EndTry%
+:@Catch
+  REM Exception handling code goes here
+  exit
+  exit
+:@EndCatch
 
 @echo -ended
 @echo.
-
-pause
+exit
+exit

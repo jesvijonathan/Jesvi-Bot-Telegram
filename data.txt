@@ -1,9 +1,9 @@
 bot_logging : false
-sql_logging : true
-try_install_requirements : false
-contrast_text : true
-minimise_log : true
-fresh_log : false
+sql_logging : false
+minimise_log : false
+fresh_log : true
+general_log : false
+coloured_text : true
 auto_start : false
 
 

@@ -1,3 +1,12 @@
+#################
+                #
+#switch = "ON"   #   *comment one and-
+#switch = "OFF" #   -leave the other open*
+                #
+#################
+
+switch = "OFF"
+
 import mysql.connector
 from pathlib import Path
 
@@ -5,6 +14,13 @@ import os, sys
 pa = (os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(pa)
 import config
+
+try:
+    switch = sys.argv[1]
+except:
+    switch = "OFF"
+
+print("\nTurning '" + switch + "' MySQL general_log..")
 
 mydb = mysql.connector.connect(
 host="127.0.0.1",
@@ -30,9 +46,9 @@ sql = ("SET global general_log_file = '{s0}'".format(s0=pa))
 mycursor.execute(sql)
 mydb.commit()
 
-switch = "ON"
-
 sql = ("SET GLOBAL general_log = '{s0}'".format(s0=switch))
 mycursor.execute(sql)
 
 mydb.commit()
+
+print("done")

@@ -27,7 +27,7 @@ goto :eof
 @echo.
 
 cd %~dp0
-py general_log_switch.py
+::py general_log_switch.py
 @echo.
 
 net stop MySQL80

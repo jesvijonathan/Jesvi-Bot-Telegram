@@ -29,16 +29,40 @@ void HideConsole()
 }
 
 
-int splash(){
-    system("Cls"); 
+int splash(int full=0){
+    system("cls"); 
     string jb[30];
-
-    jb[0] = "\n          _______   _______ \n";
-    jb[1] = "     __  ___  __ \\ / __  __ _____  \n";
+    
+    jb[0] = "\n          _______   _______  \n";
+    jb[1] = "     __  ___  __ \\ / __  __ _____   \n";
     jb[2] = "    |_ \\| __/' _| | |  \\/__|_   _| \n";
     jb[3] = "     _\\ | _|`._`` | | ~| \\/ || |   \n";
-    jb[4] = "    /___|___|___/ | |__/\\__/ |_|   \n";
+    jb[4] = "    /___|___|___/ | |__/\\__/ |_|    \n";
     jb[5] = "          _______/ \\_______\n";
+    auto l ="          _______/ \\_______  ";
+    auto l2 ="          _______   _______  ";
+    string g,g2;
+
+    if (full==1){
+        system("Color 0f");
+        for(int i=0;i<30;i++){
+            g += l[i];
+            g2 +=l2[i];
+            cout<<"\n"<<g2<<"\n"<<jb[1]<<jb[2]<<jb[3]<<jb[4]<<g;
+            Sleep(10);
+            if (i==29){
+                break;
+            }
+            cout <<"\33[2K\r" <<"\x1b[A";
+            cout <<"\33[2K\r" <<"\x1b[A";
+            cout <<"\33[2K\r" <<"\x1b[A";
+            cout <<"\33[2K\r" <<"\x1b[A";
+            cout <<"\33[2K\r" <<"\x1b[A";
+            cout <<"\33[2K\r" <<"\x1b[A";
+        }
+        system("Color 07");
+        return 0;
+    }
 
     for(int i=0; i<=5;i++){
         cout<<jb[i];
@@ -70,23 +94,27 @@ int call(int a=10,int an=0){
     if (ans[2] == "true"){
         switch(a){
         case 0:
-            system("start /MIN /b bin\\start.bat");
+            system("start /MIN /b %cd%\\bin\\start.bat");
             return 0;
             break;
         case 1:
-            system("start /MIN bin\\logger_bot.bat");
+            system("start /MIN %cd%\\bin\\logger_bot.bat");
             return 0;
             break;
         case 2:
-            system("start /MIN bin\\logger_sql.bat");
+            system("start /MIN %cd%\\bin\\logger_sql.bat");
             return 0;
             break;
         case 3:
-            system("start /MIN /b bin\\restart_database.bat");
+            system("start /MIN /b %cd%\\bin\\restart_database.bat");
             return 0;
             break;
         case 4:
-            system("start /MIN /b bin\\requirements_installer.bat");
+            system("start /MIN /b %cd%\\bin\\requirements_installer.bat");
+            return 0;
+            break;
+        case 5:
+            system("start /MIN %cd%\\bin\\auto_start.bat");
             return 0;
             break;
         default:
@@ -96,23 +124,27 @@ int call(int a=10,int an=0){
     else{
         switch(a){
         case 0:
-            system("start /b bin\\start.bat");
+            system("start /b %cd%\\bin\\start.bat");
             return 0;
             break;
         case 1:
-            system("start bin\\logger_bot.bat");
+            system("start %cd%\\bin\\logger_bot.bat");
             return 0;
             break;
         case 2:
-            system("start bin\\logger_sql.bat");
+            system("start %cd%\\bin\\logger_sql.bat");
             return 0;
             break;
         case 3:
-            system("start /MIN /b bin\\restart_database.bat");
+            system("start /MIN /b %cd%\\bin\\restart_database.bat");
             return 0;
             break;
         case 4:
-            system("start bin\\requirements_installer.bat");
+            system("start %cd%\\bin\\requirements_installer.bat");
+            return 0;
+            break;
+        case 5:
+            system("start /MIN /b %cd%\\bin\\auto_start.bat");
             return 0;
             break;
         default:
@@ -126,7 +158,7 @@ int call(int a=10,int an=0){
 string data(string search){
   string word;
 
-  ifstream myfile ("data.txt");
+  ifstream myfile ("bin\\data.txt");
 
   while (myfile >> word) 
     {  
@@ -167,7 +199,7 @@ string split(string str){
 int assign_data(){
     string w;
 
-    fstream myfile ("data.txt");
+    fstream myfile ("bin\\data.txt");
 
     while(myfile >> w) { //take word and print
         
@@ -216,7 +248,7 @@ int set_data(string var,string val){
     int c=0;
 
 
-    fstream myfile ("data.txt");
+    fstream myfile ("bin\\data.txt");
 
     while (getline(myfile,word))
     {
@@ -234,7 +266,7 @@ int set_data(string var,string val){
     myfile.close();
     
     ofstream mfile;
-    mfile.open ("data.txt", ios::trunc);
+    mfile.open ("bin\\data.txt", ios::trunc);
 
 
     for(int i=0;i<14;i++){
@@ -264,7 +296,9 @@ restart:
 
     char con;
     
+    if (ans[5]=="true"){
     system("Color 0A");
+    }
 
     splash();
     
@@ -343,9 +377,166 @@ restart:
 }
 
 
-int credits(){
-    printf("By Jesvi Jonthan");
-    _getch();
+int credits(int full=1){
+    int go;
+
+    system("Color 0f");
+    
+    
+    while(1){
+    splash(1);
+    splash();
+    cout <<"\x1b[A"<<"\33[2K\r";
+    
+    auto jb= "JESVI BOT",d="Developed",j="Jesvi Jonathan";
+    
+    if (full==1){
+    for(int i=0;i<8;i++){
+        cout<<"              ";
+        for (int j=0;j<=i;j++){
+            cout<<jb[j];
+        }
+        Sleep(30);
+        printf("\33[2K\r");
+    }
+    }
+    printf("              JESVI BOT\n\n");
+    
+    if (full==1){
+    Sleep(500);
+
+    for(int i=0;i<8;i++){
+        cout<<"             ";
+        for (int j=0;j<=i;j++){
+            cout<<d[j];
+        }
+        Sleep(30);
+        printf("\33[2K\r");
+    }
+
+    printf("             Developed ");
+    Sleep(20);
+    printf("\33[2K\r");
+    printf("             Developed B");
+    Sleep(30);
+    printf("\33[2K\r");
+    printf("             Developed By");
+    Sleep(500);
+    printf("\33[2K\r");
+       
+    printf("             Developed By   \b");
+    }
+
+    if (full==1){
+    for(int i=14;i>=0;i--){
+        cout<<j[i];
+        Sleep(20);
+        cout<<"\b\b";
+    }
+    
+    printf("\n");
+    Sleep(400);
+    printf("\33[2K\r\n");
+    }
+    else{
+    printf("            Jesvi Jonathan\n\n");
+    }
+    //cout<<"\n\n";
+
+    auto det1= "          Version : 0.7               ",
+    det2= "          Release : 12.10.2020        ",
+    det3="            State : Stable            ",
+    det4="             Type : Full              ",
+    line="______________________________________";
+    
+    if (full==1){
+    for (int i=0;i<40;i++){
+        for(int j=0;j<=i;j++){
+        cout<<line[j];
+        }
+        cout<<"\n";
+        cout<<"\n";
+        for(int j=0;j<=i;j++){
+        cout<<det1[j];
+        }
+        cout<<"\n";
+        for(int j=0;j<=i;j++){
+        cout<<det2[j];
+        }
+        cout<<"\n";
+        for(int j=0;j<=i;j++){
+        cout<<det3[j];
+        }
+        cout<<"\n";
+        for(int j=0;j<=i;j++){
+        cout<<det4[j];
+        }
+        cout<<"\n";
+        for(int j=0;j<=i;j++){
+        cout<<line[j];
+        }
+        
+        Sleep(10);
+        
+        cout <<"\33[2K\r" <<"\x1b[A";
+        cout <<"\33[2K\r" <<"\x1b[A";
+        cout <<"\33[2K\r" <<"\x1b[A";
+        cout <<"\33[2K\r" <<"\x1b[A";
+        cout <<"\33[2K\r" <<"\x1b[A";
+        cout <<"\33[2K\r" <<"\x1b[A";
+        
+    }
+    
+    
+    cout <<"\x1b[A"<<"\x1b[A"<<"\33[2K\r" ;
+    }
+    cout<< "______________________________________";
+    cout<<"\n\n"<<det1<<"\n"<<det2<<"\n"<<det3<<"\n"<<det4<<"\n";
+    cout<< "______________________________________";
+    
+    cout<<"\n\n";
+    
+    printf(     "\n  Main Webpage-1     2-Support Group");
+    printf("\n   Source code-3     4-Jesvi Bot");
+    printf("\n     Donations-5     6-Return\n");
+    
+    full =0;
+    go = _getch();
+    
+    printf("\33[2K\r\n");
+
+    switch(go){
+    case '1':
+        printf("Redirecting to Official Webpage..");
+        system("start https://jesvijonathan.github.io/jesvijonathan/");
+        break;
+    case '2':
+        printf("Redirecting to @Bot_Garage group..");
+        system("start https://telegram.me/bot_garage");
+        break;
+    case '3':
+        printf("Jesvi Bot Main GitHub repository..");
+        system("start https://github.com/jesvijonathan/Jesvi-Bot");
+        break;
+    case '4':
+        printf("Viewing Jesvi Bot in person");
+        system("start https://telegram.me/jesvi_bot");
+        break;
+    case '5':
+        printf("Developer Donation link (I'm Broke :P)");
+        system("start www.google.com");
+        break;
+    case '6':
+        printf("Moving back...)");
+        return 0;
+        break;
+    default:
+        printf("Out of field !");
+        break;
+    }
+    
+    }
+    
     return 0;
 }
 
@@ -355,13 +546,15 @@ int settings(){
     string options[8];
     int op;
 
+    while(1){
     options[0] = "1. Live Log Bot on start : " + ans[0];
     options[1] = "\n2. Live Log SQL on start : " + ans[1];
-    options[2] = "\n3. Minimise log window on start : " + ans[2];
-    options[3] = "\n4. Clean log on start : " + ans[3];
-    options[4] = "\n5. Database general log : " + ans[4];
-    options[5] = "\n6. Cool Text : " + ans[5];
-    options[6] = "\n7. Auto start on login : " + ans[6];
+    options[2] = "\n3. Minimise log window   : " + ans[2];
+    options[3] = "\n4. Clean log on start    : " + ans[3];
+    options[4] = "\n5. Database general log  : " + ans[4];
+    options[5] = "\n6. Cool Text             : " + ans[5];
+    options[6] = "\n7. Auto start on login   : " + ans[6];
+    options[7] = "\n8. Return";
     
     
     splash();
@@ -372,11 +565,16 @@ int settings(){
 
     }
 
+    cout<<"\n\n";
+
     op=_getch(); 
     op = (int)((char)op - '0');
+    
+    printf("\33[2K\r");
 
     switch(op){
         case 1:
+            printf("Switching Bot log...");
             if (ans[0]=="true"){
                 ans[0]= "false";
                 set_data("bot_logging","false");
@@ -385,8 +583,10 @@ int settings(){
                 ans[0]= "true";
                 set_data("bot_logging","true");
             }
+
             break;
         case 2:
+            printf("Switching Sql log...");
             if (ans[1]=="true"){
                 ans[1]= "false";
                 set_data("sql_logging","false");
@@ -397,6 +597,7 @@ int settings(){
             }
             break;
         case 3:
+            printf("Switching log window...");
             if (ans[2]=="true"){
                 ans[2]= "false";
                 set_data("minimise_log","false");
@@ -407,6 +608,7 @@ int settings(){
             }
             break;
         case 4:
+            printf("Switching fresh log...");
             if (ans[3]=="true"){
                 ans[3]= "false";
                 set_data("fresh_log","false");
@@ -417,18 +619,20 @@ int settings(){
             }
             break;
         case 5:
+            printf("Switching general log...");
             if (ans[4]=="true"){
                 set_data("general_log","false");
                 ans[4]= "false";
-                system("py bin\\general_log_switch.py OFF");
+                system("py %cd%\\bin\\general_log_switch.py OFF");
             }
             else{
                 set_data("general_log","true");
                 ans[4]= "true";
-                system("py bin\\general_log_switch.py ON");  
+                system("py %cd%\\bin\\general_log_switch.py ON");  
             }
             break;
         case 6:
+            printf("Switching coloured...");
             if (ans[5]=="true"){
                 set_data("coloured_text","false");
                 ans[5]= "false";
@@ -439,19 +643,32 @@ int settings(){
             }
             break;
         case 7:
+            printf("Switching auto start...");
             if (ans[6]=="true"){
                 set_data("auto_start","false");
                 ans[6]= "false";
+                string pp,dd="\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Jesvi Bot.lnk";
+                pp = string(getenv("USERPROFILE"));
+                auto y = pp+dd;
+                remove((y).c_str());
+                
             }
             else{
                 set_data("auto_start","true");
-                ans[6]= "true";  
+                ans[6]= "true";
+                call(5);
             }
+            printf("\33[2K\r");
+            break;
+        case 8:
+            printf("Returning..");
+            return 0;
             break;
         default:
-            return 0;
+            printf("Out of field !");
+            break;
     }
-
+}
     return 0;
 }
 
@@ -466,7 +683,7 @@ int menu(){
     options[3] = "4. Restart Database\n";
     options[4] = "5. Settings\n";
     options[5] = "6. Refresh\n";
-    options[6] = "7. Credits\n";
+    options[6] = "7. About\n";
     options[7] = "8. Exit\n";
     
 
@@ -514,12 +731,13 @@ int menu(){
 
     case 6:
     printf("Refreshing..");
+    assign_data();
     Sleep(200);
     printf("\33[2K\r");
     break;
 
     case 7:
-    printf("Viewing Credits..");
+    printf("Viewing Credits & info..");
     Sleep(200);
     printf("\33[2K\r");
     credits();
@@ -541,11 +759,10 @@ int menu(){
 
 
 int main(){
-    
-    //set_data("bot_logging","false");
-    assign_data();
 
+    assign_data();
     window();
+    splash(1);
 
     while(1){
         system("Color 07");

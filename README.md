@@ -1,13 +1,3 @@
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedI][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -43,11 +33,9 @@
   - [Installation](#installation)
     - [Normal Installation](#normal-installation)
 - [Usage](#usage)
-- [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 
 
@@ -98,50 +86,61 @@ Getting this program up and running is just a piece of cake ! Follow the steps a
 ### Installation
 
 #### Normal Installation
+
 1. Unpack the latest release of Jesvi Bot using [7zip](www.7zip.com)
+
 2. Run `Jesvi Bot.exe` application present inside the unpacked `Jesvi-Bot` Folder
+
 3. Select `3. Install Requirements` in the Jesvi Bot utility application to let the application automatically install all the required dependencies & modules the script requires to run
-4. 
 
+4. Setup MYSQL workbench & create/setup a new conection with a database
 
+5. Add the database details to `Config.py` to respective variables. Example :
 
+```bot_username = "your_bot_username"
+database_name = "your_database"
+database_user  = "remote"
+database_password = "your_database_password"
 
-5. Get a free API Key at [https://example.com](https://example.com)
-6. Clone the repo
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
-3. Install NPM packages
-```sh
-npm install
-```
-4. Enter your API in `config.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
+#do the same for other variables..
 ```
 
+6. Get your `Bot API Token` from [@botfather](https://telegram.me/botfather) via `/newbot` command & owner (*your) details from [@jesvi_bot](https://telegram.me/jesvi_bot) via `/info` command in telegram
+2. Now you can select `Start` in the Jesvi Bot Application & get Jesvi Bot fully running !
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+Jesvi Bot can come very handy when you have to manage a telegram group, channel, etc.. because of all the included features & tools that the bot is equiped with, It is easy for users & admins to get the full potential out of Jesvi Bot.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+#####Note - 
+* /notes can be used to view available notes in the group
+  
+#####Rules - 
+* /rules can be used to retrieve the rules set in a group
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+#####Info -
+* /info can be used on a user to retrieve his/her details and can be used without taging to get the group details
 
+#####search -
+* /search can be used to search for details about keyword provided
 
+#####Cricket -
+* /iplupdate provides details about cricket
 
-<!-- ROADMAP -->
-## Roadmap
+#####User Check -
+* can check and filter spam users, global banned users & bots from entering the group
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+####Filter -
+* /filter can be used to blacklist a word
+  
 
-
+#####THERE ARE ALOT MORE (50+ MODULES) BUT IMMA LAZY TO TYPE ALL OF THEM...
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions make this projetc btter n btter. Any contributions you make are **greatly appreciated**, So Imma gonna keep expecting pull req from you ;).
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -161,42 +160,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+**Jesvi Jonathan** - 
+*Telegram :* [@jesvi_jonathan](https://twitter.com/your_username)
+*GitHub :* [jesvijonathan](https://github.com/jesvijonathan/Jesvi-Bot)
+*Email :*  jesvi22j@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+**Project Link :** [https://github.com/jesvijonathan/Jesvi-Bot](https://github.com/jesvijonathan/Jesvi-Bot)
 
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png

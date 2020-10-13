@@ -113,45 +113,25 @@ database_password = "your_database_password"
 ## Usage
 Jesvi Bot can come very handy when you have to manage a telegram group, channel, etc.. because of all the included features & tools that the bot is equiped with, It is easy for users & admins to get the full potential out of Jesvi Bot.
 
-#####Note - 
-* /notes can be used to view available notes in the group
-<<<<<<< HEAD
-  
-#####Rules - 
+####Rules - 
 * /rules can be used to retrieve the rules set in a group
-
-#####Info -
+  
+####Info -
 * /info can be used on a user to retrieve his/her details and can be used without taging to get the group details
 
-#####search -
+####search -
 * /search can be used to search for details about keyword provided
 
-#####Cricket -
+####Cricket -
 * /iplupdate provides details about cricket
 
-#####User Check -
+####User Check -
 * can check and filter spam users, global banned users & bots from entering the group
 
 ####Filter -
 * /filter can be used to blacklist a word
   
-
-=======
-#####Rules - 
-* /rules can be used to retrieve the rules set in a group
-#####Info -
-* /info can be used on a user to retrieve his/her details and can be used without taging to get the group details
-#####search -
-* /search can be used to search for details about keyword provided
-#####Cricket -
-* /iplupdate provides details about cricket
-#####User Check -
-* can check and filter spam users, global banned users & bots from entering the group
-####Filter -
-* /filter can be used to blacklist a word
-  
->>>>>>> a546bdae19882afe700626c67af6974611a7e621
-#####THERE ARE ALOT MORE (50+ MODULES) BUT IMMA LAZY TO TYPE ALL OF THEM...
+######THERE ARE ALOT MORE (50+ MODULES) BUT IMMA LAZY TO TYPE ALL OF THEM...
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -182,5 +162,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 *Email :*  jesvi22j@gmail.com
 
 **Project Link :** [https://github.com/jesvijonathan/Jesvi-Bot](https://github.com/jesvijonathan/Jesvi-Bot)
-
-===============

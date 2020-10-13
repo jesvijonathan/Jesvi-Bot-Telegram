@@ -1,3 +1,6 @@
-# Jesvi-Bot 0.7
-A Developing Telegram Handler Bot @jesvi_bot
-Fully Compatible With Windows
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]

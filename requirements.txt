@@ -6,6 +6,7 @@ googletrans == 3.0.0
 # C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\modules\wiki.py: 5
 langcodes == 2.1.0
 
+# C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\bin\general_log_switch.py: 10
 # C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\database.py: 1
 mysql_connector_python == 8.0.21
 
@@ -15,7 +16,7 @@ pyspeedtest == 1.2.7
 # C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\modules\cricscore.py: 1
 requests == 2.24.0
 
-# C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\main.py: 26
+# C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\main.py: 30
 # C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\modules\filter.py: 3
 # C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\modules\mute.py: 3
 # C:\Users\jesvi\Documents\GitHub\Jesvi-Bot\modules\notes.py: 1

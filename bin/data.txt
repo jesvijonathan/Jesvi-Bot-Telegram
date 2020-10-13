@@ -4,11 +4,4 @@ minimise_log : false
 fresh_log : true
 general_log : true
 coloured_text : true
-auto_start : false
-
-
-
-
-
-
-
+auto_start : true

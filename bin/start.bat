@@ -6,15 +6,13 @@ cd %~dp0
 
 for /f "tokens=3" %%i in ('netsh wlan show interface ^| findstr /i "SSID"') do set "myssid=%%i" & goto next
 :next
-if "%myssid%"=="" @echo Connected : - 
-if "%myssid%"=="" @echo. 
-if "%myssid%"=="" @echo No Network ! 
+if "%myssid%"=="" @echo             No Internet ! 
 if "%myssid%"=="" @echo.
 
 if "%myssid%"=="" color c 
 if "%myssid%"=="" pause 
 if "%myssid%"=="" exit
-@echo Connected : %myssid%
+@echo         Connected : %myssid%
 
 
 set totalMem=
@@ -24,14 +22,13 @@ for /f "tokens=4" %%a in ('systeminfo ^| findstr Physical') do if defined totalM
 set totalMem=%totalMem:,=%
 set availableMem=%availableMem:,=%
 set /a usedMem=totalMem-availableMem
-@echo Memory    : %usedMem%/%totalMem% 
+@echo         Memory    : %usedMem%/%totalMem% 
 
-
-@echo Started   : %DATE% (%TIME%)
+@echo         Started   : %TIME%
 
 
 @echo.
-@echo ----- Live Status -----
+@echo ------------ Live Status -------------
 @echo.
 
 :someRoutine

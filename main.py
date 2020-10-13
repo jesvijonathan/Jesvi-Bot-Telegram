@@ -79,7 +79,8 @@ def main():
     print("-database ready")
     #time.sleep(0.5)
     print("-active")
-    print("\n-----------------------")
+    print("\n--------------------------------------")
+    
 
     logger = writer()
     sys.stdout = logger

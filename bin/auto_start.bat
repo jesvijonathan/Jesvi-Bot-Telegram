@@ -12,7 +12,7 @@ echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 
 echo oLink.TargetPath = ("%cd%\Jesvi-Bot\Jesvi Bot.exe")>> %SCRIPT%
 
-echo oLink.Description = "Jesvi Bot Auto Start Shortcut" >> %SCRIPT%
+echo oLink.Description = "Jesvi Bot By Jesvi Jonathan" >> %SCRIPT%
 echo oLink.IconLocation = ("%~dp0icon.ico") >> %SCRIPT%
 echo oLink.WorkingDirectory = "%cd%\Jesvi-Bot\" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
@@ -28,11 +28,12 @@ echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 
 echo oLink.TargetPath = ("%cd%\Jesvi-Bot\Jesvi Bot.exe")>> %SCRIPT%
 
-echo oLink.Description = "Jesvi Bot Auto Start Shortcut" >> %SCRIPT%
+echo oLink.Description = "Jesvi Bot By Jesvi Jonathan" >> %SCRIPT%
 echo oLink.IconLocation = ("%~dp0icon.ico") >> %SCRIPT%
 echo oLink.WorkingDirectory = "%cd%\Jesvi-Bot\" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
+
 
 exit

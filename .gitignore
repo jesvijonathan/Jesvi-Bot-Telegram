@@ -20,11 +20,10 @@ __pycache__/database.cpython-37.pyc
 ###
 __pycache__/
 .vscode/
-
-config.py
 ###
 Jesvi Bot.code-workspace
 .vscode/launch.json
 ###
 log_bot_runtime.log
 log_sql_runtime.log
+config.py

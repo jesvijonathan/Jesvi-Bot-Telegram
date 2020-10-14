@@ -1,7 +1,0 @@
-bot_logging : false
-sql_logging : false
-minimise_log : false
-fresh_log : true
-general_log : true
-coloured_text : true
-auto_start : true

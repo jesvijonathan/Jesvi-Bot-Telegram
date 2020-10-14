@@ -84,21 +84,7 @@ def load():
     mycursor = mydb.cursor()
 
 
-"""
-  mydb = mysql.connector.connect(
-  host="127.0.0.1",
-  user="root",
-  password="Eulah2002@sql")
-  mycursor = mydb.cursor()  
-  mycursor.execute("CREATE DATABASE IF NOT EXISTS jesvi_bot_database")
- 
-  mydb = mysql.connector.connect(
-  host="127.0.0.1",
-  user="root",
-  password="Eulah2002@sql",
-  database="jesvi_bot_database")
-  mycursor = mydb.cursor()  
-"""
+
 
 
 def initgroup(chat_id):

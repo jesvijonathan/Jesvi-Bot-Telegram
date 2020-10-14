@@ -26,3 +26,5 @@ Jesvi Bot.code-workspace
 ###
 log_bot_runtime.log
 log_sql_runtime.log
+
+config.py

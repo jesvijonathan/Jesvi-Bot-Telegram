@@ -11,7 +11,7 @@ database_port = 3306
 
 owner_id = "594702198"
 owner_username = "jesvijonathan"
-
+#
 suppport_group_username = "bot_garage"
 
 sudo_users = []

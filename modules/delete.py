@@ -8,10 +8,9 @@ lock = 0
 
 
 def clean(update, context):
-    m = extract.sudocheck(update,context)
+    m = extract.sudocheck(update, context)
     if m == 2:
         return
-    
 
     msg = update.message.reply_to_message
     del_msg = update.message.reply_text("Cleaning started...")
@@ -21,17 +20,17 @@ def clean(update, context):
     del_msg_id = int(del_msg.message_id)
 
     t = 1
-    
+
     while t == 1:
         if msg_id == del_msg_id:
-           t = 0
-        
+            t = 0
+
         try:
             context.bot.deleteMessage(chat_id, del_msg_id)
         except:
             pass
 
-        del_msg_id=del_msg_id-1
+        del_msg_id = del_msg_id-1
 
     """
     if msg_id >= del_msg_id:
@@ -51,13 +50,13 @@ def clean(update, context):
 
 
 def delete(update, context):
-    m = extract.sudocheck(update,context)
+    m = extract.sudocheck(update, context)
     if m == 2:
         return
-    
+
     msg_frm = update.message
     msg = msg_frm.reply_to_message
-    
+
     msg.delete()
 
     del_msg = update.message.reply_text("Deleted !")
@@ -67,18 +66,18 @@ def delete(update, context):
 
 
 def silent_delete(update, context):
-    m = extract.sudocheck(update,context)
+    m = extract.sudocheck(update, context)
     if m == 2:
         return
 
     msg_frm = update.message
     msg = msg_frm.reply_to_message.delete()
-    
+
     msg_frm.delete()
 
 
 def lock(update, context):
-    m = extract.sudocheck(update,context,1,1)
+    m = extract.sudocheck(update, context, 1, 1)
     if m == 2:
         return
     if m == 1:
@@ -96,23 +95,23 @@ def lock_delete(update, context):
         user_id = update.message.from_user.id
         chat_id = str(update.effective_chat.id)
         #status = context.bot.get_chat_member(chat_id, user_id)['status']
-        
-        status = get_link(chat_id=chat_id[1:],user_id=user_id,status=1)
+
+        status = get_link(chat_id=chat_id[1:], user_id=user_id, status=1)
         try:
             status = status[0][1]
         except:
             return 1
 
-        if status == "member" or status == "restricted" :
+        if status == "member" or status == "restricted":
             update.message.delete()
         else:
             return 1
     else:
         return 0
-        
+
 
 def unlock(update, context):
-    m = extract.sudocheck(update,context,1,1)
+    m = extract.sudocheck(update, context, 1, 1)
     if m == 2 or m == 1:
         return
 

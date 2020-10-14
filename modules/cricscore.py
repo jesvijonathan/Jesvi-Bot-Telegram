@@ -1,5 +1,5 @@
 import requests
-import time 
+import time
 
 get_all_matches = "https://cricapi.com/api/matches/"
 get_score = "https://cricapi.com/api/cricketScore/"
@@ -16,11 +16,11 @@ def get_init(func="ipl_match_update"):
     global api_key
     global unique_id
     global match
-    
+
     text = res_dict = None
 
-    uri_params_1 = { "apikey":api_key }
-    resp=requests.get(get_all_matches,params=uri_params_1)
+    uri_params_1 = {"apikey": api_key}
+    resp = requests.get(get_all_matches, params=uri_params_1)
     res_dict = resp.json()
     match = res_dict['matches']
 
@@ -28,9 +28,9 @@ def get_init(func="ipl_match_update"):
         text = ipl_tday_update()
     elif func == "ipl_match_update":
         text = ipl_match_update()
-    
+
     return text
-    
+
     """
         print("ID :",i['unique_id'])
         print("DATE :",i['date'])
@@ -44,11 +44,10 @@ def get_init(func="ipl_match_update"):
         #2020-10-22T00:00:00.000Z
     """
 
+
 def ipl_tday_update():
     global match
     global unique_id
-
-
 
     tday = (time.strftime("%Y-%m-%d", time.gmtime()))
     nti = (time.strftime("%H:%M:%S", time.gmtime()))
@@ -65,7 +64,7 @@ def ipl_tday_update():
             cmin = nti[3:]
             cmin = cmin[:2]
             chrs = nti[:2]
-            ctime = int(chrs)*60 + int(cmin) 
+            ctime = int(chrs)*60 + int(cmin)
 
             gmin = ti[3:]
             gmin = gmin[:2]
@@ -79,7 +78,7 @@ def ipl_tday_update():
                 remtimehrs = 0
                 remtimemin = 0
                 try:
-                    toss = "Toss : " +  "<b>" + i['toss_winner_team'] + "</b>\n"
+                    toss = "Toss : " + "<b>" + i['toss_winner_team'] + "</b>\n"
                 except:
                     pass
                 try:
@@ -88,25 +87,26 @@ def ipl_tday_update():
                     pass
             else:
 
-                remtimemin = (gtime - ctime)%60
+                remtimemin = (gtime - ctime) % 60
                 remtimehrs = (int(ghrs) - int(chrs))-1
-                
+
                 if remtimehrs <= 0:
                     remtimehrs = 0
 
                 remtimehrs = remtimehrs
-                countd = "(" + str(remtimehrs) + "hr " + str(remtimemin) + "min remaining)"
+                countd = "(" + str(remtimehrs) + "hr " + \
+                    str(remtimemin) + "min remaining)"
 
-            #mlef = int() - int() 
+            #mlef = int() - int()
 
-            text = (text + 
-                    "Match : " + "<a href='https://www.google.com/search?q=ipl&oq=ipl&aqs=chrome.0.69i59l3j69i57j69i65j69i60l2j69i61.465j0j4&sourceid=chrome&ie=UTF-8'>" + i['team-1'] + " vs " + i['team-2'] + "</a>\n" + 
+            text = (text +
+                    "Match : " + "<a href='https://www.google.com/search?q=ipl&oq=ipl&aqs=chrome.0.69i59l3j69i57j69i65j69i60l2j69i61.465j0j4&sourceid=chrome&ie=UTF-8'>" + i['team-1'] + " vs " + i['team-2'] + "</a>\n" +
                     "Type  : " + i['type'] + "\n" +
-                    "Date  : " + "<b>" + i['date'][:10] + "</b>\n" + 
-                    "Time : " + "<b>" + ti + " GMT " + countd + "</b>\n" + 
+                    "Date  : " + "<b>" + i['date'][:10] + "</b>\n" +
+                    "Time : " + "<b>" + ti + " GMT " + countd + "</b>\n" +
                     toss +
                     winnert + "\n")
-    
+
             return text
 
 
@@ -121,10 +121,10 @@ def ipl_match_update():
     for i in match:
         if i['type'] == 'Twenty20' and i['date'][:10] == tday[:10]:
             unique_id.append(i['unique_id'])
-            
+
     for i in unique_id:
-        uri_params = {'apikey':api_key, 'unique_id':i}
-        resp=requests.get(get_score,params=uri_params)
+        uri_params = {'apikey': api_key, 'unique_id': i}
+        resp = requests.get(get_score, params=uri_params)
         update = resp.json()
 
         stat = update['stat']
@@ -133,7 +133,7 @@ def ipl_match_update():
         except:
             pass
         try:
-            desc =  update['description']
+            desc = update['description']
         except:
             pass
 
@@ -144,14 +144,14 @@ def ipl_match_update():
 
         date = tday
 
-        text = ( text + 
-        "Match : " + "<a href='https://www.google.com/search?q=ipl&oq=ipl&aqs=chrome.0.69i59l3j69i57j69i65j69i60l2j69i61.465j0j4&sourceid=chrome&ie=UTF-8'>" + update['team-1'] + " vs " + update['team-2'] + "</a>\n\n" +
-        "Status : " + "<b>" + stat + "</b>\n\n" +
-        "Score  : " + "<b>" + score + "</b>\n" +
-        desc + "\n" +
-        "Type   : " + "Twenty20" + "\n"
-        "Refreshed   : " + "<i>" + date  + "</i>\n" + 
-        "\n<i>> /iplupdate</i>")
+        text = (text +
+                "Match : " + "<a href='https://www.google.com/search?q=ipl&oq=ipl&aqs=chrome.0.69i59l3j69i57j69i65j69i60l2j69i61.465j0j4&sourceid=chrome&ie=UTF-8'>" + update['team-1'] + " vs " + update['team-2'] + "</a>\n\n" +
+                "Status : " + "<b>" + stat + "</b>\n\n" +
+                "Score  : " + "<b>" + score + "</b>\n" +
+                desc + "\n" +
+                "Type   : " + "Twenty20" + "\n"
+                "Refreshed   : " + "<i>" + date + "</i>\n" +
+                "\n<i>> /iplupdate</i>")
 
         return text
 

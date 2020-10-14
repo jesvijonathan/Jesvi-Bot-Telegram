@@ -12,7 +12,7 @@ int window(int s = 0)
 {
     if (s == 0)
     {
-        SetConsoleTitle(("Jesvi Bot"));
+        SetConsoleTitle("Jesvi Bot");
         system("MODE CON COLS=38 LINES=22");
     }
     else if (s == 1)

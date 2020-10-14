@@ -1,6 +1,6 @@
 
 
-import telegram 
+import telegram
 
 import modules.extract as extract
 
@@ -11,6 +11,7 @@ spam_type = "echo"
 spam_overflow_text = ""
 spam_user = {}
 
+
 def spam_check(update, context):
     global spam
     global spam_text
@@ -19,10 +20,10 @@ def spam_check(update, context):
 
     msg = update.message.reply_to_message
 
-    m = extract.sudocheck(update,context)
+    m = extract.sudocheck(update, context)
     if m == 2:
         return
-        
+
     try:
         res = update.message.text.split(None, 3)
     except:
@@ -33,45 +34,43 @@ def spam_check(update, context):
     except:
         text_1 = ""
         pass
-    
+
     try:
         text_2 = res[2]
     except:
         text_2 = ""
         pass
 
-
     try:
         user_name = msg.from_user.username
         res = update.message.text.split(None, 1)
-        
+
         if text_1 == "":
             update.message.reply_text("No Spam Text Provided !")
             return
-        
+
         if text_1 == "stop" or text_1 == "off" or text_1 == "halt":
             del spam_user[user_name]
             update.message.reply_text("Halted spamming " + user_name + " !")
             return
 
         spam_user[user_name] = text_1
-        text = "Spam stormming " + user_name + " with '" + str(spam_user[user_name]) + "' !"
+        text = "Spam stormming " + user_name + \
+            " with '" + str(spam_user[user_name]) + "' !"
         update.message.reply_text(text)
         return
 
     except:
         pass
-    
 
-        
     if text_1.startswith("@") == True:
-        
+
         if text_2 == "":
             update.message.reply_text("No Spam Text Provided !")
             return
 
-        shrt = text_1[1:] 
-        
+        shrt = text_1[1:]
+
         if text_2 == "stop":
             del spam_user[shrt]
             update.message.reply_text("Halted spamming " + text_1 + " !")
@@ -79,7 +78,8 @@ def spam_check(update, context):
 
         spam_user[shrt] = text_2
 
-        text = "Spam stormming " + text_1 + " with '" + str(spam_user[shrt]) + "' !"
+        text = "Spam stormming " + text_1 + \
+            " with '" + str(spam_user[shrt]) + "' !"
         update.message.reply_text(text)
         return
 
@@ -88,20 +88,19 @@ def spam_check(update, context):
     text = ""
     temp = ''
 
-    
     if text_1 == "":
         b = "off"
         temp = spam_text
-        
+
         if spam == 1:
             b = "on"
         if spam_text == "":
             temp = "Not Set !"
-        
-        text = "Spam currently : " + b + "\nSpam mode : " + spam_type + "\nSpam text : " + temp
+
+        text = "Spam currently : " + b + "\nSpam mode : " + \
+            spam_type + "\nSpam text : " + temp
         update.message.reply_text(text)
         return
-
 
     if text_1 == "on":
         spam = 1
@@ -116,7 +115,7 @@ def spam_check(update, context):
 
     elif text_1 == "overflow":
         spam_type = "overflow"
-    
+
     elif text_1 == "echo":
         spam_type = "echo"
         text = "Spam switched to 'echo' mode !"
@@ -127,7 +126,7 @@ def spam_check(update, context):
     elif text_1 == "reply":
         spam_type = "reply"
         if spam_text != "":
-            temp = '& "' + spam_text +'" set as spam text !'
+            temp = '& "' + spam_text + '" set as spam text !'
         else:
             temp = '& spam text not asigned !'
         text = "Spam switched to 'reply' mode " + temp
@@ -143,16 +142,17 @@ def spam_check(update, context):
 
     update.message.reply_text(text)
 
-def spam_call(update,context):
+
+def spam_call(update, context):
     global spam_text
     global spam_type
     global spam
-    
+
     msg = update.message
-    
+
     try:
         user_name = msg.from_user.username
-        
+
         for user in spam_user:
             if user_name == user:
                 msg.reply_text(spam_user[user_name])
@@ -168,6 +168,7 @@ def spam_call(update,context):
             msg.reply_text(spam_text)
 
 
-def boom(update,context): 
+def boom(update, context):
     chat_id = update.effective_chat.id
-    context.bot.send_message(chat_id, "Boom !\nWe have something to celebrate ! 🥳")
+    context.bot.send_message(
+        chat_id, "Boom !\nWe have something to celebrate ! 🥳")

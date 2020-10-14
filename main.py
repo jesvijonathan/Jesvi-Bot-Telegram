@@ -1,6 +1,6 @@
 # Jesvi Bot
-# v0.01
-# 11 Aug 2020
+# v0.5
+# 14 Oct 2020
 # By Jesvi Jonathan
 
 import telegram
@@ -48,7 +48,6 @@ logger = logging.getLogger(__name__)
 print("-logging")
 
 #import traceback
-
 
 print("-loaded modules")
 updater = Updater(bot_token, use_context=True)

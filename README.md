@@ -10,10 +10,10 @@
   <p align="center">
     A Telegram Handler Bot With Multiple Features & Support
     <br />
-    <a href="https://jesvijonathan.github.io/jesvijonathan/"><strong>Jesvi Bot Official Webpage</strong></a>
+    <a href="https://jesvijonathan.github.io/jesvijonathan/"><strong>Official Webpage</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jesvijonathan/Jesvi-Bot/issues">View Jesvi Bot</a>
+    <a href="https://github.com/jesvijonathan/Jesvi-Bot/issues">View Demo</a>
     ·
     <a href="https://github.com/jesvijonathan/Jesvi-Bot/issues">Report Bug</a>
     ·

@@ -52,7 +52,7 @@ Here's some shallow information :
 * Comes with a utility application for setting up the requirements, tweaking the configurations & to access other functionalities across respective platforms
 * Simple & easy Database setup for both servers & regular personal computers
 * Debugging & live status info are upated live
-* And lots more stugg I coded but am lazy to mention 'F'
+* And lots more stuff... explore it yourself.
 
 This project still being developing by the me & the dev community, So you can expect more features and updates quite often..
 

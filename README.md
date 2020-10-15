@@ -42,24 +42,24 @@
 <!-- ABOUT THE PROJECT -->
 ## About Jesvi Bot
 
-[![Jesvi Bot Utility][product-screenshot]](https://example.com)
+[![Jesvi Bot Utility][menu-screenshot]](https://example.com)
 
-This project was started as a program to handle my telegram groups that had a large number of members & also to serve several other unique features that were made simple using Jesvi Bot to the users.
+This project was started as a program to handle several telegram groups that have a large number of members & also to serve several other unique features that were made simple & easy to users & admins.
 
 Here's some shallow information :
-* Comes with tones of usefull bot modules that can be fully customized & used for efficient management 
+* Comes with tones of usefull bot modules that can be fully customized & used for efficient management
 * Has cross-platform support across major platforms
-* Comes with a utility application for setting up the requirements, tweaking the configurations & to access other functionalities across respective platform
-* Simple & easy Database setup for both servers & personal computers
-* Debugging & live status info are quick and feasible
-* And lots more features that I didn't mention
+* Comes with a utility application for setting up the requirements, tweaking the configurations & to access other functionalities across respective platforms
+* Simple & easy Database setup for both servers & regular personal computers
+* Debugging & live status info are upated live
+* And lots more stugg I coded but am lazy to mention 'F'
 
-This project still being developing by the me & community, So you can expect more features and updates quite often..
+This project still being developing by the me & the dev community, So you can expect more features and updates quite often..
 
-All the tools are packed in & the Jesvi Bot is all set to go in a server via script mode & also in a PC via utility mode which proves to be a good feature for debugging & for running mainstream
+All the tools are packed in & the Bot is all set to go in a server via script mode & also in a PC via utility mode which proves to be a good feature for debugging & for running mainstream
 
 Feel free to mention a issue or a feature request in this repository :)
-& for more information, Check out [Jesvi Bot's Official Webpage](https://jesvijonathan.github.io/jesvijonathan/)
+& for more information, Check out [Jesvi Bot's Official Webpage](https://jesvijonathan.github.io/jesvijonathan/) (<--under construction)
 
 ### Built With
 Jesvi Bot is built mainly with Python3 (3.8.6).. However, the OS specific Utility, tools & features are built using Batch & C++ (Mingw) for Windows.

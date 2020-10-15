@@ -40,7 +40,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About Jesvi Bot
+## About This Project
 
 [![Jesvi Bot Utility][menu-screenshot]](https://example.com)
 

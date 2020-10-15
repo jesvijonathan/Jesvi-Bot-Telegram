@@ -13,7 +13,7 @@
     <a href="https://jesvijonathan.github.io/jesvijonathan/"><strong>Official Webpage</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jesvijonathan/Jesvi-Bot/issues">View Demo</a>
+    <a href="https://github.com/jesvijonathan/Jesvi-Bot">View Demo</a>
     ·
     <a href="https://github.com/jesvijonathan/Jesvi-Bot/issues">Report Bug</a>
     ·

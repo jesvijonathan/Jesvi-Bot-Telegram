@@ -1,5 +1,5 @@
 from modules import *
-from modules.database import *
+from modules.core import *
 from config import *
 
 from telegram import Message, Chat, Update, Bot, User
@@ -25,34 +25,53 @@ dp = updater.dispatcher
 
 
 # Initialize Database & Cursor
-mydb = connector.connect(
+db = connector.connect(
     host=database_host,
     user=database_user,
     password=database_password,
     database=database_name)
-mycursor = mydb.cursor(prepared=True)
+cursor = db.cursor(buffered=True)
+
+database_create = database.database_create(cursor, db)
+database_create.create_base()
 
 
 def unparse(update, context):  # Unparse Incoming Responses
+    print(0)
     msg = update.message
-    # print(msg, "\n")
-    tagmsg = update.message.reply_to_message
-    # print(tagmsg, "\n")
+    # print("\n", msg)
 
-    chat = msg['chat']
     user = msg['from_user']
-    print("\nchat : ", chat)
-    print("\nfrm_usr : ", user)
+    chat = msg['chat']
 
-    #create.user_base(mycursor=mycursor, mydb=mydb)
-    #create.chat_base(mycursor=mycursor, mydb=mydb)
+    tag_user = None
 
-    add.user(mycursor=mycursor, mydb=mydb, user=user)
-    add.chat(mycursor=mycursor, mydb=mydb, chat=chat)
+    arg = {
+        "update": update,
+        "context": context,
+        "chat": chat,
+        "user": user
+    }
+
+    # print(**arg)
+
+    try:
+        tagmsg = update.message.reply_to_message
+
+        tag_user = tagmsg['from_user']
+
+        add.user(**arg, user=tag_user)
+
+    except:
+        pass
+
+    print(1)
 
 
 def main():  # Main Function
     print("started")
+    dp.add_handler(MessageHandler(
+        Filters.status_update.new_chat_members, welcome.gate))
     dp.add_handler(MessageHandler(Filters.all, unparse))
 
     updater.start_polling()

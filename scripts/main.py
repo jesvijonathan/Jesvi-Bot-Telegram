@@ -1,17 +1,16 @@
-from modules import *
-from modules.core import *
-from config import *
-
-from telegram import Message, Chat, Update, Bot, User
-from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from telegram.utils.helpers import escape_markdown
-
 import logging
 
 from mysql import connector
+from telegram import (Bot, Chat, InlineKeyboardButton, InlineKeyboardMarkup,
+                      Message, ParseMode, Update, User)
+from telegram.error import (BadRequest, ChatMigrated, NetworkError,
+                            TelegramError, TimedOut, Unauthorized)
+from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
+from telegram.utils.helpers import escape_markdown
 
+from config import *
+from modules import *
+from modules.core import *
 
 # Bot Logging & Debugging
 logging.basicConfig(level=logging.DEBUG,
@@ -29,7 +28,8 @@ db = connector.connect(
     host=database_host,
     user=database_user,
     password=database_password,
-    database=database_name)
+    database=database_name,
+    auth_plugin='')
 cursor = db.cursor(buffered=True)
 
 database_create = database.database_create(cursor, db)

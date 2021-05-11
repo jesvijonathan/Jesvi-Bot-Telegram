@@ -15,8 +15,8 @@ echo Checking internet connection..
 
 if detection_out=$(wget -q http://detectportal.firefox.com/success.txt --timeout=10 -O - 2> $PWD/null);
 then
-echo -e '\e[1A\e[KInternet |' ${Green}Connected${NC}
-
+echo -e -n '\e[1A\e[KInternet |' ${Green}Connected${NC}
+#iw dev | grep ssid | awk '{print $2}'
 else
 echo -e '\e[1A\e[KInternet |' ${Red}No Internet${NC} '\n'
 
@@ -31,7 +31,7 @@ while true; do
     elif [[ $input = "r" ]] || [[ $input = "R" ]] 
         then reset
         exec "$PWD/start.sh"
-
+# python3 ./$PWD/main.py
     else
         echo -e -n "\n\b" ${Red}"\e[1A\e[K\rInvalid Input.."${NC}
         sleep 0.5
@@ -40,5 +40,19 @@ while true; do
 done
 fi
 
+echo -e -n "\nChecking memory usage.."
+sleep 0.5
+echo -e -n "\rMemory   | ${Green}"
+free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }'
 
-sleep 10
+echo -e -n "${NC}Service start time.."
+sleep 0.5
+echo -e "\rTime     | ${Green}"$(date +'%r')
+
+echo -e -n "\n--Live Status--\n\n" ${NC}
+
+sudo service mysql start
+python3 $(dirname `pwd`)/scripts/main.py
+
+
+sleep 5

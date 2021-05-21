@@ -91,95 +91,93 @@ def main():
     sys.stdout = logger
     sys.stderr = logger
 
-    qinfo_cmd = ("info", "ginfo", "group", "groupinfo", "aboutgroup",
-                 q            "chatinfo", "infogroup", "infochat", "user", "userinfo")
-    qadmin_cmd = ("ainfo", "adminlist", "admin", "listadmin",
-                  q             "administrators", "members", "memb")
-    qmessage_id = ("id", "minfo", "msgid", "msg",
-                   q              "messageid", "msginfo", "message")
-    qmute_cmd = ("mute", "shutup", "restrict")
-    qspam_cmd = ("spam", "filler", "echo", "annoy")
-    qpromote_cmd = ("promote", "upgrade", "prom")
-    qdemote_cmd = ("demote", "depromote", "depromo", "degrade")
-    qfilter_cmd = ("filter", "filt", "word", "fil",
-                   q              "resetfilter", "filterreset")
-    qpin_cmd = ("pin", "notify", "notice", "noti")
-    qset_cmd = ("set", "change", "setbio", "bio")
-    qclean_cmd = ("clean", "purge", "tdel")
-    qdelete_cmd = ("del", "delete", "rem", "remove")
-    qsilent_delete_cmd = ("sdel", "silentdel", "sildel", "silentdelete")
-    qrip_cmd = ("rip", "kickme", "suicide")
-    qkick_cmd = ("kick")
-    qban_cmd = ("ban", "gban")
-    qunban_cmd = ("unban", "forgive", "accept")
-    qabout_cmd = ("about", "bot", "botinfo")
-    qowner_cmd = ("owner", "jesvi", "boss", "maintainer")
-    qboom_cmd = ("boom", "yay", "dang", "bang", "party")
-    qleave_cmd = ("leave", "scoot")
-    qnote_cmd = ("note", "notes")
-    qwarn_cmd = {"warnset", "warnclear", "warnreset", "forgive",
-                 q            "withdraw", "warninfo", "warnlist", "allwarns", "warnremove"}
-    qrules_cmd = {"rules", "setrules", "setrule", "rule"}
-    qsearch_cmd = {"search", "google", "usearch"}
-    qtranslate_cmd = {"trans", "translate"}
-    qcreate_base = {"createbase"}
-    qsql_cmd = {"sqlon", "sqloff"}
+    info_cmd = ("info", "ginfo", "group", "groupinfo", "aboutgroup",
+                "chatinfo", "infogroup", "infochat", "user", "userinfo")
+    admin_cmd = ("ainfo", "adminlist", "admin", "listadmin",
+                 "administrators", "members", "memb")
+    message_id = ("id", "minfo", "msgid", "msg",
+                  "messageid", "msginfo", "message")
+    mute_cmd = ("mute", "shutup", "restrict")
+    spam_cmd = ("spam", "filler", "echo", "annoy")
+    promote_cmd = ("promote", "upgrade", "prom")
+    demote_cmd = ("demote", "depromote", "depromo", "degrade")
+    filter_cmd = ("filter", "filt", "word", "fil",
+                  "resetfilter", "filterreset")
+    pin_cmd = ("pin", "notify", "notice", "noti")
+    set_cmd = ("set", "change", "setbio", "bio")
+    clean_cmd = ("clean", "purge", "tdel")
+    delete_cmd = ("del", "delete", "rem", "remove")
+    silent_delete_cmd = ("sdel", "silentdel", "sildel", "silentdelete")
+    rip_cmd = ("rip", "kickme", "suicide")
+    kick_cmd = ("kick")
+    ban_cmd = ("ban", "gban")
+    unban_cmd = ("unban", "forgive", "accept")
+    about_cmd = ("about", "bot", "botinfo")
+    owner_cmd = ("owner", "jesvi", "boss", "maintainer")
+    boom_cmd = ("boom", "yay", "dang", "bang", "party")
+    leave_cmd = ("leave", "scoot")
+    note_cmd = ("note", "notes")
+    warn_cmd = {"warnset", "warnclear", "warnreset", "forgive",
+                "withdraw", "warninfo", "warnlist", "allwarns", "warnremove"}
+    rules_cmd = {"rules", "setrules", "setrule", "rule"}
+    search_cmd = {"search", "google", "usearch"}
+    translate_cmd = {"trans", "translate"}
+    create_base = {"createbase"}
+    sql_cmd = {"sqlon", "sqloff"}
 
+    dp.add_handler(CommandHandler(create_base, database.create_base))
+    dp.add_handler(CommandHandler(sql_cmd, sqlof))
+    dp.add_handler(CommandHandler("ipltoday", fun.cricket))
+    dp.add_handler(CommandHandler("iplupdate", fun.cricket))
+    dp.add_handler(CommandHandler(search_cmd, ai.search))
+    dp.add_handler(CommandHandler(translate_cmd, ai.translate))
+    dp.add_handler(CommandHandler("warn", filter.warn_strike))
+    dp.add_handler(CommandHandler(warn_cmd, filter.warn_set))
+    dp.add_handler(CommandHandler(rules_cmd, edit.rules))
+    dp.add_handler(CommandHandler("fbi", fun.fbi_joke))
+    dp.add_handler(CommandHandler("start", welcome.start_func))
+    dp.add_handler(CommandHandler("cdsync", welcome.dat))
+    dp.add_handler(CommandHandler("net", database.net))
+    dp.add_handler(CommandHandler(note_cmd, notes.notes))
+    dp.add_handler(CommandHandler(boom_cmd, spams.boom))
+    dp.add_handler(CommandHandler("owner", welcome.owner))
+    dp.add_handler(CommandHandler(about_cmd, welcome.about))
+    dp.add_handler(CommandHandler(rip_cmd, ban.rip))
+    dp.add_handler(CommandHandler(kick_cmd, ban.kick))
+    dp.add_handler(CommandHandler(ban_cmd, ban.ban))
+    dp.add_handler(CommandHandler(unban_cmd, ban.unban))
+    dp.add_handler(CommandHandler(leave_cmd, ban.leave))
+    dp.add_handler(CommandHandler(pin_cmd, edit.pin))
+    dp.add_handler(CommandHandler("unpin", edit.unpin))
+    dp.add_handler(CommandHandler(set_cmd, edit.set_))
+    dp.add_handler(CommandHandler(promote_cmd, promote.promote))
+    dp.add_handler(CommandHandler(demote_cmd, promote.depromote))
+    dp.add_handler(CommandHandler(spam_cmd, spams.spam_check))
+    dp.add_handler(CommandHandler(mute_cmd, mute.mute))
+    dp.add_handler(CommandHandler("unmute", mute.unmute))
+    dp.add_handler(CommandHandler((info_cmd), info.info))
+    dp.add_handler(CommandHandler(admin_cmd, info.admin_list))
+    dp.add_handler(CommandHandler(message_id, info.msg_id))
+    dp.add_handler(CommandHandler(filter_cmd, filter.message_filter))
+    dp.add_handler(CommandHandler(clean_cmd, delete.clean))
+    dp.add_handler(CommandHandler(delete_cmd, delete.delete))
+    dp.add_handler(CommandHandler(silent_delete_cmd, delete.silent_delete))
+    dp.add_handler(CommandHandler("lock", delete.lock))
+    dp.add_handler(CommandHandler("unlock", delete.unlock))
 
-q
-qdp.add_handler(CommandHandler(create_base, database.create_base))
-qdp.add_handler(CommandHandler(sql_cmd, sqlof))
-qdp.add_handler(CommandHandler("ipltoday", fun.cricket))
-qdp.add_handler(CommandHandler("iplupdate", fun.cricket))
-qdp.add_handler(CommandHandler(search_cmd, ai.search))
-qdp.add_handler(CommandHandler(translate_cmd, ai.translate))
-qdp.add_handler(CommandHandler("warn", filter.warn_strike))
-qdp.add_handler(CommandHandler(warn_cmd, filter.warn_set))
-qdp.add_handler(CommandHandler(rules_cmd, edit.rules))
-qdp.add_handler(CommandHandler("fbi", fun.fbi_joke))
-qdp.add_handler(CommandHandler("start", welcome.start_func))
-qdp.add_handler(CommandHandler("cdsync", welcome.dat))
-qdp.add_handler(CommandHandler("net", database.net))
-qdp.add_handler(CommandHandler(note_cmd, notes.notes))
-qdp.add_handler(CommandHandler(boom_cmd, spams.boom))
-qdp.add_handler(CommandHandler("owner", welcome.owner))
-qdp.add_handler(CommandHandler(about_cmd, welcome.about))
-qdp.add_handler(CommandHandler(rip_cmd, ban.rip))
-qdp.add_handler(CommandHandler(kick_cmd, ban.kick))
-qdp.add_handler(CommandHandler(ban_cmd, ban.ban))
-qdp.add_handler(CommandHandler(unban_cmd, ban.unban))
-qdp.add_handler(CommandHandler(leave_cmd, ban.leave))
-qdp.add_handler(CommandHandler(pin_cmd, edit.pin))
-qdp.add_handler(CommandHandler("unpin", edit.unpin))
-qdp.add_handler(CommandHandler(set_cmd, edit.set_))
-qdp.add_handler(CommandHandler(promote_cmd, promote.promote))
-qdp.add_handler(CommandHandler(demote_cmd, promote.depromote))
-qdp.add_handler(CommandHandler(spam_cmd, spams.spam_check))
-qdp.add_handler(CommandHandler(mute_cmd, mute.mute))
-qdp.add_handler(CommandHandler("unmute", mute.unmute))
-qdp.add_handler(CommandHandler((info_cmd), info.info))
-qdp.add_handler(CommandHandler(admin_cmd, info.admin_list))
-qdp.add_handler(CommandHandler(message_id, info.msg_id))
-qdp.add_handler(CommandHandler(filter_cmd, filter.message_filter))
-qdp.add_handler(CommandHandler(clean_cmd, delete.clean))
-qdp.add_handler(CommandHandler(delete_cmd, delete.delete))
-qdp.add_handler(CommandHandler(silent_delete_cmd, delete.silent_delete))
-qdp.add_handler(CommandHandler("lock", delete.lock))
-qdp.add_handler(CommandHandler("unlock", delete.unlock))
-q
-qdp.add_handler(CommandHandler("help", welcome._help))
-q
-qdp.add_handler(CommandHandler("cit", cit.cit))
-q
-qdp.add_handler(CommandHandler("oof", fun.oof))
-q
-qdp.add_handler(MessageHandler(
-    q    Filters.status_update.new_chat_members, welcome.greet))
-qdp.add_handler(MessageHandler(
-    q    Filters.status_update.left_chat_member, welcome.farewell))
-qdp.add_handler(MessageHandler(Filters.all, send))
-qupdater.start_polling()
-qupdater.idle()
+    dp.add_handler(CommandHandler("help", welcome._help))
+
+    dp.add_handler(CommandHandler("cit", cit.cit))
+
+    dp.add_handler(CommandHandler("oof", fun.oof))
+
+    dp.add_handler(MessageHandler(
+        Filters.status_update.new_chat_members, welcome.greet))
+    dp.add_handler(MessageHandler(
+        Filters.status_update.left_chat_member, welcome.farewell))
+    dp.add_handler(MessageHandler(Filters.all, send))
+    updater.start_polling()
+    updater.idle()
 
 
 if __name__ == '__main__':

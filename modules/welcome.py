@@ -63,26 +63,38 @@ def udat(update, context, sync=0, quick=0):
 
 
 def start_func(update, context):
-    if update.effective_chat.type != 'private':
-        update.message.reply_text(text="<a href='http://t.me/jesvi_bot?start=start'>" + "Click Here" +
-                                  "</a>" + " to get started !", parse_mode="HTML", disable_web_page_preview=True)
-        return
-
-    res = update.message.text.split(None, 2)
+    t = update.message.text
+    res = t
 
     try:
-        t = res[0] + res[1]
-        if res[1] == "help":
-            return
-        elif res[1] == "start":
-            pass
+        res = t.split(None, 1)
+
+        if res[1] == "start":
+            about(update, context)
+
+        elif res[1] == "help":
+            _help(update, context)
+
         else:
             rules(update, context)
-            return
+
+        udat(update, context)
+        return
+
     except:
         pass
 
-    about(update, context)
+    try:
+        if t == "/start" or t == "/start"+"@"+config.bot_username:
+            if update.effective_chat.type != 'private':
+                update.message.reply_text(text="<a href='http://t.me/jesvi_bot?start=start'>" + "Click Here" +
+                                          "</a>" + " to get started !", parse_mode="HTML", disable_web_page_preview=True)
+            else:
+                about(update, context)
+
+    except:
+        pass
+
     udat(update, context)
 
 
@@ -92,8 +104,7 @@ def greet(update, context):
         if str(new_member['id']) == str(config.bot_id):
             dat(update, context, 1)
             ldat(update, context)
-            welcome_text = "Hello !\n\n" + \
-                "This is Jesvi Bot & I am a telegram handler bot developed by my owner @jesvijonathan,\n\nUse /help, /about or PM me @jesvi_bot for more info 😁 "
+            about(update, context)
         else:
             group = update.message["chat"]
             user = new_member
@@ -116,12 +127,79 @@ def farewell(update, context):
     update.effective_message.reply_text(farewell_text)
 
 
-def owner(update, conetxt):
+def owner(update, context):
     text = ("I am still being built by my owner @jesvijonathan & am being tested in @bot_garage for proper functionality &" +
-            "\nFYI : you CAN NOT PM him without a good reason or be ready to get banned\nHave a nice day ! ;)")
+            "\nFYI : you CAN NOT PM without a good reason or be ready to get banned\nHave a nice day ! ;)")
     update.message.reply_text(text)
 
 
-def about(update, conetxt):
-    text = "This is Jesvi Bot & I am a telegram handler bot being developed by my owner @jesvijonathan.\nfor any further disccussion, join @bot_garage to have a lil chat with my maintainer :)"
+def about(update, context):
+    text = "This is Jesvi Bot & I am a telegram handler bot being developed to provide users with a better UX experience... \n\nAdd me in a group and you can get started to use my features.\n\n" +\
+        "You can check out for my source/feature updates at @bot_garage_channel\n\nUse /help for more info about available commands & its uses.."
     update.message.reply_text(text)
+
+
+def _help(update, context):
+    text = None
+    if update.effective_chat.type != 'private':
+        text = ("<a href='t.me/jesvi_bot?start=help'>Click Here</a> for more info")
+        update.message.reply_text(
+            text=text, parse_mode="HTML", disable_web_page_preview=True)
+    else:
+        text = ("Commands (unsorted)-\n\n" +
+                "/start - To start the bot\n" +
+                "/help - View more about the bot\n" +
+                "/info - View the telegram info about a group/user/tagged-user in a chat\n" +
+                "/group - View group info in full detail\n" +
+                "/adminlist - Provides the list of admin and their roles\n" +
+                "/id - Provides the full link/content/id/details of the tagged-message\n" +
+                "/del - Deleted the tagged-message\n" +
+                "/sdel - Silent deletes a tagges-message without crumb\n" +
+                "/leave - Bot leaves the group\n" +
+                "/boom - A spam text to check if bot is alive\n" +
+                "/fbi - A spam text for fun ;)\n" +
+                "/pin - Pins the tagged-message to the group\n" +
+                "/unpin - Unpins the pinned message in the group"
+                "/promote - Promotes a the tagged-user to an administrator\n" +
+                "/demote - Demotes an Admin\n" +
+                "/lock - locks the group from texts/media/messages from members\n" +
+                "/unlock - Unlock the group from lock state\n" +
+                "/bio - View a Admins role in a chat\n" +
+                "/ban - Bans the tagged-user from the group\n" +
+                "/kick - Kicks the tagged-user from the group\n" +
+                "/rip - To kick yourself from the group, share it with an annoying user ;)\n" +
+                "/mute - Mute/restrict a user from sending messages in a group\n" +
+                "/unmute - UNmute a member in a group\n" +
+                "/purge - Deletes all the messages between/till the tagged-message.. useful to clean unwanted spams/chats in a group\n" +
+                "/net - View the network statistics\n" +
+                "/notes - View the notes available in a group\n" +
+                "/rules - View the rules set in a group in PM \n" +
+                "/rules - View the rules set in a group as a direct reply in the group\n" +
+                "\n\n" +
+                "/set title <short_text> - To change the Admin title\n" +
+                "/set bio <text> - To change the Admin role role/info\n" +
+                "/setrules <text> - To set the groups rules\n" +
+                "/filter <del/reply/warn> <text_to_filter> - it is used to filter words/texts sent from users and respond to it by deleteing/replying/warning them\n" +
+                "/spam <reply/echo/@_username> <text> - used to spam the chat... prolly disabled from sudos :(\n" +
+                "/warn <reason_for_warn_text> - Warn strikes the tagged-user\n" +
+                "/warninfo - View the warn record history/detail of the tagged-user\n" +
+                "/warnclear - Clears the last warn strike of the tagged-user\n" +
+                "warnreset - Resets the all warn records of the tagged-user\n" +
+                "/warnlist - Lists all the warns striked in the group\n" +
+                "/warnset limit <number> - Set the number of warns a user can take before taking warn action on the user\n" +
+                "/warnset action <mute/ban/kick> - Set the warn action to kick/ban/mute the user when the warn limit is reached\n" +
+                "/note set <note_name> <text> - To set a note that can be accessible in a group to all members via #<note_name>\n" +
+                "/note remove <note_name> - To remove a note from notes\n" +
+                "\n\n" +
+                "/cricscore - To view cricket info\n" +
+                "/iplupdate - View todays details of ongoing match\n" +
+                "/ipltoday - LIst the ipl events/chart/details"
+                "/search <search_text> - To search from the internet... just like google but alot dumber\n" +
+                "/trans - Translates the tagged-message to english from any language\n" +
+                "/cdsync - Syncs the bot with the group, useful if bot can't recognise memebers (not likely to happen :)\n" +
+                # "/create_base - Creates database\n" +
+                # "/sqlon or /sqloff - Swicth sql logging from bot script\n"+
+                "/oof - A fun spam command\n" +
+                "\n")
+        update.message.reply_text(
+            text=text)

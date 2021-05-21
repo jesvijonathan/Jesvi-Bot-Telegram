@@ -165,10 +165,21 @@ def rules(update, context):
         chat_idd = res[1]
         chat_idd = chat_idd[1:]
         k = ""
-        k = get_chat(chat_id=chat_idd, rules=r)
+        k = get_chat(chat_id=chat_idd, rules=None)
 
         try:
-            k = k[0][0]
+            # uncomment the below line and comment the other lines after changing rules=r in k = get_chat_base values
+            # k = k[0][0]
+
+            try:
+                k = "Group Rules ( " + "<a href='telegram.me/" + \
+                    k[0][1] + "'>" + k[0][2] + "</a> ) -\n\n" + k[0][6]
+            except:
+                try:
+                    k = "Group rules ( " + k[0][2] + " ) -\n\n" + k[0][6]
+                except:
+                    k = "Group rules ( " + k[0][0] + " ) - \n\n" + k[0][6]
+
         except:
             k = "Error"
 
@@ -181,12 +192,21 @@ def rules(update, context):
 
         try:
             k = k[0][0]
+
+            # comment the below line code to change to type 2 rule method
+            k = ("<a href='t.me/jesvi_bot?start=" + chat_id +
+                 "'>Click Here</a>" + " to view the group's rules")
+
         except:
-            k = "Error"
+            k = "No rules set in this group !"
 
-        #k = "<a href='t.me/jesvi_bot?start=" + chat_id + "'>Click Here</a>" + " to view the group's rules"
+        update.message.reply_text(
+            text=k, parse_mode="HTML", disable_web_page_preview=True)
+        return
 
+    elif res[0] == "/rule":
         k = get_chat(chat_id=chat_idd, rules=r)
+
         try:
             k = k[0][0]
         except:

@@ -1,0 +1,58 @@
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-05-14T19:37:00.252442Z	   88 Query	COMMIT
+2021-05-14T19:38:53.612714Z	   89 Connect	debian-sys-maint@localhost on  using Socket
+2021-05-14T19:38:53.614171Z	   89 Quit	
+2021-05-14T19:38:53.922623Z	   90 Connect	debian-sys-maint@localhost on  using Socket
+2021-05-14T19:38:53.929388Z	   90 Query	SELECT @@datadir, @@pid_file
+2021-05-14T19:38:53.934547Z	   90 Query	shutdown
+2021-05-14T19:38:53.935631Z	   90 Query	
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-05-14T19:39:25.053412Z	   11 Query	COMMIT
+2021-05-14T19:41:43.929096Z	   12 Connect	remote@localhost on  using SSL/TLS
+2021-05-14T19:41:43.931098Z	   12 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:41:43.931760Z	   12 Query	SET @@session.autocommit = OFF
+2021-05-14T19:41:43.932968Z	   12 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database_main
+2021-05-14T19:41:43.955005Z	   13 Connect	remote@localhost on jesvi_bot_database_main using SSL/TLS
+2021-05-14T19:41:43.956878Z	   13 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:41:43.957440Z	   13 Query	SET @@session.autocommit = OFF
+2021-05-14T19:41:43.958721Z	   13 Query	SET global log_output = 'FILE'
+2021-05-14T19:41:43.959096Z	   13 Query	COMMIT
+2021-05-14T19:41:43.959433Z	   13 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram\logs\log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-05-14T19:41:43.973586Z	   13 Query	COMMIT
+2021-05-14T19:41:43.974162Z	   13 Query	SET GLOBAL general_log = 'ON'
+2021-05-14T19:41:43.974733Z	   13 Query	COMMIT
+2021-05-14T19:42:10.031923Z	   14 Connect	remote@localhost on  using SSL/TLS
+2021-05-14T19:42:10.035458Z	   14 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:42:10.036609Z	   14 Query	SET @@session.autocommit = OFF
+2021-05-14T19:42:10.038357Z	   14 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database_main
+2021-05-14T19:42:10.082172Z	   15 Connect	remote@localhost on jesvi_bot_database_main using SSL/TLS
+2021-05-14T19:42:10.084347Z	   15 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:42:10.085480Z	   15 Query	SET @@session.autocommit = OFF
+2021-05-14T19:43:35.798553Z	   16 Connect	remote@localhost on  using SSL/TLS
+2021-05-14T19:43:35.800352Z	   16 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:43:35.801810Z	   16 Query	SET @@session.autocommit = OFF
+2021-05-14T19:43:35.803465Z	   16 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database_main
+2021-05-14T19:43:35.844183Z	   17 Connect	remote@localhost on jesvi_bot_database_main using SSL/TLS
+2021-05-14T19:43:35.845598Z	   17 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:43:35.846114Z	   17 Query	SET @@session.autocommit = OFF
+2021-05-14T19:44:58.040759Z	   18 Connect	remote@localhost on  using SSL/TLS
+2021-05-14T19:44:58.042516Z	   18 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:44:58.043661Z	   18 Query	SET @@session.autocommit = OFF
+2021-05-14T19:44:58.045091Z	   18 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database_main
+2021-05-14T19:44:58.079614Z	   19 Connect	remote@localhost on jesvi_bot_database_main using SSL/TLS
+2021-05-14T19:44:58.081651Z	   19 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:44:58.082648Z	   19 Query	SET @@session.autocommit = OFF
+2021-05-14T19:46:02.618582Z	   20 Connect	remote@localhost on  using SSL/TLS
+2021-05-14T19:46:02.620867Z	   20 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:46:02.621835Z	   20 Query	SET @@session.autocommit = OFF
+2021-05-14T19:46:02.623816Z	   20 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database_main
+2021-05-14T19:46:02.661645Z	   21 Connect	remote@localhost on jesvi_bot_database_main using SSL/TLS
+2021-05-14T19:46:02.662484Z	   21 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-05-14T19:46:02.662898Z	   21 Query	SET @@session.autocommit = OFF

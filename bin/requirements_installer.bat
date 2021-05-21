@@ -12,4 +12,5 @@ cd %~dp0
 py -m pip install -r ../requirements.txt
 @echo.
 TIMEOUT /T 14 /NOBREAK
+sleep 5
 exit

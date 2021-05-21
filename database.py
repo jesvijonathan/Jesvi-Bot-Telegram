@@ -84,9 +84,6 @@ def load():
     mycursor = mydb.cursor()
 
 
-
-
-
 def initgroup(chat_id):
     load()
     global mydb
@@ -261,7 +258,7 @@ def get_chat(chat_id, rules=None):
     global mydb
     global mycursor
 
-    s2 = ""
+    s2 = "*"
 
     if rules != None:
         s2 = "rules"

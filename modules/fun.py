@@ -1,6 +1,7 @@
 import random
 import modules.cricscore as cric
 import config as config
+import modules.extract as extract
 
 
 def fbi_joke(update, context):
@@ -25,6 +26,21 @@ def fbi_joke(update, context):
 
     context.bot.send_message(chat_id=user_id, text=i,
                              parse_mode="HTML")
+
+
+def oof(update, context):
+    m = extract.sudocheck(update, context, 1)
+
+    oof = "oof"
+
+    msg = update.message.reply_text(text=oof)
+
+    if m == 2:
+        return
+
+    for i in range(0, 3):
+        oof = "o" + oof
+        msg.edit_text(text=oof)
 
 
 def cricket(update, context):

@@ -22,7 +22,7 @@ import modules.ai as ai
 import modules.cit as cit
 import modules.welcome as welcome
 from config import *
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler, CallbackContext
 import sys
 import os
 import logging
@@ -36,13 +36,13 @@ stdoutOrigin = sys.stdout
 # sys.stderr = open(path+"\\logs\\log_bot_runtime.log", 'w')
 sys.stderr = open(path+"/logs/log_bot_runtime.log", 'w')
 
-
+"""
 class writer(object):
     log = []
 
     def write(self, data):
         self.log.append(data)
-
+"""
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(name)s %(message)s')
@@ -87,9 +87,9 @@ def main():
     print("-active")
     print("\n--------------------------------------")
 
-    logger = writer()
-    sys.stdout = logger
-    sys.stderr = logger
+    #logger = writer()
+    #sys.stdout = logger
+    #sys.stderr = logger
 
     info_cmd = ("info", "ginfo", "group", "groupinfo", "aboutgroup",
                 "chatinfo", "infogroup", "infochat", "user", "userinfo")
@@ -171,6 +171,8 @@ def main():
 
     dp.add_handler(CommandHandler("oof", fun.oof))
 
+    dp.add_handler(CallbackQueryHandler(buttons))
+
     dp.add_handler(MessageHandler(
         Filters.status_update.new_chat_members, welcome.greet))
     dp.add_handler(MessageHandler(
@@ -178,6 +180,30 @@ def main():
     dp.add_handler(MessageHandler(Filters.all, send))
     updater.start_polling()
     updater.idle()
+
+
+def buttons(update, context):
+    query = update.callback_query
+
+    # This will define which button the user tapped on (from what you assigned to "callback_data". As I assigned them "1" and "2"):
+    choice = query.data
+
+    # Now u can define what choice ("callback_data") do what like this:
+    if choice == '1':
+        text = 'Redirecting to class..'
+        context.bot.answer_callback_query(
+            callback_query_id=query.id, text=text, show_alert=True)
+    elif choice == '2':
+        text = 'Previous class : Tuesday | Hour 2 | Mathematics (MA8255) | Mr.Yadav'
+        context.bot.answer_callback_query(
+            callback_query_id=query.id, text=text, show_alert=True)
+    elif choice == '3':
+        # text = 'Next class : Tuesday | Hour 4 | Data_Structures (AD8255) | Ms.Amutha'
+        text = 'use "/cit cls nxt" & "/cit cls prev" till the ux is done'
+        context.bot.answer_callback_query(
+            callback_query_id=query.id, text=text, show_alert=True)
+    else:
+        query.answer(shoq_alert=True)
 
 
 if __name__ == '__main__':

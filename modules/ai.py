@@ -4,11 +4,9 @@ import modules.wiki as wiki
 def search(update, context):
 
     res = update.message.text.split(None, 1)
-    tra = r = ""
+    tra = r = None
     try:
         r = res[1]
-        if res[1] == None:
-            return
     except:
         return
 

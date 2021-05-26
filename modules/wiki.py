@@ -7,7 +7,7 @@ from langcodes import *
 #import iso_language_codes
 
 
-def trans(text, des="en", od=1):
+def trans(text="", des="en", od=1):
     translator = Translator()
 
     t = translator.translate(text=text, dest=des, src="auto")
@@ -51,13 +51,14 @@ def trans(text, des="en", od=1):
     return ttt
 
 
-def search(query=None, urll=0):
+def search(query="", urll=0):
     page = None
     text = title = content = url = ""
+
     try:
         page = wikipedia.page(query)
     except:
-        text = "Search not found !"
+        text = "Search not found ! \n:try adding a '_' at the end of the search-text"
         return text
     try:
         title = "Title : " + page.title + "\n\n"

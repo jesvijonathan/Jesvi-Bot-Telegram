@@ -1,7 +1,8 @@
 import mysql.connector
 import logging
 import time
-import pyspeedtest as speedtest
+import speedtest
+# speedtest-cli
 from config import *
 import modules.extract as extract
 

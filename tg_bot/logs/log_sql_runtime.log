@@ -1,0 +1,1006 @@
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-06T22:48:00.267697Z	  231 Query	COMMIT
+2021-06-06T22:54:14.126307Z	  232 Connect	remote@localhost on  using SSL/TLS
+2021-06-06T22:54:14.128326Z	  232 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:54:14.129077Z	  232 Query	SET @@session.autocommit = OFF
+2021-06-06T22:54:14.131051Z	  232 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-06T22:54:14.161631Z	  233 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T22:54:14.163756Z	  233 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:54:14.165395Z	  233 Query	SET @@session.autocommit = OFF
+2021-06-06T22:54:14.168882Z	  233 Query	SET global log_output = 'FILE'
+2021-06-06T22:54:14.170181Z	  233 Query	COMMIT
+2021-06-06T22:54:14.171221Z	  233 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-06T22:54:14.184618Z	  233 Query	COMMIT
+2021-06-06T22:54:14.185554Z	  233 Query	SET GLOBAL general_log = 'ON'
+2021-06-06T22:54:14.186372Z	  233 Query	COMMIT
+2021-06-06T22:55:04.257900Z	  234 Connect	remote@localhost on  using SSL/TLS
+2021-06-06T22:55:04.260417Z	  234 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:55:04.261566Z	  234 Query	SET @@session.autocommit = OFF
+2021-06-06T22:55:04.265690Z	  234 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-06T22:55:04.301330Z	  235 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T22:55:04.304502Z	  235 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:55:04.306400Z	  235 Query	SET @@session.autocommit = OFF
+2021-06-06T22:55:04.311299Z	  235 Query	SET global log_output = 'FILE'
+2021-06-06T22:55:04.314449Z	  235 Query	COMMIT
+2021-06-06T22:55:04.315060Z	  235 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-06T22:55:04.331750Z	  235 Query	COMMIT
+2021-06-06T22:55:04.332715Z	  235 Query	SET GLOBAL general_log = 'ON'
+2021-06-06T22:55:04.334210Z	  235 Query	COMMIT
+2021-06-06T22:56:08.779658Z	  236 Connect	remote@localhost on  using SSL/TLS
+2021-06-06T22:56:08.781683Z	  236 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:56:08.782736Z	  236 Query	SET @@session.autocommit = OFF
+2021-06-06T22:56:08.784579Z	  236 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-06T22:56:08.813442Z	  237 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T22:56:08.814441Z	  237 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:56:08.814921Z	  237 Query	SET @@session.autocommit = OFF
+2021-06-06T22:56:08.816019Z	  237 Query	SET global log_output = 'FILE'
+2021-06-06T22:56:08.816583Z	  237 Query	COMMIT
+2021-06-06T22:56:08.816990Z	  237 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-06T22:56:08.826976Z	  237 Query	COMMIT
+2021-06-06T22:56:08.827953Z	  237 Query	SET GLOBAL general_log = 'ON'
+2021-06-06T22:56:08.828534Z	  237 Query	COMMIT
+2021-06-06T22:57:22.079081Z	  238 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-06T22:57:22.080010Z	  238 Quit	
+2021-06-06T22:57:26.557708Z	  239 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T22:57:26.559670Z	  239 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:57:26.560496Z	  239 Query	SET @@session.autocommit = OFF
+2021-06-06T22:57:26.561459Z	  239 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-06T22:57:26.565869Z	  239 Query	COMMIT
+2021-06-06T22:57:26.566898Z	  239 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-06T22:57:26.569456Z	  239 Query	COMMIT
+2021-06-06T22:57:26.570387Z	  239 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-06T22:57:26.572430Z	  239 Query	COMMIT
+2021-06-06T22:57:26.573319Z	  239 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-06T22:57:26.575398Z	  239 Query	COMMIT
+2021-06-06T22:58:01.532146Z	  240 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-06T22:58:01.533265Z	  240 Quit	
+2021-06-06T22:58:04.838940Z	  241 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T22:58:04.840107Z	  241 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:58:04.840699Z	  241 Query	SET @@session.autocommit = OFF
+2021-06-06T22:58:04.841729Z	  241 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-06T22:58:04.848950Z	  241 Query	COMMIT
+2021-06-06T22:58:04.849684Z	  241 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-06T22:58:04.851768Z	  241 Query	COMMIT
+2021-06-06T22:58:04.852678Z	  241 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-06T22:58:04.855060Z	  241 Query	COMMIT
+2021-06-06T22:58:04.855865Z	  241 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-06T22:58:04.858564Z	  241 Query	COMMIT
+2021-06-06T22:58:43.208569Z	  242 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-06T22:58:43.209394Z	  242 Quit	
+2021-06-06T22:58:47.155380Z	  243 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T22:58:47.157141Z	  243 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T22:58:47.158263Z	  243 Query	SET @@session.autocommit = OFF
+2021-06-06T22:58:47.160934Z	  243 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-06T22:58:47.167347Z	  243 Query	COMMIT
+2021-06-06T22:58:47.168864Z	  243 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-06T22:58:47.171507Z	  243 Query	COMMIT
+2021-06-06T22:58:47.172523Z	  243 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-06T22:58:47.175364Z	  243 Query	COMMIT
+2021-06-06T22:58:47.176359Z	  243 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-06T22:58:47.178487Z	  243 Query	COMMIT
+2021-06-06T23:00:32.635729Z	  244 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-06T23:00:32.636704Z	  244 Quit	
+2021-06-06T23:00:36.007896Z	  245 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T23:00:36.009365Z	  245 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T23:00:36.009942Z	  245 Query	SET @@session.autocommit = OFF
+2021-06-06T23:00:36.011020Z	  245 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-06T23:00:36.013792Z	  245 Query	COMMIT
+2021-06-06T23:00:36.014209Z	  245 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-06T23:00:36.015541Z	  245 Query	COMMIT
+2021-06-06T23:00:36.015992Z	  245 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-06T23:00:36.017447Z	  245 Query	COMMIT
+2021-06-06T23:00:36.017984Z	  245 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-06T23:00:36.019731Z	  245 Query	COMMIT
+2021-06-06T23:03:40.633883Z	  246 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-06T23:03:40.634460Z	  246 Quit	
+2021-06-06T23:03:43.609811Z	  247 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T23:03:43.610796Z	  247 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T23:03:43.611517Z	  247 Query	SET @@session.autocommit = OFF
+2021-06-06T23:03:43.612539Z	  247 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-06T23:03:43.615602Z	  247 Query	COMMIT
+2021-06-06T23:03:43.615984Z	  247 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-06T23:03:43.618023Z	  247 Query	COMMIT
+2021-06-06T23:03:43.618959Z	  247 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-06T23:03:43.622206Z	  247 Query	COMMIT
+2021-06-06T23:03:43.623087Z	  247 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-06T23:03:43.624941Z	  247 Query	COMMIT
+2021-06-06T23:03:58.573738Z	  248 Connect	remote@localhost on  using SSL/TLS
+2021-06-06T23:03:58.574965Z	  248 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T23:03:58.575765Z	  248 Query	SET @@session.autocommit = OFF
+2021-06-06T23:03:58.577313Z	  248 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-06T23:03:58.624411Z	  249 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T23:03:58.625823Z	  249 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T23:03:58.627091Z	  249 Query	SET @@session.autocommit = OFF
+2021-06-06T23:03:58.630585Z	  249 Query	SET global log_output = 'FILE'
+2021-06-06T23:03:58.631691Z	  249 Query	COMMIT
+2021-06-06T23:03:58.632543Z	  249 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-06T23:03:58.648898Z	  249 Query	COMMIT
+2021-06-06T23:03:58.649467Z	  249 Query	SET GLOBAL general_log = 'ON'
+2021-06-06T23:03:58.650055Z	  249 Query	COMMIT
+2021-06-06T23:04:09.842017Z	  250 Connect	remote@localhost on  using SSL/TLS
+2021-06-06T23:04:09.843825Z	  250 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T23:04:09.844608Z	  250 Query	SET @@session.autocommit = OFF
+2021-06-06T23:04:09.845738Z	  250 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-06T23:04:09.876855Z	  251 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T23:04:09.879186Z	  251 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T23:04:09.880205Z	  251 Query	SET @@session.autocommit = OFF
+2021-06-06T23:04:09.881532Z	  251 Query	SET global log_output = 'FILE'
+2021-06-06T23:04:09.882048Z	  251 Query	COMMIT
+2021-06-06T23:04:09.882386Z	  251 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-06T23:04:09.914027Z	  251 Query	COMMIT
+2021-06-06T23:04:09.914973Z	  251 Query	SET GLOBAL general_log = 'off'
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-06T23:07:18.446403Z	  261 Query	COMMIT
+2021-06-06T23:07:25.053294Z	  262 Connect	remote@localhost on  using SSL/TLS
+2021-06-06T23:07:25.055368Z	  262 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T23:07:25.056473Z	  262 Query	SET @@session.autocommit = OFF
+2021-06-06T23:07:25.059196Z	  262 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-06T23:07:25.106786Z	  263 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-06T23:07:25.109631Z	  263 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-06T23:07:25.111522Z	  263 Query	SET @@session.autocommit = OFF
+2021-06-06T23:07:25.116564Z	  263 Query	SET global log_output = 'FILE'
+2021-06-06T23:07:25.118425Z	  263 Query	COMMIT
+2021-06-06T23:07:25.119978Z	  263 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.23-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-06T23:07:25.142857Z	  263 Query	COMMIT
+2021-06-06T23:07:25.143231Z	  263 Query	SET GLOBAL general_log = 'OFF'
+/usr/sbin/mysqld, Version: 8.0.25-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-10T05:36:18.831305Z	   13 Query	COMMIT
+/usr/sbin/mysqld, Version: 8.0.25-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-10T17:30:46.664574Z	   11 Query	COMMIT
+2021-06-10T17:31:56.842262Z	   12 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T17:31:56.843145Z	   12 Quit	
+2021-06-10T17:31:57.624139Z	   13 Connect	remote@localhost on  using SSL/TLS
+2021-06-10T17:31:57.625112Z	   13 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T17:31:57.625928Z	   13 Query	SET @@session.autocommit = OFF
+2021-06-10T17:31:57.627732Z	   13 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-10T17:31:57.692685Z	   14 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T17:31:57.694318Z	   14 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T17:31:57.695151Z	   14 Query	SET @@session.autocommit = OFF
+2021-06-10T17:31:57.697159Z	   14 Query	SET global log_output = 'FILE'
+2021-06-10T17:31:57.700062Z	   14 Query	COMMIT
+2021-06-10T17:31:57.700920Z	   14 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.25-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-10T17:31:57.713795Z	   14 Query	COMMIT
+2021-06-10T17:31:57.714657Z	   14 Query	SET GLOBAL general_log = 'ON'
+2021-06-10T17:31:57.715393Z	   14 Query	COMMIT
+2021-06-10T17:58:02.037311Z	   15 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T17:58:02.040755Z	   15 Quit	
+2021-06-10T17:58:03.039676Z	   16 Connect	remote@localhost on  using SSL/TLS
+2021-06-10T17:58:03.042362Z	   16 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T17:58:03.044081Z	   16 Query	SET @@session.autocommit = OFF
+2021-06-10T17:58:03.046329Z	   16 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-10T17:58:03.079881Z	   17 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T17:58:03.086836Z	   17 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T17:58:03.087894Z	   17 Query	SET @@session.autocommit = OFF
+2021-06-10T17:58:03.090006Z	   17 Query	SET global log_output = 'FILE'
+2021-06-10T17:58:03.091631Z	   17 Query	COMMIT
+2021-06-10T17:58:03.092453Z	   17 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.25-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-10T17:58:03.108580Z	   17 Query	COMMIT
+2021-06-10T17:58:03.109294Z	   17 Query	SET GLOBAL general_log = 'ON'
+2021-06-10T17:58:03.109921Z	   17 Query	COMMIT
+2021-06-10T18:04:51.062933Z	   18 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:04:51.063700Z	   18 Quit	
+2021-06-10T18:04:54.794098Z	   19 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:04:54.795870Z	   19 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:04:54.796641Z	   19 Query	SET @@session.autocommit = OFF
+2021-06-10T18:04:54.802423Z	   19 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:04:54.848969Z	   19 Query	COMMIT
+2021-06-10T18:04:54.849642Z	   19 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:04:54.854342Z	   19 Query	COMMIT
+2021-06-10T18:04:54.854946Z	   19 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:04:54.858273Z	   19 Query	COMMIT
+2021-06-10T18:04:54.858747Z	   19 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:04:54.862340Z	   19 Query	COMMIT
+2021-06-10T18:10:43.593505Z	   20 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:10:43.596431Z	   20 Quit	
+2021-06-10T18:13:59.549495Z	   21 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:13:59.551109Z	   21 Quit	
+2021-06-10T18:14:03.219870Z	   22 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:14:03.221161Z	   22 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:14:03.221870Z	   22 Query	SET @@session.autocommit = OFF
+2021-06-10T18:14:03.222828Z	   22 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:14:03.224900Z	   22 Query	COMMIT
+2021-06-10T18:14:03.225374Z	   22 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:14:03.227131Z	   22 Query	COMMIT
+2021-06-10T18:14:03.227694Z	   22 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:14:03.229104Z	   22 Query	COMMIT
+2021-06-10T18:14:03.230450Z	   22 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:14:03.232786Z	   22 Query	COMMIT
+2021-06-10T18:14:58.719889Z	   23 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:14:58.720926Z	   23 Quit	
+2021-06-10T18:15:02.345670Z	   24 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:15:02.346741Z	   24 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:15:02.347315Z	   24 Query	SET @@session.autocommit = OFF
+2021-06-10T18:15:02.348339Z	   24 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:15:02.353860Z	   24 Query	COMMIT
+2021-06-10T18:15:02.354340Z	   24 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:15:02.357661Z	   24 Query	COMMIT
+2021-06-10T18:15:02.358376Z	   24 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:15:02.360769Z	   24 Query	COMMIT
+2021-06-10T18:15:02.361348Z	   24 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:15:02.364316Z	   24 Query	COMMIT
+2021-06-10T18:17:19.257974Z	   25 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:17:19.258590Z	   25 Quit	
+2021-06-10T18:17:22.098986Z	   26 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:17:22.100286Z	   26 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:17:22.100837Z	   26 Query	SET @@session.autocommit = OFF
+2021-06-10T18:17:22.101941Z	   26 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:17:22.118015Z	   26 Query	COMMIT
+2021-06-10T18:17:22.121387Z	   26 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:17:22.124407Z	   26 Query	COMMIT
+2021-06-10T18:17:22.125943Z	   26 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:17:22.129096Z	   26 Query	COMMIT
+2021-06-10T18:17:22.131150Z	   26 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:17:22.134619Z	   26 Query	COMMIT
+2021-06-10T18:17:35.773805Z	   27 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:17:35.775773Z	   27 Quit	
+2021-06-10T18:17:37.886797Z	   28 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:17:37.889056Z	   28 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:17:37.890084Z	   28 Query	SET @@session.autocommit = OFF
+2021-06-10T18:17:37.891160Z	   28 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:17:37.898207Z	   28 Query	COMMIT
+2021-06-10T18:17:37.898773Z	   28 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:17:37.900525Z	   28 Query	COMMIT
+2021-06-10T18:17:37.900956Z	   28 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:17:37.904031Z	   28 Query	COMMIT
+2021-06-10T18:17:37.904784Z	   28 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:17:37.906460Z	   28 Query	COMMIT
+2021-06-10T18:18:23.625659Z	   29 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:18:23.626693Z	   29 Quit	
+2021-06-10T18:18:25.975747Z	   30 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:18:25.977552Z	   30 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:18:25.978700Z	   30 Query	SET @@session.autocommit = OFF
+2021-06-10T18:18:25.980435Z	   30 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:18:25.984381Z	   30 Query	COMMIT
+2021-06-10T18:18:25.985364Z	   30 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:18:25.987251Z	   30 Query	COMMIT
+2021-06-10T18:18:25.988067Z	   30 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:18:25.990562Z	   30 Query	COMMIT
+2021-06-10T18:18:25.991280Z	   30 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:18:25.992908Z	   30 Query	COMMIT
+2021-06-10T18:18:49.471237Z	   31 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:18:49.472094Z	   31 Quit	
+2021-06-10T18:18:52.845785Z	   32 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:18:52.848055Z	   32 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:18:52.849178Z	   32 Query	SET @@session.autocommit = OFF
+2021-06-10T18:18:52.850262Z	   32 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:18:52.854673Z	   32 Query	COMMIT
+2021-06-10T18:18:52.855669Z	   32 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:18:52.858647Z	   32 Query	COMMIT
+2021-06-10T18:18:52.860190Z	   32 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:18:52.862057Z	   32 Query	COMMIT
+2021-06-10T18:18:52.862545Z	   32 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:18:52.872361Z	   32 Query	COMMIT
+2021-06-10T18:19:17.291729Z	   33 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:19:17.293945Z	   33 Quit	
+2021-06-10T18:19:20.120924Z	   34 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:19:20.122283Z	   34 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:19:20.122960Z	   34 Query	SET @@session.autocommit = OFF
+2021-06-10T18:19:20.123889Z	   34 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:19:20.131740Z	   34 Query	COMMIT
+2021-06-10T18:19:20.132624Z	   34 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:19:20.135155Z	   34 Query	COMMIT
+2021-06-10T18:19:20.136218Z	   34 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:19:20.138719Z	   34 Query	COMMIT
+2021-06-10T18:19:20.139717Z	   34 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:19:20.141982Z	   34 Query	COMMIT
+2021-06-10T18:21:46.652993Z	   35 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:21:46.654224Z	   35 Quit	
+2021-06-10T18:21:49.666214Z	   36 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:21:49.667898Z	   36 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:21:49.668683Z	   36 Query	SET @@session.autocommit = OFF
+2021-06-10T18:21:49.670975Z	   36 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:21:49.676162Z	   36 Query	COMMIT
+2021-06-10T18:21:49.676966Z	   36 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:21:49.679491Z	   36 Query	COMMIT
+2021-06-10T18:21:49.680095Z	   36 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:21:49.681836Z	   36 Query	COMMIT
+2021-06-10T18:21:49.682305Z	   36 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:21:49.684225Z	   36 Query	COMMIT
+2021-06-10T18:22:20.972252Z	   37 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:22:20.974174Z	   37 Quit	
+2021-06-10T18:22:24.384129Z	   38 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:22:24.385180Z	   38 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:22:24.385812Z	   38 Query	SET @@session.autocommit = OFF
+2021-06-10T18:22:24.386786Z	   38 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:22:24.390448Z	   38 Query	COMMIT
+2021-06-10T18:22:24.390982Z	   38 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:22:24.392335Z	   38 Query	COMMIT
+2021-06-10T18:22:24.392790Z	   38 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:22:24.394612Z	   38 Query	COMMIT
+2021-06-10T18:22:24.395172Z	   38 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:22:24.396631Z	   38 Query	COMMIT
+2021-06-10T18:22:41.083449Z	   39 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:22:41.084542Z	   39 Quit	
+2021-06-10T18:22:44.681763Z	   40 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:22:44.685070Z	   40 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:22:44.685668Z	   40 Query	SET @@session.autocommit = OFF
+2021-06-10T18:22:44.686725Z	   40 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:22:44.689705Z	   40 Query	COMMIT
+2021-06-10T18:22:44.690072Z	   40 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:22:44.691108Z	   40 Query	COMMIT
+2021-06-10T18:22:44.691495Z	   40 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:22:44.692546Z	   40 Query	COMMIT
+2021-06-10T18:22:44.692914Z	   40 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:22:44.694520Z	   40 Query	COMMIT
+2021-06-10T18:23:01.027860Z	   41 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:23:01.028424Z	   41 Quit	
+2021-06-10T18:23:02.825746Z	   42 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:23:02.827753Z	   42 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:23:02.828464Z	   42 Query	SET @@session.autocommit = OFF
+2021-06-10T18:23:02.831505Z	   42 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:23:02.837767Z	   42 Query	COMMIT
+2021-06-10T18:23:02.839081Z	   42 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:23:02.841887Z	   42 Query	COMMIT
+2021-06-10T18:23:02.843293Z	   42 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:23:02.846260Z	   42 Query	COMMIT
+2021-06-10T18:23:02.847426Z	   42 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:23:02.849650Z	   42 Query	COMMIT
+2021-06-10T18:23:33.572218Z	   43 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:23:33.574445Z	   43 Quit	
+2021-06-10T18:23:35.853993Z	   44 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:23:35.855483Z	   44 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:23:35.856529Z	   44 Query	SET @@session.autocommit = OFF
+2021-06-10T18:23:35.860208Z	   44 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:23:35.865687Z	   44 Query	COMMIT
+2021-06-10T18:23:35.867001Z	   44 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:23:35.871310Z	   44 Query	COMMIT
+2021-06-10T18:23:35.872458Z	   44 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:23:35.875259Z	   44 Query	COMMIT
+2021-06-10T18:23:35.876867Z	   44 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:23:35.880048Z	   44 Query	COMMIT
+2021-06-10T18:24:23.829155Z	   45 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:24:23.830561Z	   45 Quit	
+2021-06-10T18:24:37.876250Z	   46 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:24:37.877457Z	   46 Quit	
+2021-06-10T18:24:40.537691Z	   47 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:24:40.538864Z	   47 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:24:40.539379Z	   47 Query	SET @@session.autocommit = OFF
+2021-06-10T18:24:40.540318Z	   47 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:24:40.545405Z	   47 Query	COMMIT
+2021-06-10T18:24:40.545808Z	   47 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:24:40.547623Z	   47 Query	COMMIT
+2021-06-10T18:24:40.548095Z	   47 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:24:40.551067Z	   47 Query	COMMIT
+2021-06-10T18:24:40.551934Z	   47 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:24:40.554058Z	   47 Query	COMMIT
+2021-06-10T18:25:30.381027Z	   48 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:25:30.382646Z	   48 Quit	
+2021-06-10T18:25:32.879240Z	   49 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:25:32.880781Z	   49 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:25:32.881685Z	   49 Query	SET @@session.autocommit = OFF
+2021-06-10T18:25:32.882785Z	   49 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:25:32.889846Z	   49 Query	COMMIT
+2021-06-10T18:25:32.891800Z	   49 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:25:32.895348Z	   49 Query	COMMIT
+2021-06-10T18:25:32.896074Z	   49 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:25:32.897752Z	   49 Query	COMMIT
+2021-06-10T18:25:32.898314Z	   49 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:25:32.900041Z	   49 Query	COMMIT
+2021-06-10T18:26:05.688902Z	   50 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:26:05.691589Z	   50 Quit	
+2021-06-10T18:26:08.271462Z	   51 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:26:08.273340Z	   51 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:26:08.274234Z	   51 Query	SET @@session.autocommit = OFF
+2021-06-10T18:26:08.275384Z	   51 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:26:08.285929Z	   51 Query	COMMIT
+2021-06-10T18:26:08.288708Z	   51 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:26:08.293625Z	   51 Query	COMMIT
+2021-06-10T18:26:08.295673Z	   51 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:26:08.297915Z	   51 Query	COMMIT
+2021-06-10T18:26:08.298695Z	   51 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:26:08.300460Z	   51 Query	COMMIT
+2021-06-10T18:26:35.274406Z	   52 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:26:35.276463Z	   52 Quit	
+2021-06-10T18:26:38.004588Z	   53 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:26:38.006326Z	   53 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:26:38.006998Z	   53 Query	SET @@session.autocommit = OFF
+2021-06-10T18:26:38.008173Z	   53 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:26:38.015261Z	   53 Query	COMMIT
+2021-06-10T18:26:38.017035Z	   53 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:26:38.021107Z	   53 Query	COMMIT
+2021-06-10T18:26:38.022933Z	   53 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:26:38.027834Z	   53 Query	COMMIT
+2021-06-10T18:26:38.029461Z	   53 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:26:38.032208Z	   53 Query	COMMIT
+2021-06-10T18:27:07.349333Z	   54 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:27:07.354084Z	   54 Quit	
+2021-06-10T18:27:10.806711Z	   55 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:27:10.808856Z	   55 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:27:10.810637Z	   55 Query	SET @@session.autocommit = OFF
+2021-06-10T18:27:10.814529Z	   55 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:27:10.818961Z	   55 Query	COMMIT
+2021-06-10T18:27:10.824967Z	   55 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:27:10.827777Z	   55 Query	COMMIT
+2021-06-10T18:27:10.828401Z	   55 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:27:10.830114Z	   55 Query	COMMIT
+2021-06-10T18:27:10.830615Z	   55 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:27:10.832058Z	   55 Query	COMMIT
+2021-06-10T18:27:56.958858Z	   56 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:27:56.960002Z	   56 Quit	
+2021-06-10T18:27:59.991593Z	   57 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:27:59.993681Z	   57 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:28:00.000117Z	   57 Query	SET @@session.autocommit = OFF
+2021-06-10T18:28:00.002289Z	   57 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:28:00.007140Z	   57 Query	COMMIT
+2021-06-10T18:28:00.007634Z	   57 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:28:00.009576Z	   57 Query	COMMIT
+2021-06-10T18:28:00.010399Z	   57 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:28:00.012526Z	   57 Query	COMMIT
+2021-06-10T18:28:00.013352Z	   57 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:28:00.015794Z	   57 Query	COMMIT
+2021-06-10T18:28:29.136659Z	   58 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:28:29.138995Z	   58 Quit	
+2021-06-10T18:28:31.564642Z	   59 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:28:31.566467Z	   59 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:28:31.567789Z	   59 Query	SET @@session.autocommit = OFF
+2021-06-10T18:28:31.570531Z	   59 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:28:31.574739Z	   59 Query	COMMIT
+2021-06-10T18:28:31.575621Z	   59 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:28:31.577725Z	   59 Query	COMMIT
+2021-06-10T18:28:31.578627Z	   59 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:28:31.580879Z	   59 Query	COMMIT
+2021-06-10T18:28:31.581749Z	   59 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:28:31.583900Z	   59 Query	COMMIT
+2021-06-10T18:29:45.437458Z	   60 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:29:45.438520Z	   60 Quit	
+2021-06-10T18:30:06.748658Z	   61 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:30:06.750827Z	   61 Quit	
+2021-06-10T18:30:09.933789Z	   62 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:30:09.935543Z	   62 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:30:09.936346Z	   62 Query	SET @@session.autocommit = OFF
+2021-06-10T18:30:09.938380Z	   62 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:30:09.944205Z	   62 Query	COMMIT
+2021-06-10T18:30:09.945439Z	   62 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:30:09.948665Z	   62 Query	COMMIT
+2021-06-10T18:30:09.949381Z	   62 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:30:09.951650Z	   62 Query	COMMIT
+2021-06-10T18:30:09.952293Z	   62 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:30:09.953664Z	   62 Query	COMMIT
+2021-06-10T18:30:38.872096Z	   63 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:30:38.873463Z	   63 Quit	
+2021-06-10T18:30:41.294031Z	   64 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:30:41.295350Z	   64 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:30:41.295870Z	   64 Query	SET @@session.autocommit = OFF
+2021-06-10T18:30:41.296976Z	   64 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:30:41.301477Z	   64 Query	COMMIT
+2021-06-10T18:30:41.302416Z	   64 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:30:41.305038Z	   64 Query	COMMIT
+2021-06-10T18:30:41.305896Z	   64 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:30:41.307346Z	   64 Query	COMMIT
+2021-06-10T18:30:41.307769Z	   64 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:30:41.308858Z	   64 Query	COMMIT
+2021-06-10T18:30:57.356494Z	   65 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:30:57.358790Z	   65 Quit	
+2021-06-10T18:31:00.129944Z	   66 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:31:00.131129Z	   66 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:31:00.131644Z	   66 Query	SET @@session.autocommit = OFF
+2021-06-10T18:31:00.132538Z	   66 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:31:00.136052Z	   66 Query	COMMIT
+2021-06-10T18:31:00.136436Z	   66 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:31:00.138190Z	   66 Query	COMMIT
+2021-06-10T18:31:00.138588Z	   66 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:31:00.141794Z	   66 Query	COMMIT
+2021-06-10T18:31:00.142190Z	   66 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:31:00.144539Z	   66 Query	COMMIT
+2021-06-10T18:31:24.329609Z	   67 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:31:24.331825Z	   67 Quit	
+2021-06-10T18:31:27.482775Z	   68 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:31:27.484532Z	   68 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:31:27.485460Z	   68 Query	SET @@session.autocommit = OFF
+2021-06-10T18:31:27.487355Z	   68 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:31:27.492311Z	   68 Query	COMMIT
+2021-06-10T18:31:27.492998Z	   68 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:31:27.494877Z	   68 Query	COMMIT
+2021-06-10T18:31:27.495698Z	   68 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:31:27.498739Z	   68 Query	COMMIT
+2021-06-10T18:31:27.499599Z	   68 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:31:27.501675Z	   68 Query	COMMIT
+2021-06-10T18:31:49.891116Z	   69 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:31:49.893317Z	   69 Quit	
+2021-06-10T18:31:52.411611Z	   70 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:31:52.412856Z	   70 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:31:52.413560Z	   70 Query	SET @@session.autocommit = OFF
+2021-06-10T18:31:52.414621Z	   70 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:31:52.421164Z	   70 Query	COMMIT
+2021-06-10T18:31:52.423372Z	   70 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:31:52.426796Z	   70 Query	COMMIT
+2021-06-10T18:31:52.429146Z	   70 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:31:52.432938Z	   70 Query	COMMIT
+2021-06-10T18:31:52.435012Z	   70 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:31:52.438411Z	   70 Query	COMMIT
+2021-06-10T18:32:05.291456Z	   71 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:32:05.292317Z	   71 Quit	
+2021-06-10T18:32:07.972054Z	   72 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:32:07.973408Z	   72 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:32:07.974060Z	   72 Query	SET @@session.autocommit = OFF
+2021-06-10T18:32:07.975150Z	   72 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:32:07.984096Z	   72 Query	COMMIT
+2021-06-10T18:32:07.986221Z	   72 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:32:07.990614Z	   72 Query	COMMIT
+2021-06-10T18:32:07.992125Z	   72 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:32:07.995881Z	   72 Query	COMMIT
+2021-06-10T18:32:07.997200Z	   72 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:32:08.000365Z	   72 Query	COMMIT
+2021-06-10T18:33:55.820994Z	   73 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:33:55.823697Z	   73 Quit	
+2021-06-10T18:33:58.187336Z	   74 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:33:58.188872Z	   74 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:33:58.189825Z	   74 Query	SET @@session.autocommit = OFF
+2021-06-10T18:33:58.191427Z	   74 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:33:58.193164Z	   74 Query	COMMIT
+2021-06-10T18:33:58.193807Z	   74 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:33:58.195212Z	   74 Query	COMMIT
+2021-06-10T18:33:58.198834Z	   74 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:33:58.200215Z	   74 Query	COMMIT
+2021-06-10T18:33:58.201908Z	   74 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:33:58.203446Z	   74 Query	COMMIT
+2021-06-10T18:38:28.663764Z	   75 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:38:28.665038Z	   75 Quit	
+2021-06-10T18:38:31.727288Z	   76 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:38:31.728614Z	   76 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:38:31.729400Z	   76 Query	SET @@session.autocommit = OFF
+2021-06-10T18:38:31.730393Z	   76 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:38:31.738910Z	   76 Query	COMMIT
+2021-06-10T18:38:31.740912Z	   76 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:38:31.743160Z	   76 Query	COMMIT
+2021-06-10T18:38:31.743691Z	   76 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:38:31.745304Z	   76 Query	COMMIT
+2021-06-10T18:38:31.746099Z	   76 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:38:31.747612Z	   76 Query	COMMIT
+2021-06-10T18:38:57.458117Z	   77 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:38:57.459316Z	   77 Quit	
+2021-06-10T18:39:00.127480Z	   78 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:39:00.129008Z	   78 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:39:00.129691Z	   78 Query	SET @@session.autocommit = OFF
+2021-06-10T18:39:00.130791Z	   78 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:39:00.137059Z	   78 Query	COMMIT
+2021-06-10T18:39:00.139229Z	   78 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:39:00.142232Z	   78 Query	COMMIT
+2021-06-10T18:39:00.143536Z	   78 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:39:00.147254Z	   78 Query	COMMIT
+2021-06-10T18:39:00.148232Z	   78 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:39:00.151184Z	   78 Query	COMMIT
+2021-06-10T18:39:37.143441Z	   79 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:39:37.144124Z	   79 Quit	
+2021-06-10T18:39:40.131851Z	   80 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:39:40.133972Z	   80 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:39:40.134855Z	   80 Query	SET @@session.autocommit = OFF
+2021-06-10T18:39:40.136186Z	   80 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:39:40.146212Z	   80 Query	COMMIT
+2021-06-10T18:39:40.146851Z	   80 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:39:40.148893Z	   80 Query	COMMIT
+2021-06-10T18:39:40.149769Z	   80 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:39:40.152156Z	   80 Query	COMMIT
+2021-06-10T18:39:40.152628Z	   80 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:39:40.153974Z	   80 Query	COMMIT
+2021-06-10T18:40:52.126619Z	   81 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:40:52.128673Z	   81 Quit	
+2021-06-10T18:40:55.103466Z	   82 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:40:55.104575Z	   82 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:40:55.105422Z	   82 Query	SET @@session.autocommit = OFF
+2021-06-10T18:40:55.106417Z	   82 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:40:55.115108Z	   82 Query	COMMIT
+2021-06-10T18:40:55.116432Z	   82 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:40:55.119379Z	   82 Query	COMMIT
+2021-06-10T18:40:55.119847Z	   82 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:40:55.121266Z	   82 Query	COMMIT
+2021-06-10T18:40:55.122500Z	   82 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:40:55.125871Z	   82 Query	COMMIT
+2021-06-10T18:43:21.236821Z	   83 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:43:21.237921Z	   83 Quit	
+2021-06-10T18:43:23.722720Z	   84 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:43:23.724760Z	   84 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:43:23.725620Z	   84 Query	SET @@session.autocommit = OFF
+2021-06-10T18:43:23.726737Z	   84 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:43:23.732537Z	   84 Query	COMMIT
+2021-06-10T18:43:23.734910Z	   84 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:43:23.738218Z	   84 Query	COMMIT
+2021-06-10T18:43:23.740833Z	   84 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:43:23.743203Z	   84 Query	COMMIT
+2021-06-10T18:43:23.743693Z	   84 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:43:23.747310Z	   84 Query	COMMIT
+2021-06-10T18:43:58.847667Z	   85 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:43:58.848853Z	   85 Quit	
+2021-06-10T18:44:01.330286Z	   86 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:44:01.331588Z	   86 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:44:01.332192Z	   86 Query	SET @@session.autocommit = OFF
+2021-06-10T18:44:01.333448Z	   86 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:44:01.336978Z	   86 Query	COMMIT
+2021-06-10T18:44:01.337615Z	   86 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:44:01.339127Z	   86 Query	COMMIT
+2021-06-10T18:44:01.339620Z	   86 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:44:01.340960Z	   86 Query	COMMIT
+2021-06-10T18:44:01.341557Z	   86 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:44:01.343013Z	   86 Query	COMMIT
+2021-06-10T18:45:33.881712Z	   87 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:45:33.882596Z	   87 Quit	
+2021-06-10T18:45:36.615618Z	   88 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:45:36.618868Z	   88 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:45:36.619948Z	   88 Query	SET @@session.autocommit = OFF
+2021-06-10T18:45:36.622505Z	   88 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:45:36.627058Z	   88 Query	COMMIT
+2021-06-10T18:45:36.628011Z	   88 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:45:36.630257Z	   88 Query	COMMIT
+2021-06-10T18:45:36.631032Z	   88 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:45:36.634031Z	   88 Query	COMMIT
+2021-06-10T18:45:36.634733Z	   88 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:45:36.637556Z	   88 Query	COMMIT
+2021-06-10T18:45:59.919840Z	   89 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:45:59.921977Z	   89 Quit	
+2021-06-10T18:46:03.040996Z	   90 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:46:03.043864Z	   90 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:46:03.044648Z	   90 Query	SET @@session.autocommit = OFF
+2021-06-10T18:46:03.045978Z	   90 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:46:03.053370Z	   90 Query	COMMIT
+2021-06-10T18:46:03.053909Z	   90 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:46:03.058068Z	   90 Query	COMMIT
+2021-06-10T18:46:03.058733Z	   90 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:46:03.060689Z	   90 Query	COMMIT
+2021-06-10T18:46:03.061106Z	   90 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:46:03.062555Z	   90 Query	COMMIT
+2021-06-10T18:48:26.244393Z	   91 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:48:26.245557Z	   91 Quit	
+2021-06-10T18:48:28.093891Z	   92 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:48:28.097923Z	   92 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:48:28.098698Z	   92 Query	SET @@session.autocommit = OFF
+2021-06-10T18:48:28.099639Z	   92 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:48:28.102860Z	   92 Query	COMMIT
+2021-06-10T18:48:28.103386Z	   92 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:48:28.106288Z	   92 Query	COMMIT
+2021-06-10T18:48:28.107043Z	   92 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:48:28.108471Z	   92 Query	COMMIT
+2021-06-10T18:48:28.108996Z	   92 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:48:28.110975Z	   92 Query	COMMIT
+2021-06-10T18:48:59.377201Z	   93 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:48:59.378043Z	   93 Quit	
+2021-06-10T18:49:02.792457Z	   94 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:49:02.793751Z	   94 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:49:02.794474Z	   94 Query	SET @@session.autocommit = OFF
+2021-06-10T18:49:02.795503Z	   94 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:49:02.799343Z	   94 Query	COMMIT
+2021-06-10T18:49:02.800382Z	   94 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:49:02.802917Z	   94 Query	COMMIT
+2021-06-10T18:49:02.804104Z	   94 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:49:02.806415Z	   94 Query	COMMIT
+2021-06-10T18:49:02.807387Z	   94 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:49:02.809349Z	   94 Query	COMMIT
+2021-06-10T18:49:16.698505Z	   95 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:49:16.699506Z	   95 Quit	
+2021-06-10T18:49:19.331248Z	   96 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:49:19.333034Z	   96 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:49:19.333800Z	   96 Query	SET @@session.autocommit = OFF
+2021-06-10T18:49:19.334935Z	   96 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:49:19.340167Z	   96 Query	COMMIT
+2021-06-10T18:49:19.340667Z	   96 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:49:19.344780Z	   96 Query	COMMIT
+2021-06-10T18:49:19.346966Z	   96 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:49:19.350928Z	   96 Query	COMMIT
+2021-06-10T18:49:19.352149Z	   96 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:49:19.354929Z	   96 Query	COMMIT
+2021-06-10T18:49:47.349682Z	   97 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:49:47.351329Z	   97 Quit	
+2021-06-10T18:49:50.165110Z	   98 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:49:50.166389Z	   98 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:49:50.166893Z	   98 Query	SET @@session.autocommit = OFF
+2021-06-10T18:49:50.167813Z	   98 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:49:50.173137Z	   98 Query	COMMIT
+2021-06-10T18:49:50.174252Z	   98 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:49:50.176686Z	   98 Query	COMMIT
+2021-06-10T18:49:50.177894Z	   98 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:49:50.180152Z	   98 Query	COMMIT
+2021-06-10T18:49:50.181420Z	   98 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:49:50.183773Z	   98 Query	COMMIT
+2021-06-10T18:51:17.381099Z	   99 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:51:17.383064Z	   99 Quit	
+2021-06-10T18:51:19.840998Z	  100 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:51:19.842293Z	  100 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:51:19.842929Z	  100 Query	SET @@session.autocommit = OFF
+2021-06-10T18:51:19.843873Z	  100 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:51:19.848349Z	  100 Query	COMMIT
+2021-06-10T18:51:19.849140Z	  100 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:51:19.851200Z	  100 Query	COMMIT
+2021-06-10T18:51:19.852101Z	  100 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:51:19.854040Z	  100 Query	COMMIT
+2021-06-10T18:51:19.854884Z	  100 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:51:19.856738Z	  100 Query	COMMIT
+2021-06-10T18:51:27.723260Z	  101 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:51:27.724185Z	  101 Quit	
+2021-06-10T18:51:30.097646Z	  102 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:51:30.099071Z	  102 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:51:30.099648Z	  102 Query	SET @@session.autocommit = OFF
+2021-06-10T18:51:30.100737Z	  102 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:51:30.104929Z	  102 Query	COMMIT
+2021-06-10T18:51:30.105426Z	  102 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:51:30.106753Z	  102 Query	COMMIT
+2021-06-10T18:51:30.107192Z	  102 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:51:30.108227Z	  102 Query	COMMIT
+2021-06-10T18:51:30.108621Z	  102 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:51:30.109925Z	  102 Query	COMMIT
+2021-06-10T18:51:54.736632Z	  103 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:51:54.737636Z	  103 Quit	
+2021-06-10T18:51:58.484974Z	  104 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:51:58.486420Z	  104 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:51:58.487064Z	  104 Query	SET @@session.autocommit = OFF
+2021-06-10T18:51:58.488168Z	  104 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:51:58.495359Z	  104 Query	COMMIT
+2021-06-10T18:51:58.497753Z	  104 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:51:58.501638Z	  104 Query	COMMIT
+2021-06-10T18:51:58.505537Z	  104 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:51:58.508538Z	  104 Query	COMMIT
+2021-06-10T18:51:58.509465Z	  104 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:51:58.511630Z	  104 Query	COMMIT
+2021-06-10T18:52:06.446283Z	  105 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:52:06.447380Z	  105 Quit	
+2021-06-10T18:52:08.952772Z	  106 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:52:08.957286Z	  106 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:52:08.957991Z	  106 Query	SET @@session.autocommit = OFF
+2021-06-10T18:52:08.959197Z	  106 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:52:08.966346Z	  106 Query	COMMIT
+2021-06-10T18:52:08.966793Z	  106 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:52:08.967985Z	  106 Query	COMMIT
+2021-06-10T18:52:08.968444Z	  106 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:52:08.969895Z	  106 Query	COMMIT
+2021-06-10T18:52:08.970464Z	  106 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:52:08.971803Z	  106 Query	COMMIT
+2021-06-10T18:54:05.998461Z	  107 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:54:06.001027Z	  107 Quit	
+2021-06-10T18:54:09.027051Z	  108 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:54:09.028061Z	  108 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:54:09.028567Z	  108 Query	SET @@session.autocommit = OFF
+2021-06-10T18:54:09.029508Z	  108 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:54:09.032002Z	  108 Query	COMMIT
+2021-06-10T18:54:09.032885Z	  108 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:54:09.044550Z	  108 Query	COMMIT
+2021-06-10T18:54:09.045644Z	  108 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:54:09.048360Z	  108 Query	COMMIT
+2021-06-10T18:54:09.048885Z	  108 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:54:09.050267Z	  108 Query	COMMIT
+2021-06-10T18:54:18.164563Z	  109 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:54:18.166463Z	  109 Quit	
+2021-06-10T18:54:20.128085Z	  110 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:54:20.130047Z	  110 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:54:20.132386Z	  110 Query	SET @@session.autocommit = OFF
+2021-06-10T18:54:20.134937Z	  110 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:54:20.140802Z	  110 Query	COMMIT
+2021-06-10T18:54:20.141976Z	  110 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:54:20.144190Z	  110 Query	COMMIT
+2021-06-10T18:54:20.144779Z	  110 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:54:20.146859Z	  110 Query	COMMIT
+2021-06-10T18:54:20.147387Z	  110 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:54:20.148457Z	  110 Query	COMMIT
+2021-06-10T18:54:27.302593Z	  111 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:54:27.303650Z	  111 Quit	
+2021-06-10T18:54:29.458352Z	  112 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:54:29.459898Z	  112 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:54:29.460491Z	  112 Query	SET @@session.autocommit = OFF
+2021-06-10T18:54:29.461654Z	  112 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:54:29.472426Z	  112 Query	COMMIT
+2021-06-10T18:54:29.473439Z	  112 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:54:29.476265Z	  112 Query	COMMIT
+2021-06-10T18:54:29.477202Z	  112 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:54:29.479698Z	  112 Query	COMMIT
+2021-06-10T18:54:29.480559Z	  112 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:54:29.482739Z	  112 Query	COMMIT
+2021-06-10T18:57:43.979588Z	  113 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T18:57:43.982199Z	  113 Quit	
+2021-06-10T18:57:46.874988Z	  114 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T18:57:46.876607Z	  114 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T18:57:46.877315Z	  114 Query	SET @@session.autocommit = OFF
+2021-06-10T18:57:46.878446Z	  114 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T18:57:46.885684Z	  114 Query	COMMIT
+2021-06-10T18:57:46.887662Z	  114 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T18:57:46.892247Z	  114 Query	COMMIT
+2021-06-10T18:57:46.894218Z	  114 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T18:57:46.897951Z	  114 Query	COMMIT
+2021-06-10T18:57:46.899161Z	  114 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T18:57:46.903264Z	  114 Query	COMMIT
+2021-06-10T19:05:10.039433Z	  115 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:05:10.041809Z	  115 Quit	
+2021-06-10T19:05:12.855835Z	  116 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:05:12.859142Z	  116 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:05:12.860424Z	  116 Query	SET @@session.autocommit = OFF
+2021-06-10T19:05:12.863098Z	  116 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T19:05:12.868686Z	  116 Query	COMMIT
+2021-06-10T19:05:12.869667Z	  116 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T19:05:12.872201Z	  116 Query	COMMIT
+2021-06-10T19:05:12.873185Z	  116 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T19:05:12.875659Z	  116 Query	COMMIT
+2021-06-10T19:05:12.877400Z	  116 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T19:05:12.880039Z	  116 Query	COMMIT
+2021-06-10T19:05:26.188237Z	  117 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:05:26.190299Z	  117 Quit	
+2021-06-10T19:05:28.736447Z	  118 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:05:28.740817Z	  118 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:05:28.743545Z	  118 Query	SET @@session.autocommit = OFF
+2021-06-10T19:05:28.747201Z	  118 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T19:05:28.754770Z	  118 Query	COMMIT
+2021-06-10T19:05:28.755999Z	  118 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T19:05:28.762619Z	  118 Query	COMMIT
+2021-06-10T19:05:28.765125Z	  118 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T19:05:28.767343Z	  118 Query	COMMIT
+2021-06-10T19:05:28.767888Z	  118 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T19:05:28.769386Z	  118 Query	COMMIT
+2021-06-10T19:14:32.848485Z	  119 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:14:32.850053Z	  119 Quit	
+2021-06-10T19:14:42.173935Z	  120 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:14:42.175084Z	  120 Quit	
+2021-06-10T19:14:44.550585Z	  121 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:14:44.551738Z	  121 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:14:44.552253Z	  121 Query	SET @@session.autocommit = OFF
+2021-06-10T19:14:44.553182Z	  121 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T19:14:44.556630Z	  121 Query	COMMIT
+2021-06-10T19:14:44.557844Z	  121 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T19:14:44.560543Z	  121 Query	COMMIT
+2021-06-10T19:14:44.561743Z	  121 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T19:14:44.564035Z	  121 Query	COMMIT
+2021-06-10T19:14:44.565003Z	  121 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T19:14:44.567039Z	  121 Query	COMMIT
+2021-06-10T19:15:18.461089Z	  122 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:15:18.461713Z	  122 Quit	
+2021-06-10T19:15:21.140139Z	  123 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:15:21.141792Z	  123 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:15:21.142456Z	  123 Query	SET @@session.autocommit = OFF
+2021-06-10T19:15:21.143603Z	  123 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T19:15:21.151342Z	  123 Query	COMMIT
+2021-06-10T19:15:21.153568Z	  123 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T19:15:21.158072Z	  123 Query	COMMIT
+2021-06-10T19:15:21.160875Z	  123 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T19:15:21.164714Z	  123 Query	COMMIT
+2021-06-10T19:15:21.166416Z	  123 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T19:15:21.169538Z	  123 Query	COMMIT
+2021-06-10T19:15:59.093882Z	  124 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:15:59.095450Z	  124 Quit	
+2021-06-10T19:16:01.475222Z	  125 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:16:01.477495Z	  125 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:16:01.479950Z	  125 Query	SET @@session.autocommit = OFF
+2021-06-10T19:16:01.484826Z	  125 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T19:16:01.493437Z	  125 Query	COMMIT
+2021-06-10T19:16:01.494472Z	  125 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T19:16:01.496866Z	  125 Query	COMMIT
+2021-06-10T19:16:01.497527Z	  125 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T19:16:01.499407Z	  125 Query	COMMIT
+2021-06-10T19:16:01.499997Z	  125 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T19:16:01.502374Z	  125 Query	COMMIT
+2021-06-10T19:17:24.850374Z	  126 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:17:24.851637Z	  126 Quit	
+2021-06-10T19:17:27.689950Z	  127 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:17:27.691313Z	  127 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:17:27.691887Z	  127 Query	SET @@session.autocommit = OFF
+2021-06-10T19:17:27.692899Z	  127 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T19:17:27.698235Z	  127 Query	COMMIT
+2021-06-10T19:17:27.699462Z	  127 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T19:17:27.702971Z	  127 Query	COMMIT
+2021-06-10T19:17:27.704148Z	  127 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T19:17:27.706866Z	  127 Query	COMMIT
+2021-06-10T19:17:27.708042Z	  127 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T19:17:27.710673Z	  127 Query	COMMIT
+2021-06-10T19:18:17.863658Z	  128 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:18:17.866182Z	  128 Quit	
+2021-06-10T19:18:20.458866Z	  129 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:18:20.460096Z	  129 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:18:20.460614Z	  129 Query	SET @@session.autocommit = OFF
+2021-06-10T19:18:20.461624Z	  129 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T19:18:20.465119Z	  129 Query	COMMIT
+2021-06-10T19:18:20.465954Z	  129 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T19:18:20.467416Z	  129 Query	COMMIT
+2021-06-10T19:18:20.467825Z	  129 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T19:18:20.468996Z	  129 Query	COMMIT
+2021-06-10T19:18:20.469525Z	  129 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T19:18:20.470990Z	  129 Query	COMMIT
+2021-06-10T19:25:48.997309Z	  130 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:25:48.999513Z	  130 Quit	
+2021-06-10T19:25:52.402155Z	  131 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:25:52.404767Z	  131 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:25:52.406433Z	  131 Query	SET @@session.autocommit = OFF
+2021-06-10T19:25:52.408614Z	  131 Query	CREATE TABLE IF NOT EXISTS chat_base ( chat_id VARCHAR(14) PRIMARY KEY, type VARCHAR(14), title VARCHAR(48), username VARCHAR(48), join_date TIMESTAMP)
+2021-06-10T19:25:52.419103Z	  131 Query	COMMIT
+2021-06-10T19:25:52.419986Z	  131 Query	CREATE TABLE IF NOT EXISTS user_base ( user_id VARCHAR(14) PRIMARY KEY, first_name VARCHAR(48), last_name VARCHAR(48), username VARCHAR(48), is_bot BOOLEAN, date TIMESTAMP)
+2021-06-10T19:25:52.421922Z	  131 Query	COMMIT
+2021-06-10T19:25:52.422682Z	  131 Query	CREATE TABLE IF NOT EXISTS link_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), status VARCHAR(14) DEFAULT 'member', bio TEXT, join_date TIMESTAMP, last_active TIMESTAMP)
+2021-06-10T19:25:52.424833Z	  131 Query	COMMIT
+2021-06-10T19:25:52.425665Z	  131 Query	CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, recent_pin TINYINT DEFAULT 5)
+2021-06-10T19:25:52.427746Z	  131 Query	COMMIT
+2021-06-10T19:26:31.966972Z	  132 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:26:31.968151Z	  132 Quit	
+2021-06-10T19:26:32.614888Z	  133 Connect	remote@localhost on  using SSL/TLS
+2021-06-10T19:26:32.616361Z	  133 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:26:32.617167Z	  133 Query	SET @@session.autocommit = OFF
+2021-06-10T19:26:32.621604Z	  133 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-10T19:26:32.663339Z	  134 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:26:32.666634Z	  134 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:26:32.668427Z	  134 Query	SET @@session.autocommit = OFF
+2021-06-10T19:26:32.671566Z	  134 Query	SET global log_output = 'FILE'
+2021-06-10T19:26:32.677801Z	  134 Query	COMMIT
+2021-06-10T19:26:32.678947Z	  134 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.25-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-10T19:26:32.689833Z	  134 Query	COMMIT
+2021-06-10T19:26:32.690735Z	  134 Query	SET GLOBAL general_log = 'ON'
+2021-06-10T19:26:32.691401Z	  134 Query	COMMIT
+2021-06-10T19:26:39.933438Z	  135 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:26:39.934588Z	  135 Quit	
+2021-06-10T19:26:40.459924Z	  136 Connect	remote@localhost on  using SSL/TLS
+2021-06-10T19:26:40.461658Z	  136 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:26:40.462295Z	  136 Query	SET @@session.autocommit = OFF
+2021-06-10T19:26:40.463227Z	  136 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-10T19:26:40.485111Z	  137 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:26:40.487029Z	  137 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:26:40.488546Z	  137 Query	SET @@session.autocommit = OFF
+2021-06-10T19:26:40.491185Z	  137 Query	SET global log_output = 'FILE'
+2021-06-10T19:26:40.492641Z	  137 Query	COMMIT
+2021-06-10T19:26:40.493353Z	  137 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.25-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-10T19:26:40.508146Z	  137 Query	COMMIT
+2021-06-10T19:26:40.509015Z	  137 Query	SET GLOBAL general_log = 'ON'
+2021-06-10T19:26:40.509772Z	  137 Query	COMMIT
+2021-06-10T19:26:54.697159Z	  138 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:26:54.699357Z	  138 Quit	
+2021-06-10T19:26:55.322620Z	  139 Connect	remote@localhost on  using SSL/TLS
+2021-06-10T19:26:55.324104Z	  139 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:26:55.325386Z	  139 Query	SET @@session.autocommit = OFF
+2021-06-10T19:26:55.326872Z	  139 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-10T19:26:55.350493Z	  140 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:26:55.351720Z	  140 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:26:55.352401Z	  140 Query	SET @@session.autocommit = OFF
+2021-06-10T19:26:55.353877Z	  140 Query	SET global log_output = 'FILE'
+2021-06-10T19:26:55.355082Z	  140 Query	COMMIT
+2021-06-10T19:26:55.355521Z	  140 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.25-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-10T19:26:55.362834Z	  140 Query	COMMIT
+2021-06-10T19:26:55.363748Z	  140 Query	SET GLOBAL general_log = 'ON'
+2021-06-10T19:26:55.364569Z	  140 Query	COMMIT
+2021-06-10T19:27:00.335881Z	  141 Connect	debian-sys-maint@localhost on  using Socket
+2021-06-10T19:27:00.337883Z	  141 Quit	
+2021-06-10T19:27:00.988561Z	  142 Connect	remote@localhost on  using SSL/TLS
+2021-06-10T19:27:00.989690Z	  142 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:27:00.990260Z	  142 Query	SET @@session.autocommit = OFF
+2021-06-10T19:27:00.991261Z	  142 Query	CREATE DATABASE IF NOT EXISTS jesvi_bot_database
+2021-06-10T19:27:01.012557Z	  143 Connect	remote@localhost on jesvi_bot_database using SSL/TLS
+2021-06-10T19:27:01.014294Z	  143 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci'
+2021-06-10T19:27:01.014984Z	  143 Query	SET @@session.autocommit = OFF
+2021-06-10T19:27:01.016559Z	  143 Query	SET global log_output = 'FILE'
+2021-06-10T19:27:01.018799Z	  143 Query	COMMIT
+2021-06-10T19:27:01.019631Z	  143 Query	SET global general_log_file = '/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/logs/log_sql_runtime.log'
+/usr/sbin/mysqld, Version: 8.0.25-0ubuntu0.20.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-06-10T19:27:01.027103Z	  143 Query	COMMIT
+2021-06-10T19:27:01.027773Z	  143 Query	SET GLOBAL general_log = 'ON'
+2021-06-10T19:27:01.028261Z	  143 Query	COMMIT

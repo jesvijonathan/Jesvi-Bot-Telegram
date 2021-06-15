@@ -1,0 +1,49 @@
+2021-06-12 04:48:30,856 DEBUG telegram.ext.dispatcher Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7d5dd61070>
+2021-06-12 04:48:30,911 INFO apscheduler.scheduler Scheduler started
+2021-06-12 04:48:30,916 DEBUG apscheduler.scheduler Looking for jobs to run
+2021-06-12 04:48:30,916 DEBUG telegram.bot Entering: get_me
+2021-06-12 04:48:30,917 DEBUG apscheduler.scheduler No jobs; waiting until a job is added
+2021-06-12 04:48:32,352 DEBUG telegram.bot {'id': 1382602742, 'first_name': 'Jesvi Test Bot', 'is_bot': True, 'username': 'jesvi_test_bot', 'can_join_groups': True, 'can_read_all_group_messages': True, 'supports_inline_queries': True}
+2021-06-12 04:48:32,353 DEBUG telegram.bot Exiting: get_me
+2021-06-12 04:48:32,357 DEBUG telegram.ext.updater Bot:1382602742:dispatcher - started
+2021-06-12 04:48:32,360 DEBUG telegram.ext.updater Bot:1382602742:updater - started
+2021-06-12 04:48:32,361 DEBUG telegram.ext.updater Updater thread started (polling)
+2021-06-12 04:48:32,364 DEBUG telegram.ext.updater Start network loop retry bootstrap del webhook
+2021-06-12 04:48:32,365 DEBUG telegram.ext.updater Waiting for Dispatcher and polling to start
+2021-06-12 04:48:32,365 DEBUG telegram.ext.updater Deleting webhook
+2021-06-12 04:48:32,366 DEBUG telegram.bot Entering: delete_webhook
+2021-06-12 04:48:32,370 DEBUG telegram.ext.dispatcher Dispatcher started
+2021-06-12 04:48:32,561 DEBUG telegram.bot True
+2021-06-12 04:48:32,562 DEBUG telegram.bot Exiting: delete_webhook
+2021-06-12 04:48:32,563 DEBUG telegram.ext.updater Bootstrap done
+2021-06-12 04:48:32,563 DEBUG telegram.ext.updater Start network loop retry getting Updates
+2021-06-12 04:48:32,564 DEBUG telegram.bot Entering: get_updates
+2021-06-12 04:48:38,416 INFO telegram.ext.updater Received signal 15 (SIGTERM), stopping...
+2021-06-12 04:48:38,417 INFO apscheduler.scheduler Scheduler has been shut down
+2021-06-12 04:48:38,418 DEBUG apscheduler.scheduler Looking for jobs to run
+2021-06-12 04:48:38,419 DEBUG apscheduler.scheduler No jobs; waiting until a job is added
+2021-06-12 04:48:38,420 DEBUG telegram.ext.updater Stopping Updater and Dispatcher...
+2021-06-12 04:48:38,420 DEBUG telegram.ext.updater Requesting Dispatcher to stop...
+2021-06-12 04:48:39,379 DEBUG telegram.ext.dispatcher orderly stopping
+2021-06-12 04:48:39,381 DEBUG telegram.ext.dispatcher Dispatcher thread stopped
+2021-06-12 04:48:39,382 DEBUG telegram.ext.updater Bot:1382602742:dispatcher - ended
+2021-06-12 04:48:39,431 DEBUG telegram.ext.dispatcher Waiting for async thread 1/4 to end
+2021-06-12 04:48:39,432 DEBUG telegram.ext.dispatcher Closing run_async thread Bot:1382602742:worker:b72e885a-1f3a-4206-ae83-03b9bcbda898_0/4
+2021-06-12 04:48:39,432 DEBUG telegram.ext.dispatcher Closing run_async thread Bot:1382602742:worker:b72e885a-1f3a-4206-ae83-03b9bcbda898_1/4
+2021-06-12 04:48:39,433 DEBUG telegram.ext.dispatcher Closing run_async thread Bot:1382602742:worker:b72e885a-1f3a-4206-ae83-03b9bcbda898_2/4
+2021-06-12 04:48:39,433 DEBUG telegram.ext.dispatcher Closing run_async thread Bot:1382602742:worker:b72e885a-1f3a-4206-ae83-03b9bcbda898_3/4
+2021-06-12 04:48:39,439 DEBUG telegram.ext.dispatcher async thread 1/4 has ended
+2021-06-12 04:48:39,440 DEBUG telegram.ext.dispatcher Waiting for async thread 2/4 to end
+2021-06-12 04:48:39,441 DEBUG telegram.ext.dispatcher async thread 2/4 has ended
+2021-06-12 04:48:39,441 DEBUG telegram.ext.dispatcher Waiting for async thread 3/4 to end
+2021-06-12 04:48:39,442 DEBUG telegram.ext.dispatcher async thread 3/4 has ended
+2021-06-12 04:48:39,442 DEBUG telegram.ext.dispatcher Waiting for async thread 4/4 to end
+2021-06-12 04:48:39,442 DEBUG telegram.ext.dispatcher async thread 4/4 has ended
+2021-06-12 04:48:39,443 DEBUG telegram.ext.updater Waiting for Bot:1382602742:dispatcher thread to end
+2021-06-12 04:48:39,443 DEBUG telegram.ext.updater Bot:1382602742:dispatcher thread has ended
+2021-06-12 04:48:39,444 DEBUG telegram.ext.updater Waiting for Bot:1382602742:updater thread to end
+2021-06-12 04:48:43,140 DEBUG telegram.bot No new updates found.
+2021-06-12 04:48:43,141 DEBUG telegram.bot []
+2021-06-12 04:48:43,142 DEBUG telegram.bot Exiting: get_updates
+2021-06-12 04:48:43,143 DEBUG telegram.ext.updater Bot:1382602742:updater - ended
+2021-06-12 04:48:43,143 DEBUG telegram.ext.updater Bot:1382602742:updater thread has ended

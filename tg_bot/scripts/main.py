@@ -70,6 +70,7 @@ def unparse(update, context):  # Unparse Incoming Responses
 
 def main():  # Main Function
     print("started")
+
     dp.add_handler(MessageHandler(
         Filters.status_update.new_chat_members, welcome.gate))
     dp.add_handler(MessageHandler(Filters.all, unparse))

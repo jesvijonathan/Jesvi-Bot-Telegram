@@ -4,8 +4,8 @@ bot_token = "1382602742:AAEV2n5Ik0BpeZcWRNlKokgIKSjkF-uZ-qY"
 # Database Connection Configuration
 database_name = "jesvi_bot_database"
 database_user = "remote"
-database_password = "Eulah2002@sql"
-database_host = "127.0.0.1"
+database_password = "Eulah@mysql2002"
+database_host = "localhost"
 
 # Bot Details
 bot_name = "Jesvi Test Bot"

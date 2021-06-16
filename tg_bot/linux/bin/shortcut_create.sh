@@ -22,7 +22,7 @@ Terminal=true\n
 Type=Application\n
 Categories=Utility;Application;"
 
-echo $txt > JesBot.desktop
+echo "$txt" > JesBot.desktop
 
 sleep 0.2
 echo "Setting permission"

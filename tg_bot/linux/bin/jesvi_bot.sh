@@ -4,6 +4,8 @@
 title="Jesvi Bot"
 echo -e '\033]2;'$title'\007'
 
+temp=${PWD}
+
 s1(){
 bash "${PWD}/bin/dir_test.sh" && cd ./bin
 }
@@ -12,10 +14,9 @@ s2(){
 bash "${PWD}/dir_test.sh"
 }
 
-s1 || s2
+s1 || s2 
 
 cur=${PWD}
-
 
 reset
 
@@ -32,6 +33,7 @@ da=(
 
 declare -A opti
 readd(){
+
     while read -ra line; do
         for word in "${line[@]}"; do
             if [[ $flag = "1" ]] 
@@ -48,7 +50,9 @@ readd(){
                 que=$word
             fi
         done
+
 done < data.txt
+
 }
 
 readd
@@ -349,7 +353,7 @@ read ut
         cd ../
         cd ../
         cd ./common
-        python3 ./general_log_switch.py
+        sudo python3 ./general_log_switch.py
         cd $cur
         echo ""
         sleep 2
@@ -435,6 +439,16 @@ while true; do
     elif [[ $input = "l" ]]
         then
         printf '\033[8;24;34t'
+    elif [[ $input = "d" ]]
+    then
+        echo -e -n "\bOpening Database Viewer"
+        sle 0.2
+        echo -n "."
+        sle 0.2
+        echo -n "."
+        x-terminal-emulator -e ./mysql_db_view.sh
+        sleep 0.3
+        echo ""
     else
         sleep 0.2
         echo -e -n "\n\b" ${Red}"\e[1A\e[K\rInvalid Input.."${NC}

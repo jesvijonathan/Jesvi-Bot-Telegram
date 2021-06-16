@@ -1,14 +1,20 @@
 #################
+import mysql.connector
 from sys import platform
 import sys
 import os
 from pathlib import Path
-import mysql.connector
-
 #
 # switch = "ON"   #   *comment one and-
 # switch = "OFF" #   -leave the other open*
 #
+try:
+    from tg_bot.scripts.config import *
+except:
+    pa = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    pa = pa + "/scripts"
+    sys.path.insert(1, pa)
+    from config import *
 
 switch = "ON"
 
@@ -21,22 +27,22 @@ except:
 print("\nTurning '" + switch + "' MySQL general_log..")
 
 mydb = mysql.connector.connect(
-    host="127.0.0.1",
-    user="remote",
-    password="Eulah2002@sql")
+    host=database_host,
+    user=database_user,
+    password=database_password)
 mycursor = mydb.cursor()
 mycursor.execute("CREATE DATABASE IF NOT EXISTS jesvi_bot_database")
 
 mydb = mysql.connector.connect(
-    host="127.0.0.1",
-    user="remote",
-    password="Eulah2002@sql",
-    database="jesvi_bot_database")
+    host=database_host,
+    user=database_user,
+    password=database_password,
+    database=database_name)
 mycursor = mydb.cursor()
 
 sql = ("SET global log_output = '{s0}'".format(s0="FILE"))
 mycursor.execute(sql)
-
+mydb.commit()
 
 pa = None
 
@@ -61,15 +67,12 @@ sys.path.append(pa)
 print(pa)
 
 
-mydb.commit()
-
 sql = ("SET global general_log_file = '{s0}'".format(s0=pa))
 mycursor.execute(sql)
 mydb.commit()
 
 sql = ("SET GLOBAL general_log = '{s0}'".format(s0=switch))
 mycursor.execute(sql)
-
 mydb.commit()
 
 print("done")

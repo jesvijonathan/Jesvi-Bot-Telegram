@@ -201,7 +201,7 @@ elif [[ $i = "3" ]]
         echo -n "."
         x-terminal-emulator -e ./mysql_logger.sh 2> /dev/null
         sleep 0.3
-elif [[ $i = "98" ]]
+elif [[ $i = "d" ]]
         then
         echo -N "'ON' or 'OFF' : "
         read ii

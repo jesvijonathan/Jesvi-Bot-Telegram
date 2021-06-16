@@ -21,7 +21,7 @@ echo ""
 
 if [ $input = "0" ]
     then
-    mysql -Bse "USE jesvi_bot_database_main;SHOW TABLES;"
+    sudo mysql -Bse "USE jesvi_bot_database;SHOW TABLES;"
     else
     if [ $input = "1" ]
         then
@@ -57,7 +57,7 @@ if [ $input = "0" ]
     fi  
 
 
-    mysql -Bse "USE jesvi_bot_database_main;SELECT * FROM $table;"
+    sudo mysql -Bse "USE jesvi_bot_database;SELECT * FROM $table;"
 fi  
 
 
@@ -71,7 +71,7 @@ read input
 if [ $input = "r" ]
     then
     reset
-    exec "$PWD/database_view.sh"
+    exec "$PWD/mysql_db_view.sh"
     else
     exit 0  
 fi  

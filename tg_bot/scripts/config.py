@@ -3,7 +3,7 @@ bot_token = "1382602742:AAEV2n5Ik0BpeZcWRNlKokgIKSjkF-uZ-qY"
 
 # Database Connection Configuration
 database_name = "jesvi_bot_database"
-database_user = "remote"
+database_user = "root"
 database_password = "Eulah@mysql2002"
 database_host = "localhost"
 

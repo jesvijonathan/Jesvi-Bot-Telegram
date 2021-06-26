@@ -1,10 +1,10 @@
 # Bot API Token
-bot_token = "1382602742:AAEV2n5Ik0BpeZcWRNlKokgIKSjkF-uZ-qY"
+bot_token = "1262215479:AAH9fH7B4TE6S_S_sAgN6WH6gCMQBwisrqo"
 
 # Database Connection Configuration
 database_name = "jesvi_bot_database"
-database_user = "root"
-database_password = "Eulah@mysql2002"
+database_user = "remote"
+database_password = "Eulah2002@sql"
 database_host = "localhost"
 
 # Bot Details

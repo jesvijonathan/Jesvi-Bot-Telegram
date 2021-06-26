@@ -12,14 +12,14 @@ cd $cur
 sleep 0.2
 echo "Creating .desktop content"
 
-txt="[Desktop Entry]\n
-Version=6.1\n
-Name=Jesvi Bot\n
-Comment=Bot Developed By Jesvi\n
-Exec=$cur/jesvi_bot.sh\n
-Icon=$res/common/res/icon.ico\n
-Terminal=true\n
-Type=Application\n
+txt="[Desktop Entry]
+Version=6.1
+Name=Jesvi Bot
+Comment=Bot Developed By Jesvi
+Exec=$cur/jesvi_bot.sh
+Icon=$res/common/res/icon.ico
+Terminal=true
+Type=Application
 Categories=Utility;Application;"
 
 echo "$txt" > JesBot.desktop

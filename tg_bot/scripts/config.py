@@ -2,15 +2,15 @@
 bot_token = "1262215479:AAH9fH7B4TE6S_S_sAgN6WH6gCMQBwisrqo"
 
 # Database Connection Configuration
-database_name = "jesvi_bot_database"
+database_name = "bot_test"
 database_user = "remote"
-database_password = "Eulah2002@sql"
+database_password = "Eulah2002@mysql"
 database_host = "localhost"
 
 # Bot Details
 bot_name = "Jesvi Test Bot"
 bot_username = "jesvi_test_bot"
-bot_id = 1382602742
+bot_id = 1262215479
 
 # Owner ID
 owner_id = 594702198

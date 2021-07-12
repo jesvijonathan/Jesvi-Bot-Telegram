@@ -108,7 +108,7 @@ class database_create:
     def welcome_base(self):
 
         sql = (
-            "CREATE TABLE IF NOT EXISTS welcome_base ( chat_id VARCHAR(14) PRIMARY KEY, welcome_text TEXT DEFAULT 'Hello {first_name}, \nWelcome to {group_name} !', verification BOOLEAN DEFAULT 0, fail_action TINYINT DEFAULT 1"
+            "CREATE TABLE IF NOT EXISTS welcome_base ( chat_id VARCHAR(14) PRIMARY KEY, welcome_text TEXT, verification BOOLEAN DEFAULT 0, fail_action TINYINT DEFAULT 1)"
         )  # welcome_base : chat_id | welcome_text | verification | fail_action
 
         cursor.execute(sql)
@@ -119,6 +119,7 @@ class database_create:
         self.user_base()
         self.link_base()
         self.settings_base()
+        self.welcome_base()
 
 
 def add_user(user):
@@ -141,6 +142,21 @@ def add_user(user):
     db.commit()
 
 
+def get_user(user_id):
+    sql = (
+        "SELECT * FROM user_base WHERE user_id=%s"
+    )
+
+    data = (
+        user_id,
+    )
+
+    cursor.execute(sql, data)
+
+    return cursor.fetchone()
+
+
+
 def add_chat(chat):
     title = chat['title']
     username = chat['username']
@@ -159,7 +175,22 @@ def add_chat(chat):
     db.commit()
 
 
-def add_link(chat, user, status="member"):
+def get_chat(chat_id):
+    sql = (
+        "SELECT * FROM chat_base WHERE chat_id=%s"
+    )
+
+    data = (
+        chat_id,
+    )
+
+    cursor.execute(sql, data)
+
+    return cursor.fetchone()
+
+
+
+def add_link(chat, user, status="member", replace=0):
     chat_id = chat['id']
     user_id = user['id']
 
@@ -176,12 +207,20 @@ def add_link(chat, user, status="member"):
     cursor.execute(sql, data)
 
     if cursor.fetchone():
-        sql1 = (
-            "UPDATE link_base SET last_active=CURRENT_TIMESTAMP() WHERE chat_id=%s AND user_id= %s LIMIT 1"
-        )
-        data1 = (
-            chat_id, user_id
-        )
+        if replace == 1:
+            sql1 = (
+                "UPDATE link_base SET status=%s, last_active=CURRENT_TIMESTAMP() WHERE chat_id=%s AND user_id= %s LIMIT 1"
+            )
+            data1 = (
+                status, chat_id, user_id
+            )
+        else:
+            sql1 = (
+                "UPDATE link_base SET last_active=CURRENT_TIMESTAMP() WHERE chat_id=%s AND user_id= %s LIMIT 1"
+            )
+            data1 = (
+                chat_id, user_id
+            )
     else:
         sql1 = (
             "INSERT INTO link_base (chat_id, user_id, status, join_date, last_active) VALUE(%s, %s, %s, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP())"
@@ -194,11 +233,28 @@ def add_link(chat, user, status="member"):
     db.commit()
 
 
-def add_settings(chat_id, members):
+def get_link(chat_id, user_id):
     sql = (
-        "REPLACE INTO settings_base (chat_id, members) VALUE(%s, %s)")
+        "SELECT * FROM link_base WHERE chat_id=%s AND user_id=%s"
+    )
+
     data = (
-        chat_id, members
+        chat_id, user_id,
+    )
+
+    cursor.execute(sql, data)
+
+    return cursor.fetchone()
+
+
+def add_settings(chat_id, members):
+
+    sql = (
+        "INSERT INTO settings_base (chat_id, members) VALUE(%s, %s) ON DUPLICATE KEY UPDATE members=%s"
+    )
+    data = (
+        chat_id, members,
+        members
     )
 
     # print(data)
@@ -207,23 +263,44 @@ def add_settings(chat_id, members):
     db.commit()
 
 
-def get_user(mycursor, mydb, user):
-    sql = ("""SELECT * FROM user_base WHERE user_id = %s""")
+def get_settings(chat_id):
+    sql = (
+        "SELECT * FROM settings_base WHERE chat_id=%s"
+    )
 
-    data = (user['id'],)
+    data = (
+        chat_id,
+    )
 
-    mycursor.execute(sql, data)
-    myresult = mycursor.fetchone()
+    cursor.execute(sql, data)
 
-    return myresult
+    return cursor.fetchone()
 
 
-def get_chat(mycursor, mydb, chat):
-    sql = ("""SELECT * FROM chat_base WHERE chat_id = %s""")
+def add_welcome(chat_id, welcome_text="Hello {first_name}, \nWelcome to {group_name} !"):
 
-    data = (chat['id'],)
+    sql = (
+        "REPLACE INTO welcome_base (chat_id, welcome_text) VALUE(%s, %s)"
+    )
+    data = (
+        chat_id, welcome_text
+    )
 
-    mycursor.execute(sql, data)
-    myresult = mycursor.fetchone()
+    # print(data)
 
-    return myresult
+    cursor.execute(sql, data)
+    db.commit()
+
+
+def get_welcome(chat_id):
+    sql = (
+        "SELECT * FROM welcome_base WHERE chat_id=%s"
+    )
+
+    data = (
+        chat_id,
+    )
+
+    cursor.execute(sql, data)
+
+    return cursor.fetchone()

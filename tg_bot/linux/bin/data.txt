@@ -1,8 +1,8 @@
-bot_logging : false
+bot_logging : true
 sql_logging : false
 minimise_log : false
 fresh_log : true
-general_log : true
+general_log : false
 coloured_text : true
 auto_start : true
 

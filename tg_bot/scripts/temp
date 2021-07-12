@@ -1,0 +1,8 @@
+    """custom_keyboard = [['1', '2', '3'],
+                       ['4', '7']]
+
+    reply_markup = ReplyKeyboardMarkup(
+        custom_keyboard, resize_keyboard=True,)
+    context.bot.send_message(chat_id=chat['id'],
+                             text="Custom Keyboard Test",
+                             reply_markup=reply_markup)"""

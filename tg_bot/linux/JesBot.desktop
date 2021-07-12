@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=6.1
+Name=Jesvi Bot
+Comment=Bot Developed By Jesvi
+Exec=/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/linux/bin/jesvi_bot.sh
+Icon=/root/Documents/GitHub/Jesvi-Bot-Telegram/tg_bot/common/res/icon.ico
+Terminal=true
+Type=Application
+Categories=Utility;Application;

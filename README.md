@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://jesvijonathan.github.io/jesvijonathan/">
-    <img src="bin/icon.ico" alt="Logo" width="80" height="80">
+    <img src="tg_bot/common/res/icon.ico" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Jesvi Bot</h3>
@@ -26,7 +26,7 @@
 <!-- TABLE OF CONTENTS 
 ## Table of Contents
 
-- [About Jesvi Bot](#about-jesvi-bot)
+- [About This Project](#about-this-project)
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -47,6 +47,7 @@
 This project was started as a program to handle several telegram groups that have a large number of members & also to serve several other unique features that were made simple & easy to users & admins.
 
 Here's some shallow information :
+* Open Framework for starting your own bot service or use the fully built branches with prebuilt modules
 * Comes with tones of usefull bot modules that can be fully customized & used for efficient management
 * Has cross-platform support across major platforms
 * Comes with a utility application for setting up the requirements, tweaking the configurations & to access other functionalities across respective platforms
@@ -67,6 +68,7 @@ Jesvi Bot is built mainly with Python3 (3.8.6).. However, the OS specific Utilit
 * [Python](https://www.python.org/)
 * [C++](http://www.mingw.org/)
 * [Batch](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
+* [Shell](https://www.shellscript.sh/)
 
 
 <!-- GETTING STARTED -->
@@ -79,7 +81,7 @@ Getting this program up and running is just a piece of cake ! Follow the steps a
 * Windows or Linux Operating System
 * ~50MB Disk Space
 * [Latest Jesvi Bot Release](https://github.com/jesvijonathan/Jesvi-Bot/releases)
-* [Python 3.8.6](https://www.python.org/)
+* [Python 3](https://www.python.org/)
 * [MySQL 80](https://www.mysql.com/)
 * [MySQL Connection](https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-create-connection.html)
 
@@ -119,7 +121,7 @@ yeah.. I'm just too frikin lazy to type all of them ...
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions make this projetc btter n btter. Any contributions you make are **greatly appreciated**, So Imma gonna keep expecting pull req from you ;).
+Contributions make this projetc better n better. Any contributions you make are **greatly appreciated**, So Imma gonna keep expecting pull req from you ;).
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)

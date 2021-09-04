@@ -11,7 +11,7 @@ setlocal
   @echo Press Ctrl + C to stop logging...
   @echo.
 
-  powershell -Command "& {Get-Content ../logs/log_bot_runtime.log -wait}"
+  powershell -Command "& {Get-Content ../../logs/log_bot_runtime.log -wait}"
 %@EndTry%
 :@Catch
   REM Exception handling code goes here

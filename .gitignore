@@ -1,5 +1,7 @@
 __pycache__
-scripts/modules/database/__pycache__
-scripts/modules/__pycache__
-scripts/__pycache__
+tg_bot/scripts/modules/database/__pycache__
+tg_bot/scripts/modules/__pycache__
+tg_bot/scripts/__pycache__
 .vscode
+tg_bot/scripts/config1.py
+tg_bot/tmp scripts

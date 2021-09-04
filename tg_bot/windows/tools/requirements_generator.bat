@@ -13,7 +13,8 @@ py -m pip install pigar
 @echo.
 @echo Creating list..
 @echo.
-py -m pigar
+cd ../../scripts
+py -m pigar -p ../requirements.txt
 @echo.
 @echo Done listing dependencies to "requirements.txt"
 start notepad "requirements.txt"

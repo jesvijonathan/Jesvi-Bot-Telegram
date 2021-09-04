@@ -10,7 +10,8 @@ if "%myssid%"=="" @echo             No Internet !
 if "%myssid%"=="" @echo.
 
 if "%myssid%"=="" color c 
-if "%myssid%"=="" pause 
+if "%myssid%"=="" @echo   "Press 5 to retry & 1 to return.."
+if "%myssid%"=="" pause>nul
 if "%myssid%"=="" exit
 @echo         Connected : %myssid%
 
@@ -34,12 +35,13 @@ set /a usedMem=totalMem-availableMem
 :someRoutine
 setlocal
 %@Try%
-  REM Normal code goes here
+  REM
   cd %~dp0
-  ..\main.py
+  cd ../../scripts/
+  main.py
 %@EndTry%
 :@Catch
-  REM Exception handling code goes here
+  REM
   exit
   exit
 :@EndCatch

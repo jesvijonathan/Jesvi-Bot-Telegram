@@ -94,6 +94,7 @@ def gate(update, context):
             if len(first_name.encode('utf-8')) > 32:
                 first_name = cut_str_to_bytes(first_name,32)  # for security | to fix length < 32bytes max
             
+            print(wel)
             
             text = wel[1].format(first_name=first_name,
                                  last_name=user['last_name'],

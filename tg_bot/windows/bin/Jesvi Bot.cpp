@@ -10,9 +10,10 @@ string ans[8];
 
 int window(int s = 0)
 {
+    SetConsoleTitle("Jesvi Bot");
+    
     if (s == 0)
     {
-        SetConsoleTitle("Jesvi Bot");
         system("MODE CON COLS=38 LINES=22");
     }
     else if (s == 1)
@@ -29,7 +30,6 @@ int window(int s = 0)
 
 int splash(int full = 0)
 {
-
     system("cls");
 
     string jb[30], g, g2;
@@ -92,13 +92,16 @@ int stop(int a)
     switch (a)
     {
     case 1:
-        system("taskkill /f /im cmd.exe /fi \"windowtitle eq Jesvi Bot Status\"");
+        system("taskkill /f /im cmd.exe /fi \"windowtitle eq Jesvi Bot Status\" /t");
         return 0;
     case 2:
-        system("taskkill /f /im cmd.exe /fi \"windowtitle eq Bot Debugger\"");
+        system("taskkill /f /im cmd.exe /fi \"windowtitle eq Bot Debugger\" /t");
         return 0;
     case 3:
-        system("taskkill /f /im cmd.exe /fi \"windowtitle eq SQL Debugger\"");
+        system("taskkill /f /im cmd.exe /fi \"windowtitle eq SQL Debugger\" /t");
+        return 0;
+    case 4:
+        system("taskkill /f /im cmd.exe /fi \"windowtitle eq Jesvi Bot Auto Start\" /t");
         return 0;
     default:
         return 0;
@@ -109,35 +112,36 @@ int stop(int a)
 
 int call(int a = 10, int an = 0)
 {
-
     if (ans[2] == "true")
     {
-
         switch (a)
         {
         case 0:
-            system("start /MIN /b %cd%\\bin\\start.bat");
             return 0;
             break;
         case 1:
-            system("start /MIN %cd%\\bin\\logger_bot.bat");
+            system("start /MIN %cd%\\logger_bot.bat");
             return 0;
             break;
         case 2:
-            system("start /MIN %cd%\\bin\\logger_sql.bat");
+            system("start /MIN %cd%\\logger_sql.bat");
             return 0;
             break;
         case 3:
-            system("start /MIN /b %cd%\\bin\\restart_database.bat");
+            system("start /MIN /b %cd%\\restart_database.bat");
             return 0;
             break;
         case 4:
-            system("start /MIN /b %cd%\\bin\\requirements_installer.bat");
+            system("start /MIN /b %cd%\\requirements_installer.bat");
+            
             return 0;
             break;
         case 5:
-            system("start /MIN %cd%\\bin\\auto_start.bat");
+            system("start /MIN %cd%\\auto_start.bat");
             return 0;
+            break;
+        case 98:
+            system("start /MIN /b %cd%\\shortcut_create.bat");
             break;
         default:
             return 0;
@@ -148,28 +152,31 @@ int call(int a = 10, int an = 0)
         switch (a)
         {
         case 0:
-            system("start /b %cd%\\bin\\start.bat");
+            system("start /b %cd%\\start.bat");
             return 0;
             break;
         case 1:
-            system("start %cd%\\bin\\logger_bot.bat");
+            system("start %cd%\\logger_bot.bat");
             return 0;
             break;
         case 2:
-            system("start %cd%\\bin\\logger_sql.bat");
+            system("start %cd%\\logger_sql.bat");
             return 0;
             break;
         case 3:
-            system("start /MIN /b %cd%\\bin\\restart_database.bat");
+            system("start /MIN /b %cd%\\restart_database.bat");
             return 0;
             break;
         case 4:
-            system("start %cd%\\bin\\requirements_installer.bat");
+            system("start %cd%\\requirements_installer.bat");
             return 0;
             break;
         case 5:
-            system("start /MIN /b %cd%\\bin\\auto_start.bat");
+            system("start /MIN /b %cd%\\auto_start.bat");
             return 0;
+            break;
+        case 98:
+            system("start /MIN /b %cd%\\shortcut_create.bat");
             break;
         default:
             return 0;
@@ -183,7 +190,7 @@ string data(string search)
 {
     string word;
 
-    ifstream myfile("bin\\data.txt");
+    ifstream myfile("data.txt");
 
     while (myfile >> word)
     {
@@ -227,7 +234,7 @@ int assign_data()
 {
     string w;
 
-    fstream myfile("bin\\data.txt");
+    fstream myfile("data.txt");
 
     while (myfile >> w)
     { //take word and print
@@ -304,7 +311,7 @@ int set_data(string var, string val)
     }
 
     ofstream mfile;
-    mfile.open("bin\\data.txt", ios::trunc);
+    mfile.open("data.txt", ios::trunc);
 
     for (int i = 0; i < 7; i++)
     {
@@ -334,7 +341,7 @@ int launch_set()
 int start()
 {
 restart:
-
+    
     char con;
 
     if (ans[5] == "true")
@@ -358,19 +365,17 @@ restart:
         ofs.close();
     }
 
-    call(5);
-
     launch_set();
 
     cout << "   1-Stop  |  2-Log Bot  |  3-LogSQL\n   4-Test  |  5-Restart  |  6-Folder\n";
     cout << "--------------------------------------\n\n";
+    
     call(0);
 
-    Sleep(8000);
+    Sleep(2000);
 
     while (1)
     {
-
         con = _getch();
         con = (int)((char)con - '0');
 
@@ -411,7 +416,7 @@ restart:
         case 6:
             printf("Opening Resource...");
             Sleep(200);
-            system("start explorer.exe %cd%\\logs");
+            system("start explorer.exe %cd%");
             printf("\33[2K\r");
             break;
         default:
@@ -613,7 +618,7 @@ int credits(int full = 1)
             system("start https://telegram.me/jesvi_bot");
             break;
         case '5':
-            printf("Developer Donation link (I'm Broke :P)");
+            printf("Developer Donation link :P");
             system("start www.google.com");
             break;
         case '6':
@@ -631,7 +636,6 @@ int credits(int full = 1)
 
 int settings()
 {
-
     string options[8];
     int op;
 
@@ -639,7 +643,6 @@ int settings()
 
     while (1)
     {
-
         options[0] = "1. Live Log Bot on start : " + ans[0];
         options[1] = "\n2. Live Log SQL on start : " + ans[1];
         options[2] = "\n3. Minimise log window   : " + ans[2];
@@ -665,6 +668,10 @@ int settings()
 
         switch (op)
         {
+        case 0:
+            call(98);
+            printf("Creating Bot Shortcut..");
+            break;
         case 1:
             printf("Switching Bot log...");
             if (ans[0] == "true")
@@ -724,14 +731,15 @@ int settings()
             {
                 ans[4] = "false";
                 set_data("general_log", "false");
-                system("py %cd%\\bin\\general_log_switch.py OFF");
+                system("py %cd%\\gen_log.py OFF");
             }
             else
             {
                 ans[4] = "true";
                 set_data("general_log", "true");
-                system("py %cd%\\bin\\general_log_switch.py ON");
+                system("py %cd%\\gen_log.py ON");
             }
+            Sleep(850);
             break;
         case 6:
             printf("Switching coloured...");
@@ -761,7 +769,7 @@ int settings()
             {
                 ans[6] = "true";
                 set_data("auto_start", "true");
-                call(5);
+                call(98);
             }
             break;
         case 8:
@@ -804,16 +812,27 @@ int menu()
 
     switch (op)
     {
+    case 0:
+        printf("Openning Logs..");
+        Sleep(200);
+        window(1);
+        printf("\33[2K\r");
+        call(1);
+        call(2);
+        window(0);
+        break;
     case 1:
         printf("Starting Jesvi Bot..");
         window(1);
+        stop(1);
+        stop(4);
         start();
         window(0);
         break;
 
     case 2:
         printf("Opening Resource folder...");
-        system("start explorer.exe %cd%\\logs");
+        system("start explorer.exe %cd%");
         Sleep(850);
         printf("\33[2K\r");
         break;
@@ -821,6 +840,7 @@ int menu()
     case 3:
         printf("Running Requirements Installer...");
         call(4);
+        call(98);
         Sleep(350);
         break;
 
@@ -860,6 +880,18 @@ int menu()
         Sleep(500);
         exit(10);
         break;
+    
+    case 9:
+        printf("Stopping All JBot Services..");
+        Sleep(200);
+        window(1);
+        printf("\33[2K\r");
+        stop(1);
+        stop(2);
+        stop(3);
+        stop(4);
+        window(0);
+        break;
 
     default:
         cout << "Out of field !";
@@ -871,7 +903,6 @@ int menu()
 
 int main()
 {
-
     assign_data();
 
     window(0);

@@ -8,6 +8,7 @@ from pathlib import Path
 # switch = "ON"   #   *comment one and-
 # switch = "OFF" #   -leave the other open*
 #
+
 try:
     from tg_bot.scripts.config import *
 except:
@@ -26,19 +27,23 @@ except:
 
 print("\nTurning '" + switch + "' MySQL general_log..")
 
-mydb = mysql.connector.connect(
-    host=database_host,
-    user=database_user,
-    password=database_password)
-mycursor = mydb.cursor()
-mycursor.execute("CREATE DATABASE IF NOT EXISTS jesvi_bot_database")
 
 mydb = mysql.connector.connect(
-    host=database_host,
-    user=database_user,
-    password=database_password,
-    database=database_name)
-mycursor = mydb.cursor()
+host=database_host,
+user=database_user,
+password=database_password)
+mycursor = mydb.cursor(buffered=True)
+
+sql = "CREATE DATABASE IF NOT EXISTS {s0}".format(s0=database_name)
+mycursor.execute(sql)
+
+mydb = mysql.connector.connect(
+host=database_host,
+user=database_user,
+password=database_password,
+database=database_name)
+mycursor = mydb.cursor(buffered=True)
+    
 
 sql = ("SET global log_output = '{s0}'".format(s0="FILE"))
 mycursor.execute(sql)

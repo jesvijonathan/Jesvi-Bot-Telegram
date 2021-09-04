@@ -1,25 +1,17 @@
-# Bot API Token
-bot_token = "1262215479:AAH9fH7B4TE6S_S_sAgN6WH6gCMQBwisrqo"
+bot_token = ""  # Get It From @botfather in telegram
+bot_name = ""  # Example : "Jesvi Bot"
+bot_username = ""  # Example : "jesvi_bot"
+bot_id = ""
 
-# Database Connection Configuration
-database_name = "bot_test"
-database_user = "remote"
-database_password = "Eulah2002@mysql"
-database_host = "localhost"
+# Your database name, Example : "bot_database"
+database_name = ""
+database_user = ""  # The sudo user, Example : "remote"
+database_password = ""  # your database password
+database_host = ""  # Example : "127.0.0.1"
+database_port = ""  # Example : "3306"
 
-# Bot Details
-bot_name = "Jesvi Test Bot"
-bot_username = "jesvi_test_bot"
-bot_id = 1262215479
+owner_id = ""  # Get your/owner telegram id via @jesvi_bot, and after starting a conversation using /start, use /info to get your details
+owner_username = ""  # Your/Owner user name
 
-# Owner ID
-owner_id = 594702198
-
-# Sudo User's ID
-sudo_user_ids = [1125276541]
-
-# Support Group's Username
 suppport_group_username = "bot_garage"
-
-# etc
-welcome_text = "Hello, This Is Jesvi Bot !"
+sudo_users = []  # Id's of sudo users you permit

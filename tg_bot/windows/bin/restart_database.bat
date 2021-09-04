@@ -19,9 +19,6 @@ goto :eof
 
 ::--------------------------------------
 
-::ENTER YOUR CODE BELOW:
-
-
 @echo.
 @echo Restarting MYSQL Database.. (~30sec)
 @echo.
@@ -30,8 +27,10 @@ cd %~dp0
 ::py general_log_switch.py
 @echo.
 
-net stop MySQL80
-net start MySQL80
+:: Change the below if the it does not work, also try "MySQL", "MySQL80", "mysql" 
+net stop mysql
+net start mysql
+
 
 TIMEOUT /T 3 /NOBREAK
 exit

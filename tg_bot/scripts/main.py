@@ -15,22 +15,59 @@ from mysql import connector
 
 import time
 
+import sys
+import os
+
+"""
 import concurrent.futures
 from concurrent.futures import ProcessPoolExecutor
 import multiprocessing
-import threading
-print("imoprting modules")
+import threading"""
+
+print("imoprted modules")
+
 
 # Bot Logging & Debugging
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(name)s %(message)s')
-logger = logging.getLogger(__name__)
+platform = sys.platform
+
+path = path = str(os.path.dirname(os.path.dirname(sys.argv[0])))
+stdoutOrigin = sys.stdout
+
+deb = 1 # switch to 1 when debugging, to prevent log file creation
+
+if platform == "linux" or platform == "linux2" or platform == "darwin":
+    sys.stderr = open(path+"/../logs/log_bot_runtime.log", 'w')
+
+elif platform == "win32":
+    wp= path + '\\logs\\log_bot_runtime.log'
+    filename = os.path.join(wp)
+    
+    if deb == 0:
+        logging.basicConfig(filename=filename,
+                        filemode='a',
+                        format='%(asctime)s %(levelname)s %(name)s %(message)s',
+                        level=logging.DEBUG)
+        #sys.stdout = open(wp, 'w')
+        sys.stderr = open(wp, 'w')
+    else:
+        logging.basicConfig(
+                        format='%(asctime)s %(levelname)s %(name)s %(message)s',
+                        level=logging.DEBUG)
+        logger = logging.getLogger(__name__)
+                        
+class writer(object):
+    log = []
+
+    def write(self, data):
+        self.log.append(data)
+
 print("logging")
 
+
 # Bot Authentication
+print("authenticating")
 updater = Updater(bot_token, use_context=True)
 dp = updater.dispatcher
-print("authenticating")
 
 # Initialize Database & Cursor
 def load():
@@ -147,6 +184,11 @@ def but_veri(update: Update, context: CallbackContext):
 
 def main():  # Main Function
     print("started")
+
+    if deb == 0:
+        logger = writer()
+        sys.stdout = logger
+        sys.stderr = logger
 
     dp.add_handler(MessageHandler(
         Filters.status_update.new_chat_members, welcome.gate))

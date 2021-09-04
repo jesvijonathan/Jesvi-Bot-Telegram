@@ -1,0 +1,23 @@
+def sleep(update, context):
+    print("ro")
+    time.sleep(3)
+    update.message.reply_text(
+        "text")
+
+
+def thread_test(update, context):
+
+    t = threading.Thread(target=sleep, args=(update, context), daemon=True)
+    t.start()
+
+    #p = multiprocessing.Process(target=sleep, args=(q,))
+    # p.start()
+    # p.join()
+
+
+def thread(update, context):
+    t = threading.Thread(target=unparse, args=(update, context), daemon=True)
+    t.start()
+
+def main():
+    dp.add_handler(CommandHandler("thread", button))

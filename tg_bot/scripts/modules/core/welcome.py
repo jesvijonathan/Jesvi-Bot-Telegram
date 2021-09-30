@@ -1,7 +1,12 @@
 import config as config
-from . import database
+#from . import database
+
+import modules.core.database as database
 from . import mute
+
 import time
+
+from mysql import connector
 
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, ChatMember
 
@@ -34,6 +39,8 @@ def cut_str_to_bytes(s, max_bytes):
 
 
 def gate(update, context):
+    db = database.bot_db()
+
     start = time.process_time()
 
     text = None
@@ -54,21 +61,21 @@ def gate(update, context):
 
             for admin in administrators:
                 user = admin.user
-                database.add_user(user=user)
-                database.add_link(chat, user=user, status=admin.status)
+                db.add_user(user=user)
+                db.add_link(chat, user=user, status=admin.status)
 
             bot = context.bot.get_chat_member(
                 chat_id, config.bot_id)
 
-            database.add_link(
+            db.add_link(
                 chat=chat, user=bot['user'], status=bot['status'])
 
             members = chat.get_members_count()
 
-            database.add_settings(chat_id=chat_id, members=members)
-            database.add_chat(chat=chat)
+            db.add_settings(chat_id=chat_id, members=members)
+            db.add_chat(chat=chat)
 
-            database.add_welcome(chat_id=chat_id)
+            db.add_welcome(chat_id=chat_id)
 
             # blacklistcheck
 
@@ -80,14 +87,14 @@ def gate(update, context):
         else:
             reply_markup = None
 
-            database.add_user(user=user)
+            db.add_user(user=user)
 
             user_status = context.bot.get_chat_member(chat_id, user_id).status
 
             members = chat.get_member_count() #previously "get_members_count"
-            database.add_settings(chat_id=chat_id, members=members)
+            db.add_settings(chat_id=chat_id, members=members)
 
-            wel = database.get_welcome(chat_id=chat_id)
+            wel = db.get_welcome(chat_id=chat_id)
 
             first_name = user['first_name']
             
@@ -108,7 +115,7 @@ def gate(update, context):
 
                 mute.mute(context, chat_id=chat_id, user_id=user_id)
 
-                database.add_link(chat=chat, user=user,
+                db.add_link(chat=chat, user=user,
                                   status="restricted", replace=1)
 
                 # print(context.bot.getChat(chat_id))
@@ -130,7 +137,7 @@ def gate(update, context):
                     ", you have been muted... \n\nClick on the human verification button within the next 2min to unmute yourself !"   # else, you will be kicked !"
                 
             else:
-                database.add_link(chat=chat, user=user, status=user_status)
+                db.add_link(chat=chat, user=user, status=user_status)
 
             update.message.reply_text(
                 text, reply_markup=reply_markup, parse_mode="HTML")
@@ -138,20 +145,22 @@ def gate(update, context):
     print("\n", time.process_time() - start, "\n")
 
 
-def farewell(update, context, mycursor, mydb):
+def farewell(update, context):
+    db = database.bot_db()
+
     msg = update.message
 
     chat = msg['chat']
     user = update.effective_message.left_chat_member
 
-    database.add_user(user=user)
+    db.add_user(user=user)
 
     user_status = context.bot.get_chat_member(chat['id'], user['id'])
-    database.add_link(chat=chat, user=user,
+    db.add_link(chat=chat, user=user,
                       status=user_status['status'])
 
     members = chat.get_members_count()
-    database.add_settings(chat_id=chat['id'], members=members)
+    db.add_settings(chat_id=chat['id'], members=members)
 
     text = "Bye bye 👋🏼"
     update.effective_message.reply_text(text)

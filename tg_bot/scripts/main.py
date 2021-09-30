@@ -1,13 +1,28 @@
-from modules import *
-from modules.core import *
+
+#from modules import *
+#from modules.core import *
 from config import *
+
+
+import modules.core.database as database
+import modules.core.mute as mute
+import modules.core.welcome as welcome
+#import  modules.core.extract as extract
+
+import  modules.core.filter as filter
+
+import  modules.core.unparse as unparse
+
+import modules.delete as delete
+
+import modules.core.note as note
+
 
 from telegram import Message, Chat, Update, Bot, User, ChatMember
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler, CallbackContext
 from telegram.utils.helpers import escape_markdown
-
 
 import logging
 
@@ -17,6 +32,8 @@ import time
 
 import sys
 import os
+
+import threading
 
 """
 import concurrent.futures
@@ -69,8 +86,12 @@ print("authenticating")
 updater = Updater(bot_token, use_context=True)
 dp = updater.dispatcher
 
+
 # Initialize Database & Cursor
+botdb = None
+
 def load():
+    global botdb
     db = connector.connect(
     host=database_host,
     user=database_user,
@@ -87,17 +108,19 @@ def load():
     database=database_name)
     cursor = db.cursor(buffered=True)
     
-    database_create = database.database_create(cursor, db)
-    database_create.create_base()
+    create_db = database.create_db().create_base()
+    #del create_db
+
+    botdb = database.bot_db()
 
 load()
 print("database loaded")
 
-def unparse(update, context):  # Unparse Incoming Responses
-    start = time.process_time()
 
+def unparse_func(update, context):  # Unparse Incoming Responses
+    start = time.process_time()
+    
     msg = update.message
-    # print("\n", msg)
 
     user = msg['from_user']
     chat = msg['chat']
@@ -109,22 +132,22 @@ def unparse(update, context):  # Unparse Incoming Responses
 
         tag_user = tagmsg['from_user']
 
-        database.add_user(user=tag_user)
+        botdb.add_user(user=tag_user)
 
     except:
         pass
 
-    database.add_user(user=user)
-    database.add_chat(chat=chat)
-    database.add_link(chat=chat, user=user)
+    botdb.parse(chat=chat, user=user)
 
     # user_status = context.bot.get_chat_member(chat['id'], user['id'])
     # print(user_status['status'])
-
     # print(chatmember)
     # print(eval(str(context.bot.getChat(chat['id']).permissions)))
+    
+    threading.Thread(target=filter.filter, args=(msg,chat,user,tag_user), daemon=True).start()
 
     print("\n", time.process_time() - start, "\n")
+
 
 
 def button(update: Update, context: CallbackContext):
@@ -183,20 +206,49 @@ def but_veri(update: Update, context: CallbackContext):
 
 
 def main():  # Main Function
+
     print("started")
 
     if deb == 0:
         logger = writer()
         sys.stdout = logger
         sys.stderr = logger
+    
+    dp.bot.send_message(chat_id=owner_id, text="<code>Started Service !\n\nTime : " +
+                        time.strftime("%Y-%m-%d (%H:%M:%S)") + "</code>", parse_mode="HTML")
+
+
+    delete_cmd = ("delete", "remove")
+
 
     dp.add_handler(MessageHandler(
         Filters.status_update.new_chat_members, welcome.gate))
+    dp.add_handler(MessageHandler(
+        Filters.status_update.left_chat_member, welcome.farewell))
 
-    dp.add_handler(CallbackQueryHandler(button))
 
-    dp.add_handler(MessageHandler(Filters.all, unparse))
+    dp.add_handler(CommandHandler("delete", delete.tag_del_cls)) # delete.tag_del_cls
+    dp.add_handler(CommandHandler("purge", delete.mul_del_cls))
+    dp.add_handler(CommandHandler("sdel", delete.s_del_cls))
 
+    #dp.add_handler(CommandHandler("admin", delete.lock))
+    dp.add_handler(CommandHandler("lock", filter.filter_router))
+    dp.add_handler(CommandHandler("unlock", filter.filter_router))
+
+    dp.add_handler(CommandHandler("filter", filter.filter_router))
+    dp.add_handler(CommandHandler("filteradd", filter.filter_router))
+    dp.add_handler(CommandHandler("filterdel", filter.filter_router))
+
+    
+    dp.add_handler(CommandHandler("noteadd", note.note_router))
+    dp.add_handler(CommandHandler("notedel", note.note_router))
+    dp.add_handler(CommandHandler("notes", note.note_router))
+    
+    #dp.add_handler(CallbackQueryHandler(button))
+
+    dp.add_handler(MessageHandler(Filters.all, unparse_func))
+    #dp.add_handler(MessageHandler(Filters.all, unparse.thread_unparse))
+    
     updater.start_polling()
     updater.idle()
 

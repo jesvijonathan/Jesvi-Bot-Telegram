@@ -878,7 +878,7 @@ int menu()
         Sleep(250);
         printf("\n          By Jesvi Jonathan");
         Sleep(500);
-        exit(10);
+        exit(1);
         break;
     
     case 9:

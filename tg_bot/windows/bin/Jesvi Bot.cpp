@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 
+
 using namespace std;
 
 string ans[8];

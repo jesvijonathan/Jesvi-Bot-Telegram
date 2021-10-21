@@ -1,4 +1,4 @@
-from os import system
+from os import system, truncate
 from re import L
 from time import sleep
 
@@ -46,7 +46,7 @@ class create_db:
 
         def settings_base(self):
             sql = (
-                "CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 0, notes TINYINT DEFAULT 0, chat_lock TINYINT DEFAULT 0, recent_pin TINYINT)"
+                "CREATE TABLE IF NOT EXISTS settings_base ( chat_id VARCHAR(14) PRIMARY KEY, members TINYINT, warn_limit TINYINT DEFAULT 3, strike_action TINYINT DEFAULT 0, disabled_commands TINYINT DEFAULT 0, filter TINYINT DEFAULT 1, notes TINYINT DEFAULT 1, chat_lock TINYINT DEFAULT 0, recent_pin TINYINT)"
             )  # settings_base : chat_id | members | warn_limit | strike_action | disabled_commands | filter | notes | lock | recent_pin
             self.cursor.execute(sql)
             self.db.commit()
@@ -67,7 +67,7 @@ class create_db:
 
         def warn_base(self):
             sql = (
-                "CREATE TABLE IF NOT EXISTS warn_base ( id VARCHAR(14) PRIMARY KEY, chat_id VARCHAR(14), note_name VARCHAR(32), note_text TEXT, set_by VARCHAR(32), date TIMESTAMP)"
+                "CREATE TABLE IF NOT EXISTS warn_base ( id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(14), user_id VARCHAR(14), by_user_id VARCHAR(14), message_id VARCHAR(14), reason TEXT, date TIMESTAMP)"
             )  # warn_base : id | chat_id | user_id | by_user_id | message_id | reason | date
             self.cursor.execute(sql)
             self.db.commit()
@@ -93,10 +93,10 @@ class create_db:
             self.cursor.execute(sql)
             self.db.commit()
 
-        def rules_base(self):
+        def rule_base(self):
             sql = (
-                "CREATE TABLE IF NOT EXISTS rules_base ( chat_id VARCHAR(14) PRIMARY KEY, rule_text TEXT, rule_type VARCHAR(14), message_id VARCHAR(14), set_by VARCHAR(32), date TIMESTAMP)"
-            )  # rules_base : chat_id | rule_text | rule_type | message_id | set_by | date
+                "CREATE TABLE IF NOT EXISTS rule_base ( chat_id VARCHAR(14) PRIMARY KEY, rule_text TEXT, rule_type VARCHAR(14), redirect BOOLEAN DEFAULT 0)"
+            )  # rules_base : chat_id | rule_text | rule_type | redirect
             self.cursor.execute(sql)
             self.db.commit()
 
@@ -114,6 +114,8 @@ class create_db:
             self.settings_base()
             self.filter_base()
             self.notes_base()
+            self.warn_base()
+            self.rule_base()
             self.welcome_base()
 
 try:
@@ -187,22 +189,43 @@ try:
             self.db.commit()
 
 
-        def get_chat(self,chat_id):
-            sql = (
-                "SELECT * FROM chat_base WHERE chat_id=%s"
-            )
+        def get_chat(self,chat_id=None):
+            if chat_id == None:
+                sql = (
+                    "SELECT * FROM chat_base"
+                )
+                self.cursor.execute(sql,)
 
-            data = (
-                chat_id,
-            )
+                return self.cursor.fetchall()
+            else:
+                sql = (
+                    "SELECT * FROM chat_base WHERE chat_id=%s"
+                )
+
+                data = (
+                    chat_id,
+                )
+            
 
             self.cursor.execute(sql, data)
 
             return self.cursor.fetchone()
 
+        def update_link(self, chat, user, meth=0):
+            """
+            if meth == 1:
+                sql = (
+                        "UPDATE link_base SET status='member WHERE chat_id=%s AND user_id= %s LIMIT 1"
+                    )
+                    data1 = (
+                        bio, chat_id, user_id
+                    )
+                self.cursor.execute(sql, data1)
+                self.db.commit()
+            """
+            pass
 
-
-        def add_link(self,chat, user, status="member", replace=0):
+        def add_link(self,chat, user, status="member", replace=0, bio=None):
             chat_id = chat['id']
             user_id = user['id']
 
@@ -225,6 +248,20 @@ try:
                     data1 = (
                         status, chat_id, user_id
                     )
+                elif replace == 3:
+                    sql1 = (
+                        "UPDATE link_base SET status=%s WHERE chat_id=%s AND user_id= %s LIMIT 1"
+                    )
+                    data1 = (
+                        status, chat_id, user_id
+                    )
+                elif replace == 5:
+                    sql1 = (
+                        "UPDATE link_base SET bio=%s WHERE chat_id=%s AND user_id= %s LIMIT 1"
+                    )
+                    data1 = (
+                        bio, chat_id, user_id
+                    )
                 else:
                     sql1 = (
                         "UPDATE link_base SET last_active=CURRENT_TIMESTAMP() WHERE chat_id=%s AND user_id= %s LIMIT 1"
@@ -237,25 +274,52 @@ try:
                     "INSERT INTO link_base (chat_id, user_id, status, join_date, last_active) VALUE(%s, %s, %s, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP())"
                 )
                 data1 = (
-                    chat_id, user_id, status
+                    chat_id, user_id, status, 
                 )
 
             self.cursor.execute(sql1, data1)
             self.db.commit()
 
 
-        def get_link(self,chat_id, user_id):
-            sql = (
-                "SELECT * FROM link_base WHERE chat_id=%s AND user_id=%s"
-            )
+        def get_link(self,chat_id, user_id=None, comp = 0):
+            if comp == 1:
+                sql = (
+                    "SELECT * FROM link_base WHERE chat_id=%s AND status=%s"
+                )
+                
+                status = "administrator"
 
-            data = (
-                chat_id, user_id,
-            )
+                data = (
+                    chat_id, status,
+                )
+                
+                self.cursor.execute(sql, data)
 
-            self.cursor.execute(sql, data)
+                return self.cursor.fetchall()
+            elif user_id == None:
+                sql = (
+                    "SELECT * FROM link_base WHERE chat_id=%s"
+                )
 
-            return self.cursor.fetchone()
+                data = (
+                    chat_id,
+                )
+                
+                self.cursor.execute(sql, data)
+
+                return self.cursor.fetchall()
+            else:
+                sql = (
+                    "SELECT * FROM link_base WHERE chat_id=%s AND user_id=%s"
+                )
+
+                data = (
+                    chat_id, user_id,
+                )
+
+                self.cursor.execute(sql, data)
+    
+                return self.cursor.fetchone()
 
 
         def add_settings(self, chat_id, members=None,lock=None,filter=None,notes=None):
@@ -414,6 +478,153 @@ try:
 
             self.cursor.execute(sql, data)
             self.db.commit()
+    
+
+        def add_rule(self,chat_id, rule_type, redirect, rule_text):
+            # rules_base : chat_id | rule_text | rule_type | redirect | set_by | date
+
+            sql = (
+                "REPLACE INTO rule_base (chat_id, rule_text, rule_type, redirect) VALUE(%s, %s, %s, %s)"
+            )
+            data = (
+                chat_id, rule_text, rule_type, redirect,
+            )
+
+            self.cursor.execute(sql, data)
+            self.db.commit()
+
+        def del_rule(self,chat_id):
+            # rules_base : chat_id | rule_text | rule_type | redirect | set_by | date
+
+            sql = (
+                "DELETE FROM rule_base WHERE chat_id=%s"
+            )
+            data = (
+                chat_id,
+            )
+
+            self.cursor.execute(sql, data)
+            self.db.commit()
+
+        def get_rule(self,chat_id):
+            sql = (
+                "SELECT * FROM rule_base WHERE chat_id=%s"
+            )
+            data = (
+                chat_id,
+            )
+
+            self.cursor.execute(sql, data)
+
+            return self.cursor.fetchone()
+
+
+        def add_warn(self, chat_id, user_id, by_user_id, message_id, reason):
+
+            sql = (
+                "INSERT INTO warn_base (chat_id, user_id, by_user_id, message_id, reason, date) VALUE(%s, %s, %s, %s, %s, CURRENT_TIMESTAMP())"
+            )
+            data = (
+                chat_id, user_id, by_user_id, message_id, reason,
+            ) # warn_base : id | chat_id | user_id | by_user_id | message_id | reason | date
+
+            self.cursor.execute(sql, data)
+            self.db.commit()
+
+
+        def get_warn(self, chat_id=None, user_id=None, list=0):
+            if list ==1:
+                sql = ( 
+                    "SELECT * FROM warn_base WHERE chat_id=%s AND user_id=%s ORDER BY id"
+                )
+
+                data = (
+                    chat_id, user_id,
+                )
+            elif chat_id == None:
+                sql = (
+                    "SELECT *, COUNT(*) FROM warn_base WHERE user_id=%s ORDER BY id"
+                )
+
+                data = (
+                    user_id,
+                )
+
+            elif user_id == None:
+                sql = (
+                    "SELECT *, COUNT(*) FROM warn_base WHERE chat_id=%s ORDER BY id"
+                )
+
+                data = (
+                   chat_id,
+                )
+            else:
+                sql = ( 
+                    "SELECT *, COUNT(*) FROM warn_base WHERE chat_id=%s AND user_id=%s ORDER BY id"
+                )
+
+                data = (
+                    chat_id, user_id,
+                )
+
+            self.cursor.execute(sql, data)
+
+            return self.cursor.fetchall()
+
+        def remove_warn(self, chat_id, user_id, lr=0):
+            if user_id == None:
+                sql = (
+                    "DELETE FROM warn_base WHERE chat_id=%s"
+                )
+
+                data = (
+                    chat_id,
+                )
+
+            else:
+                if lr == 0:
+                        sql = (
+                            "DELETE FROM warn_base WHERE chat_id=%s AND user_id=%s ORDER BY id DESC LIMIT 1"  
+                        )
+                elif lr == 1:
+                        sql = (
+                            "DELETE FROM warn_base WHERE chat_id=%s AND user_id=%s ORDER BY id ASC LIMIT 1"
+                        )
+                elif lr == 2:
+                        sql = (
+                            "DELETE FROM warn_base WHERE chat_id=%s AND user_id=%s"
+                        )
+
+                data = (
+                    chat_id, user_id,
+                )
+            
+            self.cursor.execute(sql, data)
+            self.db.commit()
+
+
+        def get_welcome(self,chat_id,user_id=None):
+            if user_id != None:
+                sql = (
+                    "SELECT * FROM warn_base WHERE chat_id=%s AND user_id=%s"
+                )
+
+                data = (
+                    chat_id, user_id,
+                )
+                
+            else:
+                sql = (
+                    "SELECT * FROM warn_base WHERE chat_id=%s"
+                )
+
+                data = (
+                    chat_id,
+                )
+
+            self.cursor.execute(sql, data)
+
+            return self.cursor.fetchone()
 
 
         def add_welcome(self,chat_id, welcome_text="Hello {first_name}, \nWelcome to {group_name} !"):

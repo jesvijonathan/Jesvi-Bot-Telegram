@@ -1,5 +1,5 @@
 import modules.core.database as database
-
+import modules.core.extract as extract
 import threading
 
 import json
@@ -40,6 +40,10 @@ class notes_switch():
 
 
     def note_remove(self,note_name,tell=0):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
+
         self.db.remove_note(self.chat_id,note_name)
 
         if tell==1:
@@ -51,6 +55,10 @@ class notes_switch():
 
 
     def note_add(self,res):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
+
         note_name=None
         note_text=None
         type=0
@@ -97,6 +105,10 @@ class notes_switch():
 
 
     def note_stat(self,res):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
+
         if res == "on":
             self.db.add_settings(self.chat_id,notes=1)  #add notes field to settings table
             self.msg.reply_text("Chat note active !")
@@ -109,7 +121,8 @@ class notes_switch():
             no_li = self.db.get_note(self.chat_id)
             self.msg.reply_text(json.dumps(no_li, indent=4, sort_keys=True, default=str))
         
-        elif res == "stat":
+        #elif res == "stat":
+        else:
             x = 0
             
             dn = self.db.get_note(self.chat_id)

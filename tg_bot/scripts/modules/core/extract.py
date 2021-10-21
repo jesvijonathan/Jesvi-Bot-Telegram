@@ -31,41 +31,49 @@ def sudocheck(update, context, objective=1, admin_del=0, udel=1):
         return 2
 
 
-def sudo_check_2(msg, user_id=None, chat_id=None, 
-                db=None, del_lvl=0, stat_check=0, context=None, status=None):
+def sudo_check_2(msg,
+                db=None, del_lvl=0,context=None, status=None, sudo=0):
     #1-del members
     #3-del admin
     #5-del creator
     #7-del sudo
+
     #4-del all
+    #6-admin+creator
 
-    if stat_check == 1:
-        user_id = msg.from_user.id
-        chat_id = msg.chat.id
-        status = context.bot.get_chat_member(chat_id, user_id)
-
-    elif stat_check == 0:
+    user_id = msg.from_user.id
+    chat_id = msg.chat.id
+    
+    if context == None:
         status = db.get_link(chat_id,user_id)[3]
-    
+  
+    else:
+        status = context.bot.get_chat_member(chat_id, user_id)
+        #db.add_link(chat=msg.chat, user=msg.from_user,status=status, replace=1)
 
-    if user_id == config.owner_id:
-        if del_lvl == 4 or del_lvl == 7:
-            msg.delete()
-        return 7
-    
+    if sudo == 1:
+        if user_id == config.owner_id:
+            if del_lvl == 4 or del_lvl == 7:
+                msg.delete()
+            return 7
+        elif user_id in config.sudo_user_ids:
+            if del_lvl == 4 or del_lvl == 7:
+                msg.delete()
+            return 8
+
 
     if status['status'] == "creator":
-        if del_lvl == 5 or del_lvl == 4:
-            msg.delete()
-        return 3
-    elif status['status'] == "administrator":
-        if del_lvl == 3 or del_lvl == 2 or del_lvl == 4:
+        if del_lvl == 5 or del_lvl == 4 or del_lvl == 6 or del_lvl == 8:
             msg.delete()
         return 2
-    else:
-        if del_lvl == 1 or del_lvl == 2 or del_lvl == 4:
+    elif status['status'] == "administrator":
+        if del_lvl == 3 or del_lvl == 2 or del_lvl == 4 or del_lvl == 6 or del_lvl == 8:
             msg.delete()
         return 1
+    else:
+        if del_lvl == 1 or del_lvl == 2 or del_lvl == 4 or del_lvl == 8:
+            msg.delete()
+        return 0
 
 
 def admin_sync(update, context,db):

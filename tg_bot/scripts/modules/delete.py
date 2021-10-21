@@ -7,7 +7,7 @@ import threading
 
 del_thread_lock = threading.Lock()
 
-class delete():
+class delete_cls():
 
     def __init__(self,update,context) -> None:
         
@@ -37,8 +37,13 @@ class delete():
 
         bot_db.parse(chat=chat, user=user)
 
+        self.msg_string = self.msg.text
 
     def delete(self):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
+
         self.tag_msg.delete()
 
         msg_frm = self.msg
@@ -52,11 +57,17 @@ class delete():
 
 
     def silent_delete(self):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
         self.tag_msg.delete()
         self.msg.delete()
 
 
     def clean(self):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
         del_msg = self.msg.reply_text("Purging started...")
         
         #del_thread_lock.acquire()
@@ -88,69 +99,19 @@ class delete():
         
         cln.delete()
 
-
-def tag_del_cls(update,context):
-    threading.Thread(target=delete(update,context).delete, args=(), daemon=True).start()
-
-def s_del_cls(update,context):
-    threading.Thread(target=delete(update,context).silent_delete, args=(), daemon=True).start()
-
-def mul_del_cls(update,context):
-    threading.Thread(target=delete(update,context).clean, args=(), daemon=True).start()
-
-
-
-
-"""
-def admin_load(update):
-    global lock
-    
-    chat = update.effective_chat
-    chat_id = str(chat.id)
-    administrators = chat.get_administrators()
-
-    l = {}
-    u_dic = []
-
-    for admin in administrators:
-        user = admin.user
-        u_dic.append(user.id)
+    def router(self):
+        res = self.msg_string.split(None,1)
         
-    l[chat_id] = u_dic
-"""
-
-chat_lock = []
-
-def lock(update, context):
-    global chat_lock
-    
-    extract.admin_sync(update,context)
-    #admin_load(update)
-    
-    chat = update.effective_chat
-    chat_id = str(chat.id)
-    
-    chat_lock.append(chat_id)
-
-    update.message.reply_text("Chat Locked !")
+        if res[0] == "/del":
+            self.delete()
+        
+        elif res[0] == "/sdel":
+            self.silent_delete()
+        
+        elif res[0] == "/purge":
+            self.clean()
 
 
-def ldel(update,context):
-    global chat_lock
-    
-    chat = update.effective_chat
-    chat_id = str(chat.id)
+def delete_router(update,context):
+    threading.Thread(target=delete_cls(update,context).router, args=(), daemon=True).start()
 
-    if chat_id in chat_lock:
-        pass
-    else:
-        return
-    
-    user_id = update.message.from_user.id
-
-    link = database.get_link(chat_id,user_id)[3]
-
-    if link == "administrator" or link == "creator":
-        pass
-    else:
-        update.message.delete()

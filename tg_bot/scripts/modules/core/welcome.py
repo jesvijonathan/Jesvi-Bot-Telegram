@@ -2,7 +2,7 @@ import config as config
 #from . import database
 
 import modules.core.database as database
-from . import mute
+import modules.core.ban as ban
 
 import time
 
@@ -101,8 +101,6 @@ def gate(update, context):
             if len(first_name.encode('utf-8')) > 32:
                 first_name = cut_str_to_bytes(first_name,32)  # for security | to fix length < 32bytes max
             
-            print(wel)
-            
             text = wel[1].format(first_name=first_name,
                                  last_name=user['last_name'],
                                  group_name=chat["title"])
@@ -113,7 +111,7 @@ def gate(update, context):
             
             if wel[2] == 1 and (msg.from_user.id == user_id or stat != "administrator"):
 
-                mute.mute(context, chat_id=chat_id, user_id=user_id)
+                ban.ban_cls(update,context).mute()
 
                 db.add_link(chat=chat, user=user,
                                   status="restricted", replace=1)
@@ -139,8 +137,21 @@ def gate(update, context):
             else:
                 db.add_link(chat=chat, user=user, status=user_status)
 
-            update.message.reply_text(
+            sent_txt = update.message.reply_text(
                 text, reply_markup=reply_markup, parse_mode="HTML")
+            
+            sett = db.get_settings(chat_id)
+            warn_limit = sett[2]
+            warn_action = sett[3]
+
+            warn = db.get_warn(chat_id, user_id)    
+            warns = warn[0][7]
+
+            if warns >= warn_limit:
+                if warn_action == 0:
+                    db.remove_warn(chat_id,user_id,lr=1)
+                sent_txt.edit_text(text=( text + "\n\n<i>User under warn blacklist ! \nUse /warninfo to view previous warn records</i>"),
+                  parse_mode="HTML")
 
     print("\n", time.process_time() - start, "\n")
 
@@ -161,6 +172,15 @@ def farewell(update, context):
 
     members = chat.get_members_count()
     db.add_settings(chat_id=chat['id'], members=members)
+    
+    #check settings/condition
+    return
 
     text = "Bye bye 👋🏼"
     update.effective_message.reply_text(text)
+
+
+def about(update, context):
+    text = "This is " + config.bot_name + " & I am a telegram handler bot being developed with @jesvi_bot 's source code to provide users with a better UX experience... \n\nAdd me in a group and you can get started to use my features.\n\n" +\
+           "You can check out for my source/feature updates at @bot_garage_channel\n\nUse /help for more info about available commands & its uses.."
+    update.message.reply_text(text)

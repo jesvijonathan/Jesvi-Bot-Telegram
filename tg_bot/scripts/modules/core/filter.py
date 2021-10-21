@@ -1,6 +1,8 @@
+from ast import unparse
 import modules.core.database as database
 #import modules.core.extract as extract
 import modules.core.extract as extract
+import modules.core.unparse as unparse
 
 import time
 
@@ -44,15 +46,25 @@ class filter_switch():
 
 
     def lock(self):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
+            
         extract.admin_sync(self.update,self.context,db=self.db)
-
+        
         self.db.add_settings(self.chat_id,lock=1) 
         
         self.msg.reply_text("Chat Locked !")
 
 
     def unlock(self):
-        extract.admin_sync(self.update,self.context,self.db)
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
+
+        #extract.admin_sync(self.update,self.context,self.db)
+
+        unparse.unparse_cls(self.update,self.context).sync()
 
         self.db.add_settings(self.chat_id,lock=0) 
 
@@ -60,6 +72,10 @@ class filter_switch():
 
 
     def filter_remove(self,word,tell=0):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
+
         self.db.remove_filter(self.chat_id,word)
         if tell==1:
             if word == '*':
@@ -67,7 +83,9 @@ class filter_switch():
             else:    
                 self.msg.reply_text(word + " removed from filter !")
 
+
     def filter_add(self,res):
+
         word=None
         response=None
         delete=0
@@ -116,6 +134,10 @@ class filter_switch():
     
     
     def filter_stat(self,res):
+        m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+        if m==0:
+            return
+
         if res == "on":
             self.db.add_settings(self.chat_id,filter=1) 
             self.msg.reply_text("Chat filter active !")
@@ -128,7 +150,8 @@ class filter_switch():
             fi_li = self.db.get_filter(self.chat_id) 
             self.msg.reply_text(fi_li)
         
-        elif res == "stat":
+        #elif res == "stat":
+        else:
             x = 0
 
             for x,y in enumerate(self.db.get_filter(self.chat_id)):
@@ -155,11 +178,19 @@ class filter_switch():
             self.unlock()
         
         elif res[0] == "/filter":
-            self.filter_stat(res[1])
-        
+            try:
+                self.filter_stat(res[1])
+            except:
+                self.filter_stat("stat")
         elif res[0] == "/filteradd":
-            self.filter_add(res[1])
-        
+            m = extract.sudo_check_2(msg=self.msg,del_lvl=1,context=self.context)
+            if m==0:
+                return
+            try:
+                self.filter_add(res[1])
+            except:
+                ex = "Please use this format : \n'/filteradd <word> <filter-type> <reason/reply-text>'\n\n<word> is the text that the bot has to react to\n<filter-type> is the type of filter, it can be any from ( 'warn', 'reply, 'delete', 'warndel', 'replydel' )\n <reason/reply-text> : is the text bot responds with during reply & warn\n\nEx : '/filteradd beep warndel for using profane words'"
+                self.msg.reply_text(ex)
         elif res[0] == "/filterdel":
             self.filter_remove(res[1],1)
 
@@ -167,70 +198,3 @@ class filter_switch():
 def filter_router(update,context):
     threading.Thread(target=filter_switch(update,context).router, args=(), daemon=True).start()
 
-
-def filter(msg, chat, user, tag_user):
-
-    db = database.bot_db()
-
-    chat_id = chat["id"]
-    user_id = user["id"]
-    
-    sett = db.get_settings(chat_id)
-    filter_bool = sett[5]
-    note_bool = sett[6]
-    lock_bool = sett[7]
-
-    #msg_string = None
-
-    def filter_del(): #use extractor | sudo check
-        link = db.get_link(chat_id,user_id)[3]
-        if not (link == "administrator" or link == "creator"):
-            msg.delete()
-
-    def filter_filt():
-        msg_string = msg.text
-        
-        if note_bool == 1:
-            if msg_string.startswith("#") == True:
-                note_check(msg_string[1:])
-                return
-
-        for x,y in enumerate(db.get_filter(chat_id)):
-            if y[2].casefold() in msg_string.casefold():
-                if y[3] == 0:
-                    msg.delete()
-                    return
-                elif y[3] == 1:
-                    msg.reply_text(y[4])
-                    if y[5] == 1:
-                        msg.delete()
-                elif y[3] == 2:
-                    msg.reply_text("You have been warn striked !\nreason : "+y[4])
-                    if y[5] == 1:
-                        msg.delete()
-                return
-    
-    def note_check(note_name):
-        note = db.get_note_text(chat_id=chat_id, note_name=note_name)
-        
-        try:
-            text = str(note[3])
-            msg.reply_text(text, disable_web_page_preview=True)
-            return
-        except:
-            #msg.reply_text("Note not found !")
-            return
-
-    if lock_bool == 1:
-        filter_del()
-        return
-    elif filter_bool == 1:
-        filter_filt()
-    elif note_bool == 1 and filter_bool == 0:
-        msg_string = msg.text
-        if msg_string.startswith("#") == True:
-            note_check(msg_string[1:])
-            return
-
-
-    

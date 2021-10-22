@@ -5,7 +5,7 @@
     <img src="tg_bot/common/res/icon.ico" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Jes Bot v2</h3>
+  <h3 align="center">JesBot v2</h3>
 
   <p align="center">
     A Telegram Handler Bot With Multiple Features & Support

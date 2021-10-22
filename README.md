@@ -5,7 +5,7 @@
     <img src="tg_bot/common/res/icon.ico" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Jesvi Bot</h3>
+  <h3 align="center">Jes Bot v2</h3>
 
   <p align="center">
     A Telegram Handler Bot With Multiple Features & Support
@@ -108,12 +108,12 @@ database_password = "your_database_password"
 ```
 
 6. Get your `Bot API Token` from [@botfather](https://telegram.me/botfather) via `/newbot` command & owner (*your) details from [@jesvi_bot](https://telegram.me/jesvi_bot) via `/info` command in telegram
-2. Now you can select `Start` in the Jesvi Bot Application & get Jesvi Bot fully running !
+2. Now you can select `Start` in the Jesvi Bot Application & get JesBot fully running !
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-Jesvi Bot can come very handy when you have to manage a telegram group, channel, etc.. because of all the included features & tools that the bot is equiped with, It is easy for users & admins to get the full potential out of Jesvi Bot.
+JesBot can come very handy when you have to manage a telegram group, channel, etc.. because of all the included features & tools that the bot is equiped with, It is easy for users & admins to get the full potential out of Jesvi Bot.
 ```
 THERE ARE ALOT MORE (50+ MODULES) BUT IMMA LAZY TO TYPE ALL OF THEM...
 yeah.. I'm just too frikin lazy to type all of them ...

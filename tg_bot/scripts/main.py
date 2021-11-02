@@ -33,9 +33,13 @@ import modules.core.help as help
 
 import modules.core.system as system
 
+import modules.core.database as bot_db
+
+import modules.core.fun as fun
+
 import modules.extras as extras
 
-from telegram import Message, Chat, Update, Bot, User, ChatMember
+from telegram import Message, Chat, Update, Bot, User, ChatMember, bot
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler, CallbackContext
@@ -52,7 +56,6 @@ import os
 
 import threading
 
-from tg_bot.scripts.modules.core.fun import fbi_joke
 
 """
 import concurrent.futures
@@ -72,7 +75,7 @@ stdoutOrigin = sys.stdout
 deb = 1 # switch to 1 when debugging, to prevent log file creation
 
 if platform == "linux" or platform == "linux2" or platform == "darwin":
-    sys.stderr = open(path+"/../logs/log_bot_runtime.log", 'w')
+    sys.stderr = open(path+"/logs/log_bot_runtime.log", 'w')
 
 elif platform == "win32":
     wp= path + '\\logs\\log_bot_runtime.log'
@@ -230,6 +233,44 @@ def start(update,context):
            "You can check out for my source/feature updates at @bot_garage_channel\n\nUse /help for more info about available commands & its uses.."
         update.message.reply_text(text)
 
+def rel(update, context):
+    #text = "<a href='tg://user?id=" + str(user_id) + "'>" + first_name + "</a>" +\
+    #                ", you have been muted... \n\nClick on the human verification button within the next 2min to unmute yourself !"   # else, you will be kicked !"
+    
+    url1 = "https://github.com/jesvijonathan/Jesvi-Bot-Telegram"
+    url2 = "https://telegram.me/bot_garage_channel"
+
+    keyboard = [
+        [
+            InlineKeyboardButton(text="View Release", callback_data='1', url=url1),
+         ],
+         [
+             InlineKeyboardButton(text="Support Channel", callback_data='2', url=url2)
+         ],
+    ]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    text = "<b>Jesvi Bot v2.0 \n\nMajor Upstream ! </b>" + \
+        "\n\nStarted this project from scratch, improvising v1 & including alot more than what the previous release came with. 17k lines written, 341 commits & 7 months of development to bring this new upstream update" +\
+        "\nThis is a huge update after a long time."+\
+        "\n\nThe v2.0-beta stream will continue for awhile till it is complete. Lots of new features, optimization & functions added.. compared to the previous update" +\
+        "\n<a href='https://github.com/jesvijonathan/Jesvi-Bot-Telegram'>Check it out</a> & <a href='https://github.com/jesvijonathan/Jesvi-Bot-Telegram/discussions'>comment your feedback</a> on the project" +\
+        "\n\n<i>Bots using v1 source can update the existing script using the utility (run upgrade)\nChangelog, Documentation, Demo, etc will be out with the stable release</i>" +\
+        "\n\nRegards"
+    
+    """
+    cha = botdb.get_chat()
+        
+    for x,y in enumerate(cha):
+        try:
+            context.bot.send_message(chat_id=y[0], text=text, reply_markup=reply_markup, parse_mode="HTML", disable_web_page_preview=True)
+        except:
+            pass
+    """
+
+    context.bot.send_message(chat_id="", text=text, reply_markup=reply_markup, parse_mode="HTML", disable_web_page_preview=True)
+        
 
 def main():  # Main Function
     print("started")
@@ -243,6 +284,7 @@ def main():  # Main Function
     dp.bot.send_message(chat_id=owner_id, text="<code>Started Service !\n\nTime : " +
                         uptime + "</code>", parse_mode="HTML")
 
+    dp.add_handler(CommandHandler("rel", rel))
 
     start_cmd = ("start", "about")
     dp.add_handler(CommandHandler(start_cmd, start))

@@ -5,7 +5,7 @@ bot_id = ""
 
 # Your database name, Example : "bot_database"
 database_name = ""
-database_user = ""  # The sudo user, Example : "root"
+database_user = ""  # The sudo user, Example : "remote"
 database_password = ""  # your database password
 database_host = ""  # Example : "127.0.0.1"
 database_port = ""  # Example : "3306"
@@ -15,13 +15,3 @@ owner_username = ""  # Your/Owner user name
 
 suppport_group_username = "bot_garage"
 sudo_users = []  # Id's of sudo users you permit
-
-
-
-##### Misc #####
-
-bot_dict = { "id":bot_id, 
-            "first_name":bot_name, 
-            "last_name":None, 
-            "user_name":bot_username, 
-            "is_bot":True}

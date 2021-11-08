@@ -1,4 +1,9 @@
-import config as config
+
+try:
+    import config1 as config
+except:
+    import config as config
+
 from . import database
 
 if config.bot_token == "":

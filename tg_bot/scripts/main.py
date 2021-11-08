@@ -1,7 +1,11 @@
 
 #from modules import *
 #from modules.core import *
-from config import *
+
+try:
+    from config1 import *
+except:
+    from config import *
 
 
 import modules.core.database as database

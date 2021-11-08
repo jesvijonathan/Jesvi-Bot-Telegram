@@ -2,7 +2,11 @@ import modules.core.extract as extract
 import modules.core.database as database
 
 import threading
-from config import *
+try:
+    from config1 import *
+except:
+    from config import *
+    
 import time
 
 

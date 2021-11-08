@@ -159,8 +159,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 **Jesvi Jonathan** -
 
-- _Telegram :_ [@jesvi_jonathan](https://twitter.com/your_username)
-- _GitHub :_ [jesvijonathan](https://github.com/jesvijonathan/Jesvi-Bot)
+- _Telegram :_ [@jesvi_jonathan](https://telegram.me/bot_garage)
+- _GitHub :_ [jesvijonathan](https://github.com/jesvijonathan/Jesvi-Bot-Telegram)
 - _Email :_ jesvi22j@gmail.com
 
-**Project Link :** [https://github.com/jesvijonathan/Jesvi-Bot](https://github.com/jesvijonathan/Jesvi-Bot)
+**Project Link :** [https://github.com/jesvijonathan/Jesvi-Bot-Telegram](https://github.com/jesvijonathan/Jesvi-Bot-Telegram)

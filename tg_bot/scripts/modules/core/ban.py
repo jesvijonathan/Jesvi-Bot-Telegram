@@ -5,7 +5,12 @@ import modules.core.database as database
 
 import telegram
 import threading
-from config import *
+
+try:
+    from config1 import *
+except:
+    from config import *
+
 import time
 
 

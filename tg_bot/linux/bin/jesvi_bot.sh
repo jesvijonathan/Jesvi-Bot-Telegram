@@ -186,7 +186,7 @@ echo ""
 matrix " _______________________________" 0
 echo ""
 matrix "        Version : 0.7" 0
-matrix "        Release : 12.10.2020" 0
+matrix "        Release : 22.10.2021" 0
 matrix "          State : Stable" 0
 matrix "           Type : Full" 0
 matrix " _______________________________" 0

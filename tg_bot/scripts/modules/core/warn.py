@@ -6,7 +6,10 @@ import modules.core.database as database
 import modules.core.extract as extract
 import modules.core.ban as ban
 
-from config import *
+try:
+    from config1 import *
+except:
+    from config import *
 
 import time
 

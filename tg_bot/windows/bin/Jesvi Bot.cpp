@@ -510,8 +510,8 @@ int credits(int full = 1)
         }
         //cout<<"\n\n";
 
-        auto det1 = "          Version : 0.7               ",
-             det2 = "          Release : 12.10.2020        ",
+        auto det1 = "          Version : 2.0               ",
+             det2 = "          Release : 22.10.2021        ",
              det3 = "            State : Stable            ",
              det4 = "             Type : Full              ",
              line = "______________________________________";

@@ -2,7 +2,10 @@ from re import L
 import modules.core.database as database
 import modules.core.extract as extract
 
-from config import *
+try:
+    from config1 import *
+except:
+    from config import *
 
 import time
 import threading

@@ -1,4 +1,10 @@
 import config as config
+
+try:
+    import config1 as config
+except:
+    import config as config
+
 import sys
 sys.path.append('./')
 

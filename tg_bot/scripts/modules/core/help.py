@@ -1,5 +1,8 @@
-
-from config import *
+try:
+    from config1 import *
+except:
+    from config import *
+    
 def help(update, context):
     text = None
     if update.effective_chat.type != 'private':

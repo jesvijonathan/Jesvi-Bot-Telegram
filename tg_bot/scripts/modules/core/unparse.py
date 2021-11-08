@@ -14,7 +14,10 @@ from modules.core.warn import warn
 
 import json
 
-from config import *
+try:
+    from config1 import *
+except:
+    from config import *
 
 chat_lock = []
 chat_lock_bool = 0

@@ -3,7 +3,10 @@ import threading
 from mysql import connector
 
 
-from config import *
+try:
+    from config1 import *
+except:
+    from config import *
 
 
 import platform

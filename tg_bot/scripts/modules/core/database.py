@@ -2,7 +2,10 @@ from os import system, truncate
 from re import L
 from time import sleep
 
-from config import *
+try:
+    from config1 import *
+except:
+    from config import *
 
 from mysql import connector
 

@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://jesvijonathan.github.io/jesvijonathan/">
+  <a href="https://jesvijonathan.github.io/Jesvi-Bot-Telegram/">
     <img src="tg_bot/common/res/icon.ico" alt="Logo" width="80" height="80">
   </a>
 
@@ -10,10 +10,10 @@
   <p align="center">
     A Telegram Handler Bot With Multiple Features & Support
     <br />
-    <a href="https://jesvijonathan.github.io/jesvijonathan/"><strong>Official Webpage</strong></a>
+    <a href="https://jesvijonathan.github.io/Jesvi-Bot-Telegram/"><strong>Official Webpage</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jesvijonathan/Jesvi-Bot">View Demo</a>
+    <a href="https://telegram.me/jesvi_bot">View Demo</a>
     ·
     <a href="https://github.com/jesvijonathan/Jesvi-Bot/issues">Report Bug</a>
     ·
@@ -41,7 +41,7 @@
 
 ## About This Project
 
-[![Jesvi Bot Utility][menu-screenshot]](https://example.com)
+[![Jesvi Bot Utility][menu-screenshot]](https://github.com/jesvijonathan/Jesvi-Bot-Telegram/)
 
 This project was started as a program to handle several telegram groups that have a large number of members & also to serve several other unique features that were made simple & easy to users & admins.
 

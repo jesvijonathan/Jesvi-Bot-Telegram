@@ -76,7 +76,7 @@ platform = sys.platform
 path = path = str(os.path.dirname(os.path.dirname(sys.argv[0])))
 stdoutOrigin = sys.stdout
 
-deb = 1 # switch to 1 when debugging, to prevent log file creation
+deb = 0 # switch to 1 when debugging, to prevent log file creation
 
 if platform == "linux" or platform == "linux2" or platform == "darwin":
     sys.stderr = open(path+"/logs/log_bot_runtime.log", 'w')
@@ -240,29 +240,32 @@ def start(update,context):
 def rel(update, context):
     #text = "<a href='tg://user?id=" + str(user_id) + "'>" + first_name + "</a>" +\
     #                ", you have been muted... \n\nClick on the human verification button within the next 2min to unmute yourself !"   # else, you will be kicked !"
-    
+    """
     url1 = "https://github.com/jesvijonathan/Jesvi-Bot-Telegram"
     url2 = "https://telegram.me/bot_garage_channel"
 
     keyboard = [
         [
-            InlineKeyboardButton(text="View Release", callback_data='1', url=url1),
+            InlineKeyboardButton(text="", callback_data='1', url=url1),
          ],
          [
-             InlineKeyboardButton(text="Support Channel", callback_data='2', url=url2)
+             InlineKeyboardButton(text="", callback_data='2', url=url2)
          ],
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
+    """
 
-    text = "<b>Jesvi Bot v2.0 \n\nMajor Upstream ! </b>" + \
-        "\n\nStarted this project from scratch, improvising v1 & including alot more than what the previous release came with. 17k lines written, 341 commits & 7 months of development to bring this new upstream update" +\
-        "\nThis is a huge update after a long time."+\
-        "\n\nThe v2.0-beta stream will continue for awhile till it is complete. Lots of new features, optimization & functions added.. compared to the previous update" +\
-        "\n<a href='https://github.com/jesvijonathan/Jesvi-Bot-Telegram'>Check it out</a> & <a href='https://github.com/jesvijonathan/Jesvi-Bot-Telegram/discussions'>comment your feedback</a> on the project" +\
-        "\n\n<i>Bots using v1 source can update the existing script using the utility (run upgrade)\nChangelog, Documentation, Demo, etc will be out with the stable release</i>" +\
-        "\n\nRegards"
-    
+    res = update.message.text.split(None,1)
+
+    try:
+        text = res[1]
+        uid = res[0]
+    except Exception as x:
+        update.message.reply_text(x)
+        return
+
+
     """
     cha = botdb.get_chat()
         
@@ -273,7 +276,7 @@ def rel(update, context):
             pass
     """
 
-    context.bot.send_message(chat_id="", text=text, reply_markup=reply_markup, parse_mode="HTML", disable_web_page_preview=True)
+    context.bot.send_message(chat_id=uid, text=text,parse_mode="HTML", disable_web_page_preview=True)
         
 
 def main():  # Main Function

@@ -28,8 +28,8 @@ cd %~dp0
 @echo.
 
 :: Change the below if the it does not work, also try "MySQL", "MySQL80", "mysql" 
-net stop mysql
-net start mysql
+net stop MySQL80
+net start MySQL80
 
 
 TIMEOUT /T 3 /NOBREAK

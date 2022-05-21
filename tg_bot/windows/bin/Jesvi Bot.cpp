@@ -4,7 +4,6 @@
 #include <fstream>
 #include <string>
 
-
 using namespace std;
 
 string ans[8];
@@ -12,7 +11,7 @@ string ans[8];
 int window(int s = 0)
 {
     SetConsoleTitle("Jesvi Bot");
-    
+
     if (s == 0)
     {
         system("MODE CON COLS=38 LINES=22");
@@ -134,7 +133,7 @@ int call(int a = 10, int an = 0)
             break;
         case 4:
             system("start /MIN /b %cd%\\requirements_installer.bat");
-            
+
             return 0;
             break;
         case 5:
@@ -238,7 +237,7 @@ int assign_data()
     fstream myfile("data.txt");
 
     while (myfile >> w)
-    { //take word and print
+    { // take word and print
 
         if (w == "bot_logging")
         {
@@ -342,7 +341,7 @@ int launch_set()
 int start()
 {
 restart:
-    
+
     char con;
 
     if (ans[5] == "true")
@@ -370,7 +369,7 @@ restart:
 
     cout << "   1-Stop  |  2-Log Bot  |  3-LogSQL\n   4-Test  |  5-Restart  |  6-Folder\n";
     cout << "--------------------------------------\n\n";
-    
+
     call(0);
 
     Sleep(2000);
@@ -392,14 +391,14 @@ restart:
             printf("Opening Bot Live Logger...");
             call(1);
             Sleep(200);
-            //stop(2);
+            // stop(2);
             printf("\33[2K\r");
             break;
         case 3:
             printf("Opening SQL Live Logger...");
             call(2);
             Sleep(200);
-            //stop(3);
+            // stop(3);
             printf("\33[2K\r");
             break;
         case 4:
@@ -508,7 +507,7 @@ int credits(int full = 1)
         {
             printf("            Jesvi Jonathan\n\n");
         }
-        //cout<<"\n\n";
+        // cout<<"\n\n";
 
         auto det1 = "          Version : 2.0               ",
              det2 = "          Release : 22.10.2021        ",
@@ -881,7 +880,7 @@ int menu()
         Sleep(500);
         exit(1);
         break;
-    
+
     case 9:
         printf("Stopping All JBot Services..");
         Sleep(200);

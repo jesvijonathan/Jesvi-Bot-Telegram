@@ -1,8 +1,8 @@
-telegram == 0.0.1
-python-telegram-bot == 13.7
+telegram
+python-telegram-bot
 
-mysql_connector_python == 8.0.26
+mysql_connector_python
 
-wikipedia == 1.4.0
-psutil == 5.8.0
-speedtest_cli == 2.1.3
+wikipedia
+psutil
+speedtest_cli

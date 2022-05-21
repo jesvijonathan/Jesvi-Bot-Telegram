@@ -117,7 +117,7 @@ class system_cls():
             s6 = "External Ip  : <code>" + external_ip + "</code>\n"
         except:
             s6 = ""
-        
+
         try:
             current_network = subprocess.check_output(['netsh', 'wlan', 'show', 'interfaces']).decode('utf-8').split('\n')
             ssid_line = [x for x in current_network if 'SSID' in x and 'BSSID' not in x]
@@ -193,14 +193,26 @@ class system_cls():
 
         path = path = str(os.path.dirname(os.path.dirname(sys.argv[0])))
         
-        wp1= path + '/logs/log_bot_runtime.log'
+        wp1= ""
+        wp2 = ""
+        
+        if platform == "linux" or platform == "linux2" or platform == "darwin":
+            wp1= path + "/logs/log_bot_runtime.log"
+            wp2= path + '/logs/log_sql_runtime.log'
+
+        elif platform == "win32":
+            wp1= path + '\\logs\\log_bot_runtime.log'
+            wp2 = path + '\\logs\log_sql_runtime.log'
+
+        
+        print(wp1, wp2)
+        
         try:
             self.context.bot.send_document(chat_id=self.chat_id, document=open(wp1, 'rb'), filename="bot_runtime.log")
         except Exception as x:
             self.msg.reply_text(text="<code>Bot : " + str(x) + "</code>",
                                         parse_mode="HTML")
         
-        wp2= path + '/logs/log_sql_runtime.log'
         try:
             self.context.bot.send_document(chat_id=self.chat_id, document=open(wp2, 'rb'), filename="sql_server.log")
         except Exception as y:

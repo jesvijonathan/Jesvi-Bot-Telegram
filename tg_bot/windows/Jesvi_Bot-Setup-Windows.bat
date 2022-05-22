@@ -71,8 +71,8 @@ start /min explorer c:\Jesvi-Bot-Telegram
 
 
 echo Creating Shortcut
-start /B CMD /C CALL C:\Jesvi-Bot-Telegram\tg_bot\windows\bin\shortcut_create_2.bat >NUL 2>&1
-start /B CMD /C CALL C:\Jesvi-Bot-Telegram\tg_bot\windows\bin\auto_start_sc_2.bat >NUL 2>&1
+start /min C:\Jesvi-Bot-Telegram\tg_bot\windows\bin\shortcut_create_2.bat
+start /min C:\Jesvi-Bot-Telegram\tg_bot\windows\bin\auto_start_sc_2.bat
 
  
 echo.

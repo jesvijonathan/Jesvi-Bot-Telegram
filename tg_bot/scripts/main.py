@@ -13,9 +13,9 @@ import modules.core.database as database
 import modules.core.welcome as welcome
 #import  modules.core.extract as extract
 
-import  modules.core.filter as filter
+import modules.core.filter as filter
 
-import  modules.core.unparse as unparse
+import modules.core.unparse as unparse
 
 import modules.delete as delete
 
@@ -76,33 +76,35 @@ platform = sys.platform
 path = path = str(os.path.dirname(os.path.dirname(sys.argv[0])))
 stdoutOrigin = sys.stdout
 
-deb = 0 # switch to 1 when debugging, to prevent log file creation
+deb = 0  # switch to 1 when debugging, to prevent log file creation
 
 if platform == "linux" or platform == "linux2" or platform == "darwin":
     sys.stderr = open(path+"/logs/log_bot_runtime.log", 'w')
 
 elif platform == "win32":
-    wp= path + '\\logs\\log_bot_runtime.log'
+    wp = path + '\\logs\\log_bot_runtime.log'
     filename = os.path.join(wp)
-    
+
     if deb == 0:
         logging.basicConfig(filename=filename,
-                        filemode='a',
-                        format='%(asctime)s %(levelname)s %(name)s %(message)s',
-                        level=logging.DEBUG)
+                            filemode='a',
+                            format='%(asctime)s %(levelname)s %(name)s %(message)s',
+                            level=logging.DEBUG)
         #sys.stdout = open(wp, 'w')
         sys.stderr = open(wp, 'w')
     else:
         logging.basicConfig(
-                        format='%(asctime)s %(levelname)s %(name)s %(message)s',
-                        level=logging.DEBUG)
+            format='%(asctime)s %(levelname)s %(name)s %(message)s',
+            level=logging.DEBUG)
         logger = logging.getLogger(__name__)
-                        
+
+
 class writer(object):
     log = []
 
     def write(self, data):
         self.log.append(data)
+
 
 print("logging")
 
@@ -116,28 +118,30 @@ dp = updater.dispatcher
 # Initialize Database & Cursor
 botdb = None
 
+
 def load():
     global botdb
     db = connector.connect(
-    host=database_host,
-    user=database_user,
-    password=database_password)
+        host=database_host,
+        user=database_user,
+        password=database_password)
     cursor = db.cursor(buffered=True)
 
     sql = "CREATE DATABASE IF NOT EXISTS {s0}".format(s0=database_name)
     cursor.execute(sql)
 
     db = connector.connect(
-    host=database_host,
-    user=database_user,
-    password=database_password,
-    database=database_name)
+        host=database_host,
+        user=database_user,
+        password=database_password,
+        database=database_name)
     cursor = db.cursor(buffered=True)
-    
+
     create_db = database.create_db().create_base()
     #del create_db
 
     botdb = database.bot_db()
+
 
 load()
 print("database loaded")
@@ -146,24 +150,23 @@ print("database loaded")
 def unparse_func(update, context):  # Unparse Incoming Responses
     start = time.process_time()
 
-
     # user_status = context.bot.get_chat_member(chat['id'], user['id'])
     # print(user_status['status'])
     # print(chatmember)
     # print(eval(str(context.bot.getChat(chat['id']).permissions)))
-    
-    threading.Thread(target=unparse.filter, args=(update,context), daemon=True).start()
+
+    threading.Thread(target=unparse.filter, args=(
+        update, context), daemon=True).start()
 
     print("\n", time.process_time() - start, "\n")
 
 
-
 def button(update: Update, context: CallbackContext):
     start = time.process_time()
-    
+
     query = update.callback_query
     func = query.data.split(' ', 1)[0]
-    
+
     # print("\n", query.message.reply_markup, "\n")
     # print("\n", query.message.reply_to_message.from_user, "\n")
     # print("\n", query.data, "\n")
@@ -172,7 +175,7 @@ def button(update: Update, context: CallbackContext):
     # full_msg = query.message.reply_to_message
 
     if func == "veri":
-        but_veri(update,context) # try with later **locals()
+        but_veri(update, context)  # try with later **locals()
 
     print("\n", time.process_time() - start, "\n")
 
@@ -201,7 +204,7 @@ def but_veri(update: Update, context: CallbackContext):
         query.edit_message_text(text=data[2])
 
         if data[1] == '0':
-            ban.ban_cls(update,context).unmute()
+            ban.ban_cls(update, context).unmute()
             database.add_link(chat=chat, user=user, replace=1)
 
         # user_status = context.bot.get_chat_member(chat_id, user_id)
@@ -209,36 +212,37 @@ def but_veri(update: Update, context: CallbackContext):
 
     else:
         query.answer(
-                text='You are already verified, This button is not for you !')
+            text='You are already verified, This button is not for you !')
 
 
-def start(update,context):
-    res = update.message.text.split(None,1)
+def start(update, context):
+    res = update.message.text.split(None, 1)
 
     try:
         sub = res[1]
         if sub == "start":
             text = "This is " + bot_name + " & I am a telegram handler bot being developed with @jesvi_bot 's source code to provide users with a better UX experience... \n\nAdd me in a group and you can get started to use my features.\n\n" +\
-           "You can check out for my source/feature updates at @bot_garage_channel\n\nUse /help for more info about available commands & its uses.."
+                "You can check out for my source/feature updates at @bot_garage_channel\n\nUse /help for more info about available commands & its uses.."
             update.message.reply_text(text)
-        
+
         elif sub == "help":
-            help.help(update,context)
+            help.help(update, context)
         elif sub == "rules":
-            rule.rule_router(update,context)
+            rule.rule_router(update, context)
         elif sub == "set":
             pass
         elif sub == "note":
             pass
         elif sub.startswith('-') == True:
-            rule.rule_router(update,context)
-    except:    
+            rule.rule_router(update, context)
+    except:
         text = "This is " + bot_name + " & I am a telegram handler bot being developed with @jesvi_bot 's source code to provide users with a better UX experience... \n\nAdd me in a group and you can get started to use my features.\n\n" +\
-           "You can check out for my source/feature updates at @bot_garage_channel\n\nUse /help for more info about available commands & its uses.."
+            "You can check out for my source/feature updates at @bot_garage_channel\n\nUse /help for more info about available commands & its uses.."
         update.message.reply_text(text)
 
+
 def rel(update, context):
-    #text = "<a href='tg://user?id=" + str(user_id) + "'>" + first_name + "</a>" +\
+    # text = "<a href='tg://user?id=" + str(user_id) + "'>" + first_name + "</a>" +\
     #                ", you have been muted... \n\nClick on the human verification button within the next 2min to unmute yourself !"   # else, you will be kicked !"
     """
     url1 = "https://github.com/jesvijonathan/Jesvi-Bot-Telegram"
@@ -256,7 +260,7 @@ def rel(update, context):
     reply_markup = InlineKeyboardMarkup(keyboard)
     """
 
-    res = update.message.text.split(None,1)
+    res = update.message.text.split(None, 1)
 
     try:
         text = res[1]
@@ -264,7 +268,6 @@ def rel(update, context):
     except Exception as x:
         update.message.reply_text(x)
         return
-
 
     """
     cha = botdb.get_chat()
@@ -276,8 +279,9 @@ def rel(update, context):
             pass
     """
 
-    context.bot.send_message(chat_id=uid, text=text,parse_mode="HTML", disable_web_page_preview=True)
-        
+    context.bot.send_message(chat_id=uid, text=text,
+                             parse_mode="HTML", disable_web_page_preview=True)
+
 
 def main():  # Main Function
     print("started")
@@ -287,7 +291,7 @@ def main():  # Main Function
         logger = writer()
         sys.stdout = logger
         sys.stderr = logger
-    
+
     dp.bot.send_message(chat_id=owner_id, text="<code>Started Service !\n\nTime : " +
                         uptime + "</code>", parse_mode="HTML")
 
@@ -313,12 +317,11 @@ def main():  # Main Function
     warn_cmd = ("warn", "warninfo", "warnclear", "warnremove")
     dp.add_handler(CommandHandler(warn_cmd, warn.warn_router))
 
-    ban_cmd = ("ban", "unban", "kick", "mute", "unmute","leave", "rip")
+    ban_cmd = ("ban", "unban", "kick", "mute", "unmute", "leave", "rip")
     dp.add_handler(CommandHandler(ban_cmd, ban.thread_ban))
 
-    rule_cmd = ("rules", "rule","ruleset", "ruledel")
+    rule_cmd = ("rules", "rule", "ruleset", "ruledel")
     dp.add_handler(CommandHandler(rule_cmd, rule.rule_router))
-
 
     extras_cmd = ("search")
     dp.add_handler(CommandHandler(extras_cmd, extras.extras_threading))
@@ -326,9 +329,8 @@ def main():  # Main Function
     system_cmd = ("net", "sql", "system", "cmd", "server", "publish")
     dp.add_handler(CommandHandler(system_cmd, system.system_threading))
 
-    
     dp.add_handler(CommandHandler("scoot", quit_))
-    
+
     fun_cmd = ("boom")
     dp.add_handler(CommandHandler(fun_cmd, fun.boom))
     fun_cmd = ("oof")
@@ -339,7 +341,8 @@ def main():  # Main Function
     help_cmd = ("help")
     dp.add_handler(CommandHandler(help_cmd, help.help))
 
-    edit_cmd = ("promote", "demote", "pin", "unpin", "bio", "bioset", "biodel", "descset", "nickset", "titleset")
+    edit_cmd = ("promote", "demote", "pin", "unpin", "bio",
+                "bioset", "biodel", "descset", "nickset", "titleset")
     dp.add_handler(CommandHandler(edit_cmd, edit.edit_router))
 
     info_cmd = ("info", "group", "msgid", "json", "sync")
@@ -349,19 +352,21 @@ def main():  # Main Function
 
     dp.add_handler(MessageHandler(Filters.all, unparse_func))
     #dp.add_handler(MessageHandler(Filters.all, unparse.thread_unparse))
-    
+
     updater.start_polling()
     updater.idle()
-    
 
-def quit_(update,context):
-    m = extract.sudo_check_2(msg=update.message,del_lvl=7,context=context,sudo=1)
-    if m== 7:
+
+def quit_(update, context):
+    m = extract.sudo_check_2(
+        msg=update.message, del_lvl=7, context=context, sudo=1)
+    if m == 7:
         pass
-    else: return
+    else:
+        return
 
-    context.bot.send_message(chat_id=update.message['chat']["id"],text="Terminating !" ,
-                                parse_mode="HTML")
+    context.bot.send_message(chat_id=update.message['chat']["id"], text="Terminating !",
+                             parse_mode="HTML")
 
     updater.stop()
     exit(1)
@@ -372,4 +377,4 @@ def quit_(update,context):
 if __name__ == '__main__':
     main()
 
-#new stuff for sub-main 2
+# new stuff for sub-main 2

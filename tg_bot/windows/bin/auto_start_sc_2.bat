@@ -14,7 +14,7 @@ echo oLink.TargetPath = ("C:\Jesvi-Bot-Telegram\tg_bot\windows\bin\auto_start.ba
 
 echo oLink.Description = "Jesvi Bot By Jesvi Jonathan" >> %SCRIPT%
 echo oLink.IconLocation = ("%~dp0icon.ico") >> %SCRIPT%
-echo oLink.WorkingDirectory = "%cd%\bin" >> %SCRIPT%
+echo oLink.WorkingDirectory = "C:\Jesvi-Bot-Telegram\tg_bot\windows\bin" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 cscript /nologo %SCRIPT%
 del %SCRIPT%
